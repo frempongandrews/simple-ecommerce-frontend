@@ -1,0 +1,309 @@
+import Link from "next/link";
+import Layout from "./Layout";
+
+const Home = () => {
+  return (
+    <>
+      {/*=============================================
+	=            section title  container      =
+	=============================================*/}
+      <div className="section-title-container section-title-container--instagram mb-80 mt-100 mb-md-60 mb-sm-60 mt-md-80 mt-sm-80">
+        <div className="container wide">
+          <div className="row">
+            <div className="col-xl-3 d-none d-xl-block">
+              <div className="section-title__label section-title__label-style2 section-title__label--left section-title__label-style2--left">
+                <p>SS-2018 <span className="line">84</span></p>
+              </div>
+            </div>
+            <div className="col-xl-6 col-lg-10 offset-lg-1 offset-xl-0">
+              {/*=======  section title  =======*/}
+              <div className="section-title text-center">
+                <h1>Best selling products</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo estibulum issim
+                  Lorem ipsum dolor sit amet, consectetur cing elit.</p>
+              </div>
+              {/*=======  End of section title  =======*/}
+            </div>
+            <div className="col-xl-3 d-none d-xl-block text-right">
+              <div className="section-title__label  section-title__label-style2 section-title__label--right section-title__label-style2--right">
+                <p>BASIC <br /> MINIMALISM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*=====  End of section title container ======*/}
+      {/*=============================================
+	=            accessories home content         =
+	=============================================*/}
+      <div className="home-content--accessories mb-100 mb-md-80 mb-sm-80">
+        <div className="container">
+          
+          <div className="row align-items-center">
+            
+            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">01/</span>
+                <img src="assets/images/category/banner-best-seller-1.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Minimal Leather Watch</p>
+                  <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">02/</span>
+                <img src="assets/images/category/banner-bestseller-2.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Hoho Bag</p>
+                  <p className="price"><span className="main-price">$100.00</span></p>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">02/</span>
+                <img src="assets/images/category/banner-bestseller-2.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Hoho Bag</p>
+                  <p className="price"><span className="main-price">$100.00</span></p>
+                </div>
+              </div>
+            </div>
+            
+  
+            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">01/</span>
+                <img src="assets/images/category/banner-best-seller-1.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Minimal Leather Watch</p>
+                  <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">01/</span>
+                <img src="assets/images/category/banner-best-seller-1.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Minimal Leather Watch</p>
+                  <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
+              <div className="accessories-single-category wow zoomIn">
+                <Link href={`/product`}>
+                  <a className="banner-hover" />
+                </Link>
+                <span className="number">02/</span>
+                <img src="assets/images/category/banner-bestseller-2.jpg" className="img-fluid" alt="" />
+                <div className="accessories-single-category__content">
+                  <p className="name">Hoho Bag</p>
+                  <p className="price"><span className="main-price">$100.00</span></p>
+                </div>
+              </div>
+            </div>
+            
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-3  mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">03/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-3.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Dark denim shorts</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$80.00</span> <span className="discounted-price">$60.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-5 offset-lg-1 col-md-11 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">04/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-4.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Pink sneakers</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            {/*<div className="col-lg-5 offset-lg-1 col-md-11 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">04/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-4.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Pink sneakers</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-3  mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">03/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-3.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Dark denim shorts</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$80.00</span> <span className="discounted-price">$60.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-9 col-md-10 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">05/</span>*/}
+            {/*    <img src="assets/images/category/banner-best-seller-5.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">The Linen Chambray Shirt</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">06/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-6.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Frame Sunglass</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-4 offset-lg-2 col-md-8 offset-md-1 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">07/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-7.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Pastel bag</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-9 offset-lg-3 col-md-8 offset-md-3 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">08/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-8.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">High-waist trousers</p>*/}
+            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">09/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-9.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">The Cotton Two-Pocket Shirt</p>*/}
+            {/*      <p className="price"><span className="main-price">$90.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
+            {/*    <span className="number">10/</span>*/}
+            {/*    <img src="assets/images/category/banner-bestseller-10.jpg" className="img-fluid" alt="" />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">TID Canvas 001</p>*/}
+            {/*      <p className="price"><span className="main-price">$100.00</span></p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            
+            
+            <div className="col-lg-12">
+              {/*=======  shop button  =======*/}
+              <div className="shop-button text-center">
+                <a className="lezada-button lezada-button--medium lezada-button--icon--left" href="shop-left-sidebar.html"> <i className="icon-left ion-plus" /> Online store</a>
+              </div>
+              {/*=======  End of shop button  =======*/}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*=====  End of accessories home content  ======*/}
+  
+      {/*=============================================
+	=            instagram slider area         =
+	=============================================*/}
+      <div className="instagram-slider-area mb-100 mb-md-80 mb-sm-80">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-8 order-2 order-lg-1">
+              {/*=============================================
+					=            instagram image slider         =
+					=============================================*/}
+              <div className="instagram-image-slider-area">
+                {/*=======  instagram image container  =======*/}
+                <div className="instagram-image-slider-container">
+                  <div className="instagram-feed-thumb">
+                    <div id="instagramFeedThree" className="instagram-carousel">
+                    </div>
+                  </div>
+                </div>
+                {/*=======  End of instagram image container  =======*/}
+              </div>
+              {/*=====  End of instagram image slider  ======*/}
+            </div>
+            <div className="col-lg-4 order-1 order-lg-2">
+              {/*=======  instagram intro  =======*/}
+              <div className="instagram-section-intro pl-50 pl-lg-50 pl-md-0 pl-sm-0 pl-xs-0 pl-xxs-0 mb-0 mb-lg-0 mb-md-50 mb-sm-50 mb-xs-50 mb-xxs-50">
+                <p><a href="#">@lezada_shop</a></p>
+                <h3>Follow us on Instagram</h3>
+              </div>
+              {/*=======  End of instagram intro  =======*/}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*=====  End of instagram slider area  ======*/}
+    </>
+  )
+}
+
+export default Home
