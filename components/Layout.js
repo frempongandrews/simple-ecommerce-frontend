@@ -1,6 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <Head>
@@ -28,7 +29,6 @@ const Layout = ({children}) => {
         <link href="assets/css/main.css" rel="stylesheet" />
         {/* Modernizer JS */}
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-        
       </Head>
       <header className="header header-nontransparent-overlay-menu header-sticky static-header">
         {/*=======  header bottom  =======*/}
@@ -52,188 +52,602 @@ const Layout = ({children}) => {
                 <div className="site-main-nav d-none d-lg-block">
                   <nav className="site-nav center-menu">
                     <ul>
-                      <li className="menu-item-has-children"><a href="index.html">Home</a>
+                      <li className="menu-item-has-children">
+                        <a href="index.html">Home</a>
                         <ul className="sub-menu mega-menu mega-menu-column-5">
-                          <li><a href="#" className="mega-column-title">Home Group</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Home Group
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="index-trending.html">Trending</a><img src="assets/images/home-preview/01.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-collection.html">My collection</a><img src="assets/images/home-preview/02.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-special.html">Special</a><img src="assets/images/home-preview/03.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-concept.html">concept</a><img src="assets/images/home-preview/04.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-smart.html">smart design</a><img src="assets/images/home-preview/05.jpg" className="img-fluid" alt="" /></li>
+                              <li>
+                                <a href="index-trending.html">Trending</a>
+                                <img
+                                  src="assets/images/home-preview/01.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-collection.html">
+                                  My collection
+                                </a>
+                                <img
+                                  src="assets/images/home-preview/02.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-special.html">Special</a>
+                                <img
+                                  src="assets/images/home-preview/03.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-concept.html">concept</a>
+                                <img
+                                  src="assets/images/home-preview/04.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-smart.html">smart design</a>
+                                <img
+                                  src="assets/images/home-preview/05.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Home Group</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Home Group
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="index-furniture.html">Furniture </a><img src="assets/images/home-preview/06.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-essentials.html">Essentials</a><img src="assets/images/home-preview/07.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-lookbook.html">Lookbook</a><img src="assets/images/home-preview/08.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-wearables.html">Wearables</a><img src="assets/images/home-preview/09.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-accessories.html">Accessories</a><img src="assets/images/home-preview/10.jpg" className="img-fluid" alt="" /></li>
+                              <li>
+                                <a href="index-furniture.html">Furniture </a>
+                                <img
+                                  src="assets/images/home-preview/06.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-essentials.html">Essentials</a>
+                                <img
+                                  src="assets/images/home-preview/07.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-lookbook.html">Lookbook</a>
+                                <img
+                                  src="assets/images/home-preview/08.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-wearables.html">Wearables</a>
+                                <img
+                                  src="assets/images/home-preview/09.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-accessories.html">Accessories</a>
+                                <img
+                                  src="assets/images/home-preview/10.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Home Group</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Home Group
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="index-shoppable.html">Shoppable</a><img src="assets/images/home-preview/11.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-fashion.html">Fashion</a><img src="assets/images/home-preview/13.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-perfumes.html">Perfumes</a><img src="assets/images/home-preview/14.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-cosmetics.html">Cosmetics</a><img src="assets/images/home-preview/15.jpg" className="img-fluid" alt="" /></li>
-                              <li><a href="index-decor.html">Home Decor</a><img src="assets/images/home-preview/16.png" className="img-fluid" alt="" /></li>
+                              <li>
+                                <a href="index-shoppable.html">Shoppable</a>
+                                <img
+                                  src="assets/images/home-preview/11.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-fashion.html">Fashion</a>
+                                <img
+                                  src="assets/images/home-preview/13.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-perfumes.html">Perfumes</a>
+                                <img
+                                  src="assets/images/home-preview/14.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-cosmetics.html">Cosmetics</a>
+                                <img
+                                  src="assets/images/home-preview/15.jpg"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
+                              <li>
+                                <a href="index-decor.html">Home Decor</a>
+                                <img
+                                  src="assets/images/home-preview/16.png"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Home Group</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Home Group
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="index-creative.html">Creative</a><img src="assets/images/home-preview/17.png" className="img-fluid" alt="" /></li>
+                              <li>
+                                <a href="index-creative.html">Creative</a>
+                                <img
+                                  src="assets/images/home-preview/17.png"
+                                  className="img-fluid"
+                                  alt=""
+                                />
+                              </li>
                             </ul>
                           </li>
                           <li>
                             <div className="menu-image">
-                              <img src="assets/images/menu-image/menu-element.png" className="img-fluid" alt="" />
+                              <img
+                                src="assets/images/menu-image/menu-element.png"
+                                className="img-fluid"
+                                alt=""
+                              />
                             </div>
                           </li>
                         </ul>
                       </li>
-                      <li className="menu-item-has-children"><a href="shop-left-sidebar.html">Shop</a>
+                      <li className="menu-item-has-children">
+                        <a href="shop-left-sidebar.html">Shop</a>
                         <ul className="sub-menu mega-menu mega-menu-column-4">
-                          <li><a href="#" className="mega-column-title">Shop Pages</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Shop Pages
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="shop-no-sidebar.html">Shop No Sidebar</a></li>
-                              <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                              <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                              <li><a href="shop-fullwidth-no-space.html">Shop Fullwidth No Space</a></li>
-                              <li><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a></li>
-                              <li><a href="shop-fullwidth-left-sidebar.html">Shop Fullwidth Left Sidebar</a></li>
-                              <li><a href="shop-fullwidth-right-sidebar.html">Shop Fullwidth Right Sidebar</a></li>
+                              <li>
+                                <a href="shop-no-sidebar.html">
+                                  Shop No Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-left-sidebar.html">
+                                  Shop Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-right-sidebar.html">
+                                  Shop Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-fullwidth-no-space.html">
+                                  Shop Fullwidth No Space
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-fullwidth-no-sidebar.html">
+                                  Shop Fullwidth No Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-fullwidth-left-sidebar.html">
+                                  Shop Fullwidth Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-fullwidth-right-sidebar.html">
+                                  Shop Fullwidth Right Sidebar
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Shop Pages</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Shop Pages
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="shop-product-basic.html">Basic </a></li>
-                              <li><a href="shop-product-fullwidth.html">Fullwidth</a></li>
-                              <li><a href="shop-product-sticky-details.html">Sticky details</a></li>
-                              <li><a href="shop-product-with-sidebar.html">With Sidebar</a></li>
-                              <li><a href="shop-product-extra-content.html">Extra Content</a></li>
-                              <li><a href="shop-product-variation-image.html">Variation Image</a></li>
-                              <li><a href="shop-product-bought-together.html">Bought Together</a></li>
+                              <li>
+                                <a href="shop-product-basic.html">Basic </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-fullwidth.html">
+                                  Fullwidth
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-sticky-details.html">
+                                  Sticky details
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-with-sidebar.html">
+                                  With Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-extra-content.html">
+                                  Extra Content
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-variation-image.html">
+                                  Variation Image
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-product-bought-together.html">
+                                  Bought Together
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Shop Pages</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Shop Pages
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="shop-product-with-background.html">Product with background</a></li>
-                              <li><a href="shop-cart.html">Shopping Cart</a></li>
-                              <li><a href="shop-checkout.html">Checkout</a></li>
-                              <li><a href="shop-order-tracking.html">Order Tracking</a></li>
-                              <li><a href="shop-wishlist.html">Wishlist</a></li>
-                              <li><a href="shop-customer-login.html">Customer Login</a></li>
-                              <li><a href="shop-by-brand.html">Shop by Brand</a></li>
+                              <li>
+                                <a href="shop-product-with-background.html">
+                                  Product with background
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-cart.html">Shopping Cart</a>
+                              </li>
+                              <li>
+                                <a href="shop-checkout.html">Checkout</a>
+                              </li>
+                              <li>
+                                <a href="shop-order-tracking.html">
+                                  Order Tracking
+                                </a>
+                              </li>
+                              <li>
+                                <a href="shop-wishlist.html">Wishlist</a>
+                              </li>
+                              <li>
+                                <Link href={`/auth`}>
+                                  <a>Register / Login</a>
+                                </Link>
+                              </li>
+                              <li>
+                                <a href="shop-by-brand.html">Shop by Brand</a>
+                              </li>
                             </ul>
                           </li>
                           <li>
                             <div className="menu-image">
-                              <img src="assets/images/menu-image/megamenu-shop.png" className="img-fluid" alt="" />
+                              <img
+                                src="assets/images/menu-image/megamenu-shop.png"
+                                className="img-fluid"
+                                alt=""
+                              />
                             </div>
                           </li>
                         </ul>
                       </li>
-                      <li className="menu-item-has-children"><a href="#">Elements</a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Elements</a>
                         <ul className="sub-menu mega-menu mega-menu-column-5">
-                          <li><a href="#" className="mega-column-title">Shop / Products</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Shop / Products
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="element-product-categories.html">Product Categories</a></li>
-                              <li><a href="element-product-sliders.html">Product Sliders</a></li>
-                              <li><a href="element-product-tabs.html">Product Tabs</a></li>
-                              <li><a href="element-product-widget.html">Product Widget</a></li>
-                              <li><a href="element-recent-products.html">Recent Products</a></li>
+                              <li>
+                                <a href="element-product-categories.html">
+                                  Product Categories
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-product-sliders.html">
+                                  Product Sliders
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-product-tabs.html">
+                                  Product Tabs
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-product-widget.html">
+                                  Product Widget
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-recent-products.html">
+                                  Recent Products
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Shop / Products</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Shop / Products
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="element-sale-products.html">Sale Products </a></li>
-                              <li><a href="element-featured-products.html">Featured products</a></li>
-                              <li><a href="element-top-rated-products.html">Top Rated products</a></li>
-                              <li><a href="element-bestselling-products.html">Best Selling products</a></li>
-                              <li><a href="element-product-attributes.html">Product Attributes</a></li>
+                              <li>
+                                <a href="element-sale-products.html">
+                                  Sale Products{" "}
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-featured-products.html">
+                                  Featured products
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-top-rated-products.html">
+                                  Top Rated products
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-bestselling-products.html">
+                                  Best Selling products
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-product-attributes.html">
+                                  Product Attributes
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Theming</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Theming
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="element-blog-posts.html">Blog Posts</a></li>
-                              <li><a href="element-mailchimp-form.html">Mailchimp Form</a></li>
-                              <li><a href="element-icon-box.html">Icon Box</a></li>
-                              <li><a href="element-team-member.html">Team Member</a></li>
-                              <li><a href="element-instagram.html">Instagram</a></li>
+                              <li>
+                                <a href="element-blog-posts.html">Blog Posts</a>
+                              </li>
+                              <li>
+                                <a href="element-mailchimp-form.html">
+                                  Mailchimp Form
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-icon-box.html">Icon Box</a>
+                              </li>
+                              <li>
+                                <a href="element-team-member.html">
+                                  Team Member
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-instagram.html">Instagram</a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="#" className="mega-column-title">Theming</a>
+                          <li>
+                            <a href="#" className="mega-column-title">
+                              Theming
+                            </a>
                             <ul className="mega-sub-menu">
-                              <li><a href="element-faq.html">FAQs / Toggles</a></li>
-                              <li><a href="element-countdown-timer.html">Countdown Timer</a></li>
-                              <li><a href="element-button.html">Buttons</a></li>
-                              <li><a href="element-testimonials.html">Testimonials</a></li>
-                              <li><a href="element-google-maps.html">Google Maps</a></li>
+                              <li>
+                                <a href="element-faq.html">FAQs / Toggles</a>
+                              </li>
+                              <li>
+                                <a href="element-countdown-timer.html">
+                                  Countdown Timer
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-button.html">Buttons</a>
+                              </li>
+                              <li>
+                                <a href="element-testimonials.html">
+                                  Testimonials
+                                </a>
+                              </li>
+                              <li>
+                                <a href="element-google-maps.html">
+                                  Google Maps
+                                </a>
+                              </li>
                             </ul>
                           </li>
                           <li>
                             <div className="menu-image">
-                              <img src="assets/images/menu-image/menu-element.png" className="img-fluid" alt="" />
+                              <img
+                                src="assets/images/menu-image/menu-element.png"
+                                className="img-fluid"
+                                alt=""
+                              />
                             </div>
                           </li>
                         </ul>
                       </li>
-                      <li className="menu-item-has-children"><a href="#">Pages</a>
+                      <li className="menu-item-has-children">
+                        <a href="#">Pages</a>
                         <ul className="sub-menu single-column-menu">
-                          <li><a href="about-us.html">About Us</a></li>
-                          <li><a href="about-us-2.html">About Us 2</a></li>
-                          <li><a href="contact-us.html">Contact Us</a></li>
-                          <li><a href="faq.html">F.A.Q</a></li>
-                          <li><a href="coming-soon.html">Coming Soon</a></li>
-                          <li><a href="404.html">404</a></li>
-                          <li><a href="my-account.html">My account</a></li>
-                          <li><a href="compare.html">Compare</a></li>
+                          <li>
+                            <a href="about-us.html">About Us</a>
+                          </li>
+                          <li>
+                            <a href="about-us-2.html">About Us 2</a>
+                          </li>
+                          <li>
+                            <a href="contact-us.html">Contact Us</a>
+                          </li>
+                          <li>
+                            <a href="faq.html">F.A.Q</a>
+                          </li>
+                          <li>
+                            <a href="coming-soon.html">Coming Soon</a>
+                          </li>
+                          <li>
+                            <a href="404.html">404</a>
+                          </li>
+                          <li>
+                            <a href="my-account.html">My account</a>
+                          </li>
+                          <li>
+                            <a href="compare.html">Compare</a>
+                          </li>
                         </ul>
                       </li>
-                      <li className="menu-item-has-children "><a href="#">Blog</a>
+                      <li className="menu-item-has-children ">
+                        <a href="#">Blog</a>
                         <ul className="sub-menu single-column-menu single-column-has-children">
-                          <li><a href="blog-standard-right-sidebar.html">Standard Layout</a>
+                          <li>
+                            <a href="blog-standard-right-sidebar.html">
+                              Standard Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-standard-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-standard-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-standard-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-standard-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-standard-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-standard-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="blog-grid-right-sidebar.html">Grid Layout</a>
+                          <li>
+                            <a href="blog-grid-right-sidebar.html">
+                              Grid Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-grid-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-grid-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-grid-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-grid-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-grid-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-grid-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="blog-list-right-sidebar.html">List Layout</a>
+                          <li>
+                            <a href="blog-list-right-sidebar.html">
+                              List Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-list-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-list-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-list-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-list-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-list-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="blog-masonry-right-sidebar.html">Masonry Layout</a>
+                          <li>
+                            <a href="blog-masonry-right-sidebar.html">
+                              Masonry Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-masonry-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-masonry-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-masonry-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-masonry-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-masonry-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-masonry-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="blog-full-then-grid-right-sidebar.html">1st Full Then Grid Layout</a>
+                          <li>
+                            <a href="blog-full-then-grid-right-sidebar.html">
+                              1st Full Then Grid Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-full-then-grid-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-full-then-grid-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-full-then-grid-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-full-then-grid-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-full-then-grid-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-full-then-grid-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
-                          <li><a href="blog-single-post-right-sidebar.html">Single Post Layout</a>
+                          <li>
+                            <a href="blog-single-post-right-sidebar.html">
+                              Single Post Layout
+                            </a>
                             <ul className="multilevel-submenu">
-                              <li><a href="blog-single-post-right-sidebar.html">Right Sidebar</a></li>
-                              <li><a href="blog-single-post-left-sidebar.html">Left Sidebar</a></li>
-                              <li><a href="blog-single-post-full-width.html">Full Width</a></li>
+                              <li>
+                                <a href="blog-single-post-right-sidebar.html">
+                                  Right Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-single-post-left-sidebar.html">
+                                  Left Sidebar
+                                </a>
+                              </li>
+                              <li>
+                                <a href="blog-single-post-full-width.html">
+                                  Full Width
+                                </a>
+                              </li>
                             </ul>
                           </li>
                         </ul>
@@ -245,9 +659,15 @@ const Layout = ({children}) => {
               {/*=======  End of header bottom navigation  =======*/}
               {/*=======  logo   =======*/}
               <div className="logo">
-                <a href="index.html">
-                  <img src="assets/images/logo.png" className="img-fluid" alt="" />
-                </a>
+                <Link href={`/`}>
+                  <a>
+                    <img
+                      src="assets/images/logo.png"
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </a>
+                </Link>
               </div>
               {/*=======  End of logo   =======*/}
               {/*=======  headeer right container  =======*/}
@@ -255,26 +675,29 @@ const Layout = ({children}) => {
                 {/*=======  header right icons  =======*/}
                 <div className="header-right-icons d-flex justify-content-end align-items-center h-100">
                   {/*=======  single-icon  =======*/}
-                  <div className="single-icon search">
-                    <a href="#" id="search-icon">
-                      <i className="ion-ios-search-strong" />
-                    </a>
-                  </div>
+                  {/*<div className="single-icon search">*/}
+                  {/*  <a href="#" id="search-icon">*/}
+                  {/*    <i className="ion-ios-search-strong" />*/}
+                  {/*  </a>*/}
+                  {/*</div>*/}
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
                   <div className="single-icon user-login">
-                    <a href="shop-customer-login.html">
-                      <i className="ion-android-person" />
-                    </a>
+                    <Link href={`/auth`}>
+                      <a>
+                        {/*<i className="ion-android-person" />*/}
+                        Register / Login
+                      </a>
+                    </Link>
                   </div>
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
-                  <div className="single-icon wishlist">
-                    <a href="#" id="offcanvas-wishlist-icon">
-                      <i className="ion-android-favorite-outline" />
-                      <span className="count">2</span>
-                    </a>
-                  </div>
+                  {/*<div className="single-icon wishlist">*/}
+                  {/*  <a href="#" id="offcanvas-wishlist-icon">*/}
+                  {/*    <i className="ion-android-favorite-outline" />*/}
+                  {/*    <span className="count">2</span>*/}
+                  {/*  </a>*/}
+                  {/*</div>*/}
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
                   <div className="single-icon cart">
@@ -290,9 +713,8 @@ const Layout = ({children}) => {
               {/*=======  End of headeer right container  =======*/}
             </div>
             {/*=======  End of header bottom container  =======*/}
-            
-            
-             {/*Mobile Navigation Start Here */}
+
+            {/*Mobile Navigation Start Here */}
             <div className="site-mobile-navigation d-block d-lg-none">
               <div id="dl-menu" className="dl-menuwrapper site-mobile-nav">
                 {/*Site Mobile Menu Toggle Start*/}
@@ -303,164 +725,431 @@ const Layout = ({children}) => {
                 </button>
                 {/*Site Mobile Menu Toggle End*/}
                 <ul className="dl-menu dl-menu-toggle">
-                  <li className="a"><a href="#">Home</a>
+                  <li className="a">
+                    <a href="#">Home</a>
                     <ul className="dl-submenu">
-                      <li className="a"> <a href="#">Home Group One</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Home Group One</a>
                         <ul className="dl-submenu">
-                          <li><a href="index-trending.html">Trending</a></li>
-                          <li><a href="index-collection.html">My collection</a></li>
-                          <li><a href="index-special.html">Special</a></li>
-                          <li><a href="index-concept.html">concept</a></li>
-                          <li><a href="index-smart.html">smart design</a></li>
+                          <li>
+                            <a href="index-trending.html">Trending</a>
+                          </li>
+                          <li>
+                            <a href="index-collection.html">My collection</a>
+                          </li>
+                          <li>
+                            <a href="index-special.html">Special</a>
+                          </li>
+                          <li>
+                            <a href="index-concept.html">concept</a>
+                          </li>
+                          <li>
+                            <a href="index-smart.html">smart design</a>
+                          </li>
                         </ul>
                       </li>
-                      <li> <a href="#">Home Group Two</a>
+                      <li>
+                        {" "}
+                        <a href="#">Home Group Two</a>
                         <ul className="dl-submenu">
-                          <li><a href="index-furniture.html">Furniture </a></li>
-                          <li><a href="index-essentials.html">Essentials</a></li>
-                          <li><a href="index-lookbook.html">Lookbook</a></li>
-                          <li><a href="index-wearables.html">Wearables</a></li>
-                          <li><a href="index-accessories.html">Accessories</a></li>
+                          <li>
+                            <a href="index-furniture.html">Furniture </a>
+                          </li>
+                          <li>
+                            <a href="index-essentials.html">Essentials</a>
+                          </li>
+                          <li>
+                            <a href="index-lookbook.html">Lookbook</a>
+                          </li>
+                          <li>
+                            <a href="index-wearables.html">Wearables</a>
+                          </li>
+                          <li>
+                            <a href="index-accessories.html">Accessories</a>
+                          </li>
                         </ul>
                       </li>
-                      <li> <a href="#">Home Group three</a>
+                      <li>
+                        {" "}
+                        <a href="#">Home Group three</a>
                         <ul className="dl-submenu">
-                          <li><a href="index-shoppable.html">Shoppable</a></li>
-                          <li><a href="index-fashion.html">Fashion</a></li>
-                          <li><a href="index-perfumes.html">Perfumes</a></li>
-                          <li><a href="index-cosmetics.html">Cosmetics</a></li>
+                          <li>
+                            <a href="index-shoppable.html">Shoppable</a>
+                          </li>
+                          <li>
+                            <a href="index-fashion.html">Fashion</a>
+                          </li>
+                          <li>
+                            <a href="index-perfumes.html">Perfumes</a>
+                          </li>
+                          <li>
+                            <a href="index-cosmetics.html">Cosmetics</a>
+                          </li>
                         </ul>
                       </li>
-                      <li> <a href="#">Home Group four</a>
+                      <li>
+                        {" "}
+                        <a href="#">Home Group four</a>
                         <ul className="dl-submenu">
-                          <li><a href="index-decor.html">Home Decor</a></li>
-                          <li><a href="index-creative.html">Creative</a></li>
+                          <li>
+                            <a href="index-decor.html">Home Decor</a>
+                          </li>
+                          <li>
+                            <a href="index-creative.html">Creative</a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#">Shop</a>
+                  <li>
+                    <a href="#">Shop</a>
                     <ul className="dl-submenu">
-                      <li className="a"> <a href="#">Shop Pages</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Shop Pages</a>
                         <ul className="dl-submenu">
-                          <li><a href="shop-no-sidebar.html">Shop No Sidebar</a></li>
-                          <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                          <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                          <li><a href="shop-fullwidth-no-space.html">Shop Fullwidth No Space</a></li>
-                          <li><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a></li>
-                          <li><a href="shop-fullwidth-left-sidebar.html">Shop Fullwidth Left Sidebar</a></li>
-                          <li><a href="shop-fullwidth-right-sidebar.html">Shop Fullwidth Right Sidebar</a></li>
+                          <li>
+                            <a href="shop-no-sidebar.html">Shop No Sidebar</a>
+                          </li>
+                          <li>
+                            <a href="shop-left-sidebar.html">
+                              Shop Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-right-sidebar.html">
+                              Shop Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-fullwidth-no-space.html">
+                              Shop Fullwidth No Space
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-fullwidth-no-sidebar.html">
+                              Shop Fullwidth No Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-fullwidth-left-sidebar.html">
+                              Shop Fullwidth Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-fullwidth-right-sidebar.html">
+                              Shop Fullwidth Right Sidebar
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li className="a"> <a href="#">Product Details Pages</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Product Details Pages</a>
                         <ul className="dl-submenu">
-                          <li><a href="shop-product-basic.html">Basic </a></li>
-                          <li><a href="shop-product-fullwidth.html">Fullwidth</a></li>
-                          <li><a href="shop-product-sticky-details.html">Sticky details</a></li>
-                          <li><a href="shop-product-with-sidebar.html">With Sidebar</a></li>
-                          <li><a href="shop-product-extra-content.html">Extra Content</a></li>
-                          <li><a href="shop-product-variation-image.html">Variation Image</a></li>
-                          <li><a href="shop-product-bought-together.html">Bought Together</a></li>
+                          <li>
+                            <a href="shop-product-basic.html">Basic </a>
+                          </li>
+                          <li>
+                            <a href="shop-product-fullwidth.html">Fullwidth</a>
+                          </li>
+                          <li>
+                            <a href="shop-product-sticky-details.html">
+                              Sticky details
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-product-with-sidebar.html">
+                              With Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-product-extra-content.html">
+                              Extra Content
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-product-variation-image.html">
+                              Variation Image
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-product-bought-together.html">
+                              Bought Together
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li className="a"> <a href="#">Other Shop Pages</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Other Shop Pages</a>
                         <ul className="dl-submenu">
-                          <li><a href="shop-product-with-background.html">Product with background</a></li>
-                          <li><a href="shop-cart.html">Shopping Cart</a></li>
-                          <li><a href="shop-checkout.html">Checkout</a></li>
-                          <li><a href="shop-order-tracking.html">Order Tracking</a></li>
-                          <li><a href="shop-wishlist.html">Wishlist</a></li>
-                          <li><a href="shop-customer-login.html">Customer Login</a></li>
-                          <li><a href="shop-by-brand.html">Shop by Brand</a></li>
+                          <li>
+                            <a href="shop-product-with-background.html">
+                              Product with background
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-cart.html">Shopping Cart</a>
+                          </li>
+                          <li>
+                            <a href="shop-checkout.html">Checkout</a>
+                          </li>
+                          <li>
+                            <a href="shop-order-tracking.html">
+                              Order Tracking
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-wishlist.html">Wishlist</a>
+                          </li>
+                          <li>
+                            <a href="shop-customer-login.html">
+                              Customer Login
+                            </a>
+                          </li>
+                          <li>
+                            <a href="shop-by-brand.html">Shop by Brand</a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#">Elements</a>
+                  <li>
+                    <a href="#">Elements</a>
                     <ul className="dl-submenu">
-                      <li className="a"> <a href="#">Shop / Products</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Shop / Products</a>
                         <ul className="dl-submenu">
-                          <li><a href="element-product-categories.html">Product Categories</a></li>
-                          <li><a href="element-product-sliders.html">Product Sliders</a></li>
-                          <li><a href="element-product-tabs.html">Product Tabs</a></li>
-                          <li><a href="element-product-widget.html">Product Widget</a></li>
-                          <li><a href="element-recent-products.html">Recent Products</a></li>
+                          <li>
+                            <a href="element-product-categories.html">
+                              Product Categories
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-product-sliders.html">
+                              Product Sliders
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-product-tabs.html">Product Tabs</a>
+                          </li>
+                          <li>
+                            <a href="element-product-widget.html">
+                              Product Widget
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-recent-products.html">
+                              Recent Products
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li className="a"> <a href="#">Shop / Products</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Shop / Products</a>
                         <ul className="dl-submenu">
-                          <li><a href="element-sale-products.html">Sale Products </a></li>
-                          <li><a href="element-featured-products.html">Featured products</a></li>
-                          <li><a href="element-top-rated-products.html">Top Rated products</a></li>
-                          <li><a href="element-bestselling-products.html">Best Selling products</a></li>
-                          <li><a href="element-product-attributes.html">Product Attributes</a></li>
+                          <li>
+                            <a href="element-sale-products.html">
+                              Sale Products{" "}
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-featured-products.html">
+                              Featured products
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-top-rated-products.html">
+                              Top Rated products
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-bestselling-products.html">
+                              Best Selling products
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-product-attributes.html">
+                              Product Attributes
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li className="a"> <a href="#">Theming</a>
+                      <li className="a">
+                        {" "}
+                        <a href="#">Theming</a>
                         <ul className="dl-submenu">
-                          <li><a href="element-blog-posts.html">Blog Posts</a></li>
-                          <li><a href="element-mailchimp-form.html">Mailchimp Form</a></li>
-                          <li><a href="element-icon-box.html">Icon Box</a></li>
-                          <li><a href="element-team-member.html">Team Member</a></li>
-                          <li><a href="element-instagram.html">Instagram</a></li>
+                          <li>
+                            <a href="element-blog-posts.html">Blog Posts</a>
+                          </li>
+                          <li>
+                            <a href="element-mailchimp-form.html">
+                              Mailchimp Form
+                            </a>
+                          </li>
+                          <li>
+                            <a href="element-icon-box.html">Icon Box</a>
+                          </li>
+                          <li>
+                            <a href="element-team-member.html">Team Member</a>
+                          </li>
+                          <li>
+                            <a href="element-instagram.html">Instagram</a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li><a href="#">Pages</a>
+                  <li>
+                    <a href="#">Pages</a>
                     <ul className="dl-submenu">
-                      <li><a href="about-us.html">About Us</a></li>
-                      <li><a href="about-us-2.html">About Us 2</a></li>
-                      <li><a href="contact-us.html">Contact Us</a></li>
-                      <li><a href="faq.html">F.A.Q</a></li>
-                      <li><a href="coming-soon.html">Coming Soon</a></li>
-                      <li><a href="404.html">404</a></li>
-                      <li><a href="my-account.html">My account</a></li>
-                      <li><a href="compare.html">Compare</a></li>
+                      <li>
+                        <a href="about-us.html">About Us</a>
+                      </li>
+                      <li>
+                        <a href="about-us-2.html">About Us 2</a>
+                      </li>
+                      <li>
+                        <a href="contact-us.html">Contact Us</a>
+                      </li>
+                      <li>
+                        <a href="faq.html">F.A.Q</a>
+                      </li>
+                      <li>
+                        <a href="coming-soon.html">Coming Soon</a>
+                      </li>
+                      <li>
+                        <a href="404.html">404</a>
+                      </li>
+                      <li>
+                        <a href="my-account.html">My account</a>
+                      </li>
+                      <li>
+                        <a href="compare.html">Compare</a>
+                      </li>
                     </ul>
                   </li>
-                  <li><a href="#">Blog</a>
+                  <li>
+                    <a href="#">Blog</a>
                     <ul className="dl-submenu">
-                      <li><a href="#">Standard Layout</a>
+                      <li>
+                        <a href="#">Standard Layout</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-standard-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-standard-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-standard-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-standard-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-standard-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-standard-full-width.html">
+                              Full Width
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li><a href="#">Grid Layout</a>
+                      <li>
+                        <a href="#">Grid Layout</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-grid-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-grid-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-grid-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-grid-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-grid-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-grid-full-width.html">Full Width</a>
+                          </li>
                         </ul>
                       </li>
-                      <li><a href="#">List Layout</a>
+                      <li>
+                        <a href="#">List Layout</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-list-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-list-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-list-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-list-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-list-full-width.html">Full Width</a>
+                          </li>
                         </ul>
                       </li>
-                      <li><a href="#">Masonry Layout</a>
+                      <li>
+                        <a href="#">Masonry Layout</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-masonry-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-masonry-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-masonry-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-masonry-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-masonry-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-masonry-full-width.html">
+                              Full Width
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li><a href="#">1st Full Then Grid</a>
+                      <li>
+                        <a href="#">1st Full Then Grid</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-full-then-grid-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-full-then-grid-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-full-then-grid-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-full-then-grid-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-full-then-grid-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-full-then-grid-full-width.html">
+                              Full Width
+                            </a>
+                          </li>
                         </ul>
                       </li>
-                      <li><a href="#">Single Post Layout</a>
+                      <li>
+                        <a href="#">Single Post Layout</a>
                         <ul className="dl-submenu">
-                          <li><a href="blog-single-post-right-sidebar.html">Right Sidebar</a></li>
-                          <li><a href="blog-single-post-left-sidebar.html">Left Sidebar</a></li>
-                          <li><a href="blog-single-post-full-width.html">Full Width</a></li>
+                          <li>
+                            <a href="blog-single-post-right-sidebar.html">
+                              Right Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-single-post-left-sidebar.html">
+                              Left Sidebar
+                            </a>
+                          </li>
+                          <li>
+                            <a href="blog-single-post-full-width.html">
+                              Full Width
+                            </a>
+                          </li>
                         </ul>
                       </li>
                     </ul>
@@ -469,15 +1158,13 @@ const Layout = ({children}) => {
               </div>
             </div>
             {/* Mobile Navigation End Here */}
-            
-            
           </div>
         </div>
         {/*=======  End of header bottom  =======*/}
       </header>
-      
+
       {children}
-  
+
       {/*=============================================
 	=            footer area         =
 	=============================================*/}
@@ -488,12 +1175,19 @@ const Layout = ({children}) => {
               {/*=======  copyright text  =======*/}
               {/*=======  logo  =======*/}
               <div className="logo">
-                <img src="assets/images/logo.png" className="img-fluid" alt="" />
+                <img
+                  src="assets/images/logo.png"
+                  className="img-fluid"
+                  alt=""
+                />
               </div>
               {/*=======  End of logo  =======*/}
               {/*=======  copyright text  =======*/}
               <div className="copyright-text">
-                <p> © 2021. <span>All Rights Reserved</span></p>
+                <p>
+                  {" "}
+                  © 2021. <span>All Rights Reserved</span>
+                </p>
               </div>
               {/*=======  End of copyright text  =======*/}
               {/*=======  End of copyright text  =======*/}
@@ -505,10 +1199,18 @@ const Layout = ({children}) => {
               <div className="footer-nav-container">
                 <nav>
                   <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Store location</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Orders tracking</a></li>
+                    <li>
+                      <a href="#">About us</a>
+                    </li>
+                    <li>
+                      <a href="#">Store location</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact</a>
+                    </li>
+                    <li>
+                      <a href="#">Orders tracking</a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -522,10 +1224,18 @@ const Layout = ({children}) => {
               <div className="footer-nav-container">
                 <nav>
                   <ul>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Support Policy</a></li>
-                    <li><a href="#">Size guide</a></li>
-                    <li><a href="#">FAQs</a></li>
+                    <li>
+                      <a href="#">Returns</a>
+                    </li>
+                    <li>
+                      <a href="#">Support Policy</a>
+                    </li>
+                    <li>
+                      <a href="#">Size guide</a>
+                    </li>
+                    <li>
+                      <a href="#">FAQs</a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -539,10 +1249,28 @@ const Layout = ({children}) => {
               <div className="footer-nav-container footer-social-links">
                 <nav>
                   <ul>
-                    <li><a href="//twitter.com"><i className="fa fa-twitter" /> Twitter</a></li>
-                    <li><a href="//facebook.com"> <i className="fa fa-facebook" /> Facebook</a></li>
-                    <li><a href="//instagram.com"><i className="fa fa-instagram" /> Instagram</a></li>
-                    <li><a href="//youtube.com"> <i className="fa fa-youtube" /> Youtube</a></li>
+                    <li>
+                      <a href="//twitter.com">
+                        <i className="fa fa-twitter" /> Twitter
+                      </a>
+                    </li>
+                    <li>
+                      <a href="//facebook.com">
+                        {" "}
+                        <i className="fa fa-facebook" /> Facebook
+                      </a>
+                    </li>
+                    <li>
+                      <a href="//instagram.com">
+                        <i className="fa fa-instagram" /> Instagram
+                      </a>
+                    </li>
+                    <li>
+                      <a href="//youtube.com">
+                        {" "}
+                        <i className="fa fa-youtube" /> Youtube
+                      </a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -553,21 +1281,33 @@ const Layout = ({children}) => {
               {/*=======  single widget  =======*/}
               <div className="footer-subscription-widget">
                 <h2 className="footer-subscription-title">Subscribe.</h2>
-                <p className="subscription-subtitle">Subscribe to our newsletter to receive news on update.</p>
+                <p className="subscription-subtitle">
+                  Subscribe to our newsletter to receive news on update.
+                </p>
                 {/*=======  subscription form  =======*/}
                 <div className="subscription-form">
                   <form id="mc-form" className="mc-form">
-                    <input type="email" placeholder="Your email address" required />
-                    <button type="submit"><i className="ion-ios-arrow-thin-right" /></button>
+                    <input
+                      type="email"
+                      placeholder="Your email address"
+                      required
+                    />
+                    <button type="submit">
+                      <i className="ion-ios-arrow-thin-right" />
+                    </button>
                   </form>
                 </div>
                 {/*=======  End of subscription form  =======*/}
                 {/* mailchimp-alerts Start */}
                 <div className="mailchimp-alerts">
-                  <div className="mailchimp-submitting" />{/* mailchimp-submitting end */}
-                  <div className="mailchimp-success" />{/* mailchimp-success end */}
-                  <div className="mailchimp-error" />{/* mailchimp-error end */}
-                </div>{/* mailchimp-alerts end */}
+                  <div className="mailchimp-submitting" />
+                  {/* mailchimp-submitting end */}
+                  <div className="mailchimp-success" />
+                  {/* mailchimp-success end */}
+                  <div className="mailchimp-error" />
+                  {/* mailchimp-error end */}
+                </div>
+                {/* mailchimp-alerts end */}
               </div>
               {/*=======  End of single widget  =======*/}
             </div>
@@ -575,13 +1315,16 @@ const Layout = ({children}) => {
         </div>
       </div>
       {/*=====  End of footer area  ======*/}
-  
+
       <div>
         {/*=============================================
 	=            overlay items         =
     =============================================*/}
         {/*=======  overlay-navigation-menu  =======*/}
-        <div className="overlay-navigation-menu overlay-navigation-inactive" id="overlay-navigation-menu">
+        <div
+          className="overlay-navigation-menu overlay-navigation-inactive"
+          id="overlay-navigation-menu"
+        >
           {/*=======  close icon  =======*/}
           <span className="close-icon overlay-menu-close-icon">
             <a href="#" id="overlay-menu-close-icon">
@@ -596,146 +1339,390 @@ const Layout = ({children}) => {
                 <li className="has-children">
                   <a href="#">Homepage</a>
                   <ul className="sub-menu">
-                    <li><a href="index-trending.html">Trending</a></li>
-                    <li><a href="index-collection.html">My collection</a></li>
-                    <li><a href="index-special.html">Special</a></li>
-                    <li><a href="index-concept.html">concept</a></li>
-                    <li><a href="index-smart.html">smart design</a></li>
-                    <li><a href="index-furniture.html">Furniture </a></li>
-                    <li><a href="index-essentials.html">Essentials</a></li>
-                    <li><a href="index-lookbook.html">Lookbook</a></li>
-                    <li><a href="index-wearables.html">Wearables</a></li>
-                    <li><a href="index-accessories.html">Accessories</a></li>
-                    <li><a href="index-shoppable.html">Shoppable</a></li>
-                    <li><a href="index-fashion.html">Fashion</a></li>
-                    <li><a href="index-perfumes.html">Perfumes</a></li>
-                    <li><a href="index-cosmetics.html">Cosmetics</a></li>
-                    <li><a href="index-decor.html">Home Decor</a></li>
-                    <li><a href="index-creative.html">Creative</a></li>
-                  </ul>
-                </li>
-                <li className="has-children"><a href="#">Shop</a>
-                  <ul className="sub-menu">
-                    <li className="has-children-submenu"> <a href="#">Shop Pages</a>
-                      <ul className="sub-menu">
-                        <li><a href="shop-no-sidebar.html">Shop No Sidebar</a></li>
-                        <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                        <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                        <li><a href="shop-fullwidth-no-space.html">Shop Fullwidth No Space</a></li>
-                        <li><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a></li>
-                        <li><a href="shop-fullwidth-left-sidebar.html">Shop Fullwidth Left Sidebar</a></li>
-                        <li><a href="shop-fullwidth-right-sidebar.html">Shop Fullwidth Right Sidebar</a></li>
-                      </ul>
+                    <li>
+                      <a href="index-trending.html">Trending</a>
                     </li>
-                    <li className="has-children-submenu"> <a href="#">Product Details Pages</a>
-                      <ul className="sub-menu">
-                        <li><a href="shop-product-basic.html">Basic </a></li>
-                        <li><a href="shop-product-fullwidth.html">Fullwidth</a></li>
-                        <li><a href="shop-product-sticky-details.html">Sticky details</a></li>
-                        <li><a href="shop-product-with-sidebar.html">With Sidebar</a></li>
-                        <li><a href="shop-product-extra-content.html">Extra Content</a></li>
-                        <li><a href="shop-product-variation-image.html">Variation Image</a></li>
-                        <li><a href="shop-product-bought-together.html">Bought Together</a></li>
-                      </ul>
+                    <li>
+                      <a href="index-collection.html">My collection</a>
                     </li>
-                    <li className="has-children-submenu"> <a href="#">Other Shop Pages</a>
-                      <ul className="sub-menu">
-                        <li><a href="shop-product-with-background.html">Product with background</a></li>
-                        <li><a href="shop-cart.html">Shopping Cart</a></li>
-                        <li><a href="shop-checkout.html">Checkout</a></li>
-                        <li><a href="shop-order-tracking.html">Order Tracking</a></li>
-                        <li><a href="shop-wishlist.html">Wishlist</a></li>
-                        <li><a href="shop-customer-login.html">Customer Login</a></li>
-                        <li><a href="shop-by-brand.html">Shop by Brand</a></li>
-                      </ul>
+                    <li>
+                      <a href="index-special.html">Special</a>
+                    </li>
+                    <li>
+                      <a href="index-concept.html">concept</a>
+                    </li>
+                    <li>
+                      <a href="index-smart.html">smart design</a>
+                    </li>
+                    <li>
+                      <a href="index-furniture.html">Furniture </a>
+                    </li>
+                    <li>
+                      <a href="index-essentials.html">Essentials</a>
+                    </li>
+                    <li>
+                      <a href="index-lookbook.html">Lookbook</a>
+                    </li>
+                    <li>
+                      <a href="index-wearables.html">Wearables</a>
+                    </li>
+                    <li>
+                      <a href="index-accessories.html">Accessories</a>
+                    </li>
+                    <li>
+                      <a href="index-shoppable.html">Shoppable</a>
+                    </li>
+                    <li>
+                      <a href="index-fashion.html">Fashion</a>
+                    </li>
+                    <li>
+                      <a href="index-perfumes.html">Perfumes</a>
+                    </li>
+                    <li>
+                      <a href="index-cosmetics.html">Cosmetics</a>
+                    </li>
+                    <li>
+                      <a href="index-decor.html">Home Decor</a>
+                    </li>
+                    <li>
+                      <a href="index-creative.html">Creative</a>
                     </li>
                   </ul>
                 </li>
-                <li className="has-children"><a href="#">Elements</a>
+                <li className="has-children">
+                  <a href="#">Shop</a>
                   <ul className="sub-menu">
-                    <li className="has-children-submenu"> <a href="#">Shop / Products</a>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Shop Pages</a>
                       <ul className="sub-menu">
-                        <li><a href="element-product-categories.html">Product Categories</a></li>
-                        <li><a href="element-product-sliders.html">Product Sliders</a></li>
-                        <li><a href="element-product-tabs.html">Product Tabs</a></li>
-                        <li><a href="element-product-widget.html">Product Widget</a></li>
-                        <li><a href="element-recent-products.html">Recent Products</a></li>
+                        <li>
+                          <a href="shop-no-sidebar.html">Shop No Sidebar</a>
+                        </li>
+                        <li>
+                          <a href="shop-left-sidebar.html">Shop Left Sidebar</a>
+                        </li>
+                        <li>
+                          <a href="shop-right-sidebar.html">
+                            Shop Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-fullwidth-no-space.html">
+                            Shop Fullwidth No Space
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-fullwidth-no-sidebar.html">
+                            Shop Fullwidth No Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-fullwidth-left-sidebar.html">
+                            Shop Fullwidth Left Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-fullwidth-right-sidebar.html">
+                            Shop Fullwidth Right Sidebar
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"> <a href="#">Shop / Products</a>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Product Details Pages</a>
                       <ul className="sub-menu">
-                        <li><a href="element-sale-products.html">Sale Products </a></li>
-                        <li><a href="element-featured-products.html">Featured products</a></li>
-                        <li><a href="element-top-rated-products.html">Top Rated products</a></li>
-                        <li><a href="element-bestselling-products.html">Best Selling products</a></li>
-                        <li><a href="element-product-attributes.html">Product Attributes</a></li>
+                        <li>
+                          <a href="shop-product-basic.html">Basic </a>
+                        </li>
+                        <li>
+                          <a href="shop-product-fullwidth.html">Fullwidth</a>
+                        </li>
+                        <li>
+                          <a href="shop-product-sticky-details.html">
+                            Sticky details
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-product-with-sidebar.html">
+                            With Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-product-extra-content.html">
+                            Extra Content
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-product-variation-image.html">
+                            Variation Image
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-product-bought-together.html">
+                            Bought Together
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"> <a href="#">Theming</a>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Other Shop Pages</a>
                       <ul className="sub-menu">
-                        <li><a href="element-blog-posts.html">Blog Posts</a></li>
-                        <li><a href="element-mailchimp-form.html">Mailchimp Form</a></li>
-                        <li><a href="element-icon-box.html">Icon Box</a></li>
-                        <li><a href="element-team-member.html">Team Member</a></li>
-                        <li><a href="element-instagram.html">Instagram</a></li>
+                        <li>
+                          <a href="shop-product-with-background.html">
+                            Product with background
+                          </a>
+                        </li>
+                        <li>
+                          <a href="shop-cart.html">Shopping Cart</a>
+                        </li>
+                        <li>
+                          <a href="shop-checkout.html">Checkout</a>
+                        </li>
+                        <li>
+                          <a href="shop-order-tracking.html">Order Tracking</a>
+                        </li>
+                        <li>
+                          <a href="shop-wishlist.html">Wishlist</a>
+                        </li>
+                        <li>
+                          <a href="shop-customer-login.html">Customer Login</a>
+                        </li>
+                        <li>
+                          <a href="shop-by-brand.html">Shop by Brand</a>
+                        </li>
                       </ul>
                     </li>
                   </ul>
                 </li>
-                <li className="has-children"><a href="#">Pages</a>
+                <li className="has-children">
+                  <a href="#">Elements</a>
                   <ul className="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="about-us-2.html">About Us 2</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                    <li><a href="faq.html">F.A.Q</a></li>
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                    <li><a href="404.html">404</a></li>
-                    <li><a href="my-account.html">My account</a></li>
-                    <li><a href="compare.html">Compare</a></li>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Shop / Products</a>
+                      <ul className="sub-menu">
+                        <li>
+                          <a href="element-product-categories.html">
+                            Product Categories
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-product-sliders.html">
+                            Product Sliders
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-product-tabs.html">Product Tabs</a>
+                        </li>
+                        <li>
+                          <a href="element-product-widget.html">
+                            Product Widget
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-recent-products.html">
+                            Recent Products
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Shop / Products</a>
+                      <ul className="sub-menu">
+                        <li>
+                          <a href="element-sale-products.html">
+                            Sale Products{" "}
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-featured-products.html">
+                            Featured products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-top-rated-products.html">
+                            Top Rated products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-bestselling-products.html">
+                            Best Selling products
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-product-attributes.html">
+                            Product Attributes
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="has-children-submenu">
+                      {" "}
+                      <a href="#">Theming</a>
+                      <ul className="sub-menu">
+                        <li>
+                          <a href="element-blog-posts.html">Blog Posts</a>
+                        </li>
+                        <li>
+                          <a href="element-mailchimp-form.html">
+                            Mailchimp Form
+                          </a>
+                        </li>
+                        <li>
+                          <a href="element-icon-box.html">Icon Box</a>
+                        </li>
+                        <li>
+                          <a href="element-team-member.html">Team Member</a>
+                        </li>
+                        <li>
+                          <a href="element-instagram.html">Instagram</a>
+                        </li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
-                <li className="has-children"><a href="#">Blog</a>
+                <li className="has-children">
+                  <a href="#">Pages</a>
                   <ul className="sub-menu">
-                    <li className="has-children-submenu"><a href="#">Standard Layout</a>
+                    <li>
+                      <a href="about-us.html">About Us</a>
+                    </li>
+                    <li>
+                      <a href="about-us-2.html">About Us 2</a>
+                    </li>
+                    <li>
+                      <a href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li>
+                      <a href="faq.html">F.A.Q</a>
+                    </li>
+                    <li>
+                      <a href="coming-soon.html">Coming Soon</a>
+                    </li>
+                    <li>
+                      <a href="404.html">404</a>
+                    </li>
+                    <li>
+                      <a href="my-account.html">My account</a>
+                    </li>
+                    <li>
+                      <a href="compare.html">Compare</a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="has-children">
+                  <a href="#">Blog</a>
+                  <ul className="sub-menu">
+                    <li className="has-children-submenu">
+                      <a href="#">Standard Layout</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-standard-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-standard-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-standard-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-standard-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-standard-left-sidebar.html">
+                            Left Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-standard-full-width.html">Full Width</a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"><a href="#">Grid Layout</a>
+                    <li className="has-children-submenu">
+                      <a href="#">Grid Layout</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-grid-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-grid-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-grid-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-grid-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-grid-left-sidebar.html">Left Sidebar</a>
+                        </li>
+                        <li>
+                          <a href="blog-grid-full-width.html">Full Width</a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"><a href="#">List Layout</a>
+                    <li className="has-children-submenu">
+                      <a href="#">List Layout</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-list-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-list-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-list-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-list-left-sidebar.html">Left Sidebar</a>
+                        </li>
+                        <li>
+                          <a href="blog-list-full-width.html">Full Width</a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"><a href="#">Masonry Layout</a>
+                    <li className="has-children-submenu">
+                      <a href="#">Masonry Layout</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-masonry-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-masonry-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-masonry-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-masonry-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-masonry-left-sidebar.html">
+                            Left Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-masonry-full-width.html">Full Width</a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"><a href="#">1st Full Then Grid</a>
+                    <li className="has-children-submenu">
+                      <a href="#">1st Full Then Grid</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-full-then-grid-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-full-then-grid-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-full-then-grid-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-full-then-grid-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-full-then-grid-left-sidebar.html">
+                            Left Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-full-then-grid-full-width.html">
+                            Full Width
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li className="has-children-submenu"><a href="#">Single Post Layout</a>
+                    <li className="has-children-submenu">
+                      <a href="#">Single Post Layout</a>
                       <ul className="sub-menu">
-                        <li><a href="blog-single-post-right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="blog-single-post-left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="blog-single-post-full-width.html">Full Width</a></li>
+                        <li>
+                          <a href="blog-single-post-right-sidebar.html">
+                            Right Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-single-post-left-sidebar.html">
+                            Left Sidebar
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-single-post-full-width.html">
+                            Full Width
+                          </a>
+                        </li>
                       </ul>
                     </li>
                   </ul>
@@ -764,22 +1751,80 @@ const Layout = ({children}) => {
                 {/*=======  single widget  =======*/}
                 <div className="single-widget">
                   <h2 className="widget-title">About Us</h2>
-                  <p>At Lezada, we put a strong emphasis on simplicity, quality and usefulness of fashion products over other
-                    factors. Our fashion items never get outdated. They are not short-lived as normal fashion clothes.</p>
+                  <p>
+                    At Lezada, we put a strong emphasis on simplicity, quality
+                    and usefulness of fashion products over other factors. Our
+                    fashion items never get outdated. They are not short-lived
+                    as normal fashion clothes.
+                  </p>
                 </div>
                 {/*=======  End of single widget  =======*/}
               </div>
               {/*=======  End of widget wrapper  =======*/}
               {/*=======  contact widget  =======*/}
               <div className="contact-widget">
-                <p className="email"><a href="mailto:contact@lezada.com">contact@lezada.com</a></p>
+                <p className="email">
+                  <a href="mailto:contact@lezada.com">contact@lezada.com</a>
+                </p>
                 <p className="phone">(+00) 123 567990</p>
                 <div className="social-icons">
                   <ul>
-                    <li><a href="//www.twitter.com" data-tippy="Twitter" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay={50} data-tippy-arrow="true" target="_blank" rel="noreferrer"><i className="fa fa-twitter" /></a></li>
-                    <li><a href="//www.facebook.com" data-tippy="Facebook" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay={50} data-tippy-arrow="true" target="_blank" rel="noreferrer"><i className="fa fa-facebook" /></a></li>
-                    <li><a href="//www.instagram.com" data-tippy="Instagram" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay={50} data-tippy-arrow="true" target="_blank" rel="noreferrer"><i className="fa fa-instagram" /></a></li>
-                    <li><a href="//www.youtube.com" data-tippy="Youtube" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay={50} data-tippy-arrow="true" target="_blank" rel="noreferrer"><i className="fa fa-youtube-play" /></a></li>
+                    <li>
+                      <a
+                        href="//www.twitter.com"
+                        data-tippy="Twitter"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay={50}
+                        data-tippy-arrow="true"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <i className="fa fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="//www.facebook.com"
+                        data-tippy="Facebook"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay={50}
+                        data-tippy-arrow="true"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <i className="fa fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="//www.instagram.com"
+                        data-tippy="Instagram"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay={50}
+                        data-tippy-arrow="true"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <i className="fa fa-instagram" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="//www.youtube.com"
+                        data-tippy="Youtube"
+                        data-tippy-inertia="true"
+                        data-tippy-animation="shift-away"
+                        data-tippy-delay={50}
+                        data-tippy-arrow="true"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <i className="fa fa-youtube-play" />
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -808,80 +1853,143 @@ const Layout = ({children}) => {
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/01.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/01.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
-                      <p><span className="main-price discounted">$200.00</span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Dark Brown Leather Watch
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="main-price discounted">$200.00</span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/02.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/02.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dining Chair</a></h5>
-                      <p><span className="main-price discounted">$300.00</span> <span className="discounted-price">$220.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">Dining Chair</a>
+                      </h5>
+                      <p>
+                        <span className="main-price discounted">$300.00</span>{" "}
+                        <span className="discounted-price">$220.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/03.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/03.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
-                      <p><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Creative Wooden Stand
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="main-price discounted">$100.00</span>{" "}
+                        <span className="discounted-price">$80.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/01.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/01.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
-                      <p><span className="main-price discounted">$200.00</span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Dark Brown Leather Watch
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="main-price discounted">$200.00</span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/02.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/02.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
-                      <p><span className="main-price discounted">$200.00</span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Creative Wooden Stand
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="main-price discounted">$200.00</span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
@@ -898,7 +2006,7 @@ const Layout = ({children}) => {
         </div>
         {/*=======  End of wishlist overlay  =======*/}
         {/*=======  cart overlay  =======*/}
-        <div className="cart-overlay active-cart-overlay" id="cart-overlay">
+        <div className="cart-overlay" id="cart-overlay">
           <div className="cart-overlay-close inactive" />
           <div className="cart-overlay-content">
             {/*=======  close icon  =======*/}
@@ -916,80 +2024,143 @@ const Layout = ({children}) => {
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/01.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/01.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
-                      <p><span className="cart-count">2 x </span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Dark Brown Leather Watch
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="cart-count">2 x </span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/02.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/02.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dining Chair</a></h5>
-                      <p><span className="cart-count">2 x </span> <span className="discounted-price">$220.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">Dining Chair</a>
+                      </h5>
+                      <p>
+                        <span className="cart-count">2 x </span>{" "}
+                        <span className="discounted-price">$220.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/03.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/03.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
-                      <p><span className="cart-count">2 x </span> <span className="discounted-price">$80.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Creative Wooden Stand
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="cart-count">2 x </span>{" "}
+                        <span className="discounted-price">$80.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/01.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/01.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
-                      <p><span className="cart-count">2 x </span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Dark Brown Leather Watch
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="cart-count">2 x </span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
                   {/*=======  single cart product  =======*/}
                   <div className="single-cart-product">
                     <span className="cart-close-icon">
-                      <a href="#"><i className="ti-close" /></a>
+                      <a href="#">
+                        <i className="ti-close" />
+                      </a>
                     </span>
                     <div className="image">
                       <a href="shop-product-basic.html">
-                        <img src="assets/images/cart-product-image/02.jpg" className="img-fluid" alt="" />
+                        <img
+                          src="assets/images/cart-product-image/02.jpg"
+                          className="img-fluid"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="content">
-                      <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
-                      <p><span className="cart-count">2 x </span> <span className="discounted-price">$180.00</span></p>
+                      <h5>
+                        <a href="shop-product-basic.html">
+                          Creative Wooden Stand
+                        </a>
+                      </h5>
+                      <p>
+                        <span className="cart-count">2 x </span>{" "}
+                        <span className="discounted-price">$180.00</span>
+                      </p>
                     </div>
                   </div>
                   {/*=======  End of single cart product  =======*/}
@@ -1002,8 +2173,12 @@ const Layout = ({children}) => {
                 {/*=======  End of subtotal calculation  =======*/}
                 {/*=======  cart buttons  =======*/}
                 <div className="cart-buttons">
-                  <a href="shop-cart.html">view cart</a>
-                  <a href="shop-checkout.html">checkout</a>
+                  <Link href={`/cart`}>
+                    <a>view cart</a>
+                  </Link>
+                  {/*<Link>*/}
+                  {/*  <a href="shop-checkout.html">checkout</a>*/}
+                  {/*</Link>*/}
                 </div>
                 {/*=======  End of cart buttons  =======*/}
                 {/*=======  free shipping text  =======*/}
@@ -1042,11 +2217,10 @@ const Layout = ({children}) => {
         {/*=======  End of search overlay  =======*/}
         {/*=====  End of overlay items  ======*/}
       </div>
-  
+
       {/** Scroll to Top**/}
       <a href="#" className="scroll-top"></a>
-      
-  
+
       {/**<!-- jQuery JS -->**/}
       <script src="assets/js/vendor/jquery.min.js"></script>
       {/**<!-- Popper JS --> **/}
@@ -1057,9 +2231,8 @@ const Layout = ({children}) => {
       {/*<script src="assets/js/plugins.js"></script>*/}
       {/** <!-- Main JS -->**/}
       <script src="assets/js/main.js"></script>
-      
     </div>
-  )
-}
+  );
+};
 
 export default Layout;

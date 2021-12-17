@@ -1,10 +1,9 @@
+import Product from "../components/Product";
 
-const ProductPage = () => {
+export default function ProductPage() {
   return (
-    <div style={{minHeight: "80vh"}}>
-      <h1>Product Page</h1>
-    </div>
-  )
+    <>
+      <Product />
+    </>
+  );
 }
-
-export default ProductPage;
