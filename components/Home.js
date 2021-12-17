@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Layout from "./Layout";
-
+// index-accessories.html
 const Home = () => {
   return (
     <>
@@ -128,134 +128,6 @@ const Home = () => {
               </div>
             </div>
             
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-3  mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">03/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-3.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Dark denim shorts</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$80.00</span> <span className="discounted-price">$60.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-5 offset-lg-1 col-md-11 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">04/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-4.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Pink sneakers</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            {/*<div className="col-lg-5 offset-lg-1 col-md-11 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">04/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-4.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Pink sneakers</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$80.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-3  mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">03/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-3.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Dark denim shorts</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$80.00</span> <span className="discounted-price">$60.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-9 col-md-10 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">05/</span>*/}
-            {/*    <img src="assets/images/category/banner-best-seller-5.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">The Linen Chambray Shirt</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">06/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-6.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Frame Sunglass</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-4 offset-lg-2 col-md-8 offset-md-1 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">07/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-7.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Pastel bag</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-9 offset-lg-3 col-md-8 offset-md-3 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">08/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-8.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">High-waist trousers</p>*/}
-            {/*      <p className="price"><span className="main-price discounted">$100.00</span> <span className="discounted-price">$90.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">09/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-9.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">The Cotton Two-Pocket Shirt</p>*/}
-            {/*      <p className="price"><span className="main-price">$90.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <a className="banner-hover" href="shop-left-sidebar.html" />*/}
-            {/*    <span className="number">10/</span>*/}
-            {/*    <img src="assets/images/category/banner-bestseller-10.jpg" className="img-fluid" alt="" />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">TID Canvas 001</p>*/}
-            {/*      <p className="price"><span className="main-price">$100.00</span></p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-            
-            
             <div className="col-lg-12">
               {/*=======  shop button  =======*/}
               <div className="shop-button text-center">
@@ -302,6 +174,188 @@ const Home = () => {
         </div>
       </div>
       {/*=====  End of instagram slider area  ======*/}
+  
+  
+      {/*=====  cart-overlay  ======*/}
+      <div className="cart-overlay active-cart-overlay" id="cart-overlay">
+        <div className="cart-overlay-close inactive" />
+        <div className="cart-overlay-content">
+          {/*=======  close icon  =======*/}
+          <span className="close-icon" id="cart-close-icon">
+            <a href="#">
+              <i className="ion-android-close" />
+            </a>
+          </span>
+          {/*=======  End of close icon  =======*/}
+          {/*=======  offcanvas cart content container  =======*/}
+          <div className="offcanvas-cart-content-container">
+            <h3 className="cart-title">Cart</h3>
+            <div className="cart-product-wrapper">
+              <div className="cart-product-container  ps-scroll">
+                {/*=======  single cart product  =======*/}
+                <div className="single-cart-product">
+                  <span className="cart-close-icon">
+                    <a href="#">
+                      <i className="ti-close" />
+                    </a>
+                  </span>
+                  <div className="image">
+                    <a href="shop-product-basic.html">
+                      <img
+                        src="assets/images/cart-product-image/01.jpg"
+                        className="img-fluid"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="shop-product-basic.html">
+                        Dark Brown Leather Watch
+                      </a>
+                    </h5>
+                    <p>
+                      <span className="cart-count">2 x </span>{" "}
+                      <span className="discounted-price">$180.00</span>
+                    </p>
+                  </div>
+                </div>
+                {/*=======  End of single cart product  =======*/}
+                {/*=======  single cart product  =======*/}
+                <div className="single-cart-product">
+                <span className="cart-close-icon">
+                  <a href="#">
+                    <i className="ti-close" />
+                  </a>
+                </span>
+                  <div className="image">
+                    <a href="shop-product-basic.html">
+                      <img
+                        src="assets/images/cart-product-image/02.jpg"
+                        className="img-fluid"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="shop-product-basic.html">Dining Chair</a>
+                    </h5>
+                    <p>
+                      <span className="cart-count">2 x </span>{" "}
+                      <span className="discounted-price">$220.00</span>
+                    </p>
+                  </div>
+                </div>
+                {/*=======  End of single cart product  =======*/}
+                {/*=======  single cart product  =======*/}
+                <div className="single-cart-product">
+                <span className="cart-close-icon">
+                  <a href="#">
+                    <i className="ti-close" />
+                  </a>
+                </span>
+                  <div className="image">
+                    <a href="shop-product-basic.html">
+                      <img
+                        src="assets/images/cart-product-image/03.jpg"
+                        className="img-fluid"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="shop-product-basic.html">Creative Wooden Stand</a>
+                    </h5>
+                    <p>
+                      <span className="cart-count">2 x </span>{" "}
+                      <span className="discounted-price">$80.00</span>
+                    </p>
+                  </div>
+                </div>
+                {/*=======  End of single cart product  =======*/}
+                {/*=======  single cart product  =======*/}
+                <div className="single-cart-product">
+                <span className="cart-close-icon">
+                  <a href="#">
+                    <i className="ti-close" />
+                  </a>
+                </span>
+                  <div className="image">
+                    <a href="shop-product-basic.html">
+                      <img
+                        src="assets/images/cart-product-image/01.jpg"
+                        className="img-fluid"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="shop-product-basic.html">
+                        Dark Brown Leather Watch
+                      </a>
+                    </h5>
+                    <p>
+                      <span className="cart-count">2 x </span>{" "}
+                      <span className="discounted-price">$180.00</span>
+                    </p>
+                  </div>
+                </div>
+                {/*=======  End of single cart product  =======*/}
+                {/*=======  single cart product  =======*/}
+                <div className="single-cart-product">
+                <span className="cart-close-icon">
+                  <a href="#">
+                    <i className="ti-close" />
+                  </a>
+                </span>
+                  <div className="image">
+                    <a href="shop-product-basic.html">
+                      <img
+                        src="assets/images/cart-product-image/02.jpg"
+                        className="img-fluid"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="shop-product-basic.html">Creative Wooden Stand</a>
+                    </h5>
+                    <p>
+                      <span className="cart-count">2 x </span>{" "}
+                      <span className="discounted-price">$180.00</span>
+                    </p>
+                  </div>
+                </div>
+                {/*=======  End of single cart product  =======*/}
+              </div>
+              {/*=======  subtotal calculation  =======*/}
+              <p className="cart-subtotal">
+                <span className="subtotal-title">Subtotal:</span>
+                <span className="subtotal-amount">$200.00</span>
+              </p>
+              {/*=======  End of subtotal calculation  =======*/}
+              {/*=======  cart buttons  =======*/}
+              <div className="cart-buttons">
+                <a href="shop-cart.html">view cart</a>
+                <a href="shop-checkout.html">checkout</a>
+              </div>
+              {/*=======  End of cart buttons  =======*/}
+              {/*=======  free shipping text  =======*/}
+              <p className="free-shipping-text">
+                Free Shipping on All Orders Over $100!
+              </p>
+              {/*=======  End of free shipping text  =======*/}
+            </div>
+          </div>
+          {/*=======  End of offcanvas cart content container   =======*/}
+        </div>
+      </div>
+      {/*===== End cart-overlay  ======*/}
+      
     </>
   )
 }
