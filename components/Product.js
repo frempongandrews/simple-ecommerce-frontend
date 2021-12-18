@@ -40,71 +40,36 @@ const Product = () => {
                       <div className="col-md-3 order-2 order-md-1">
                         {/*=======  shop product small image gallery  =======*/}
                         <div className="shop-product__small-image-gallery-wrapper">
-                          <div className="shop-product__small-image-gallery-slider--vertical">
-                            {/*=======  single image  =======*/}
-                            <div className="single-image">
-                              <img
-                                src="assets/images/shop-product/soccer-1-170x225.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            <div className="single-image">
-                              <img
-                                src="assets/images/shop-product/soccer-2-170x225.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            <div className="single-image">
-                              <img
-                                src="assets/images/shop-product/soccer-3-170x225.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            {/*<div className="single-image">*/}
-                            {/*  <img*/}
-                            {/*    src="assets/images/shop-product/soccer-4-170x225.jpg"*/}
-                            {/*    className="img-fluid"*/}
-                            {/*    alt=""*/}
-                            {/*  />*/}
-                            {/*</div>*/}
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            {/*<div className="single-image">*/}
-                            {/*  <img*/}
-                            {/*    src="assets/images/shop-product/soccer-5-170x225.png"*/}
-                            {/*    className="img-fluid"*/}
-                            {/*    alt=""*/}
-                            {/*  />*/}
-                            {/*</div>*/}
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            {/*<div className="single-image">*/}
-                            {/*  <img*/}
-                            {/*    src="assets/images/shop-product/trendcoat-1-170x225.jpg"*/}
-                            {/*    className="img-fluid"*/}
-                            {/*    alt=""*/}
-                            {/*  />*/}
-                            {/*</div>*/}
-                            {/*=======  End of single image  =======*/}
-                            {/*=======  single image  =======*/}
-                            {/*<div className="single-image">*/}
-                            {/*  <img*/}
-                            {/*    src="assets/images/shop-product/trendcoat-2-170x225.jpg"*/}
-                            {/*    className="img-fluid"*/}
-                            {/*    alt=""*/}
-                            {/*  />*/}
-                            {/*</div>*/}
-                            {/*=======  End of single image  =======*/}
-                          </div>
+                          {/*<div className="shop-product__small-image-gallery-slider--vertical">*/}
+                          {/*  /!*=======  single image  =======*!/*/}
+                          {/*  <div className="single-image">*/}
+                          {/*    <img*/}
+                          {/*      src="assets/images/shop-product/soccer-1-170x225.png"*/}
+                          {/*      className="img-fluid"*/}
+                          {/*      alt=""*/}
+                          {/*    />*/}
+                          {/*  </div>*/}
+                          {/*  /!*=======  End of single image  =======*!/*/}
+                          {/*  /!*=======  single image  =======*!/*/}
+                          {/*  <div className="single-image">*/}
+                          {/*    <img*/}
+                          {/*      src="assets/images/shop-product/soccer-2-170x225.png"*/}
+                          {/*      className="img-fluid"*/}
+                          {/*      alt=""*/}
+                          {/*    />*/}
+                          {/*  </div>*/}
+                          {/*  /!*=======  End of single image  =======*!/*/}
+                          {/*  /!*=======  single image  =======*!/*/}
+                          {/*  <div className="single-image">*/}
+                          {/*    <img*/}
+                          {/*      src="assets/images/shop-product/soccer-3-170x225.png"*/}
+                          {/*      className="img-fluid"*/}
+                          {/*      alt=""*/}
+                          {/*    />*/}
+                          {/*  </div>*/}
+                          {/*  */}
+                          {/*  /!*=======  End of single image  =======*!/*/}
+                          {/*</div>*/}
                         </div>
                         {/*=======  End of shop product small image gallery  =======*/}
                       </div>
@@ -439,26 +404,26 @@ const Product = () => {
                           >
                             Description
                           </a>
-                          <a
-                            className="nav-item nav-link"
-                            id="product-tab-2"
-                            data-toggle="tab"
-                            href="#product-series-2"
-                            role="tab"
-                            aria-selected="false"
-                          >
-                            Additional information
-                          </a>
-                          <a
-                            className="nav-item nav-link"
-                            id="product-tab-3"
-                            data-toggle="tab"
-                            href="#product-series-3"
-                            role="tab"
-                            aria-selected="false"
-                          >
-                            Reviews (3)
-                          </a>
+                          {/*<a*/}
+                          {/*  className="nav-item nav-link"*/}
+                          {/*  id="product-tab-2"*/}
+                          {/*  data-toggle="tab"*/}
+                          {/*  href="#product-series-2"*/}
+                          {/*  role="tab"*/}
+                          {/*  aria-selected="false"*/}
+                          {/*>*/}
+                          {/*  Additional information*/}
+                          {/*</a>*/}
+                          {/*<a*/}
+                          {/*  className="nav-item nav-link"*/}
+                          {/*  id="product-tab-3"*/}
+                          {/*  data-toggle="tab"*/}
+                          {/*  href="#product-series-3"*/}
+                          {/*  role="tab"*/}
+                          {/*  aria-selected="false"*/}
+                          {/*>*/}
+                          {/*  Reviews (3)*/}
+                          {/*</a>*/}
                         </div>
                       </div>
                       {/*=======  End of tab navigation  =======*/}
@@ -485,212 +450,212 @@ const Product = () => {
                           </div>
                           {/*=======  End of shop product long description  =======*/}
                         </div>
-                        <div
-                          className="tab-pane fade"
-                          id="product-series-2"
-                          role="tabpanel"
-                          aria-labelledby="product-tab-2"
-                        >
-                          {/*=======  shop product additional information  =======*/}
-                          <div className="shop-product__additional-info">
-                            <table className="shop-attributes">
-                              <tbody>
-                                <tr>
-                                  <th>Size</th>
-                                  <td>
-                                    <p>L, M, S, XS</p>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <th>Color</th>
-                                  <td>
-                                    <p>Black, Blue, Brown</p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                          {/*=======  End of shop product additional information  =======*/}
-                        </div>
-                        <div
-                          className="tab-pane fade"
-                          id="product-series-3"
-                          role="tabpanel"
-                          aria-labelledby="product-tab-3"
-                        >
-                          {/*=======  shop product reviews  =======*/}
-                          <div className="shop-product__review shop-product__review--wide">
-                            <h2 className="review-title mb-20">
-                              3 reviews for High-waist Trousers
-                            </h2>
-                            {/*=======  single review  =======*/}
-                            <div className="single-review">
-                              <div className="single-review__image">
-                                <img
-                                  src="assets/images/user/user1.jpeg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="single-review__content">
-                                {/*=======  rating  =======*/}
-                                <div className="shop-product__rating">
-                                  <span className="product-rating">
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="ion-android-star-outline" />
-                                  </span>
-                                </div>
-                                {/*=======  End of rating  =======*/}
-                                {/*=======  username and date  =======*/}
-                                <p className="username">
-                                  Scott James{" "}
-                                  <span className="date">/ April 5, 2018</span>
-                                </p>
-                                {/*=======  End of username and date  =======*/}
-                                {/*=======  message  =======*/}
-                                <p className="message">
-                                  Thanks for always keeping your HTML themes up
-                                  to date. Your level of support and dedication
-                                  is second to none.
-                                </p>
-                                {/*=======  End of message  =======*/}
-                              </div>
-                            </div>
-                            {/*=======  End of single review  =======*/}
-                            {/*=======  single review  =======*/}
-                            <div className="single-review">
-                              <div className="single-review__image">
-                                <img
-                                  src="assets/images/user/user2.jpeg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="single-review__content">
-                                {/*=======  rating  =======*/}
-                                <div className="shop-product__rating">
-                                  <span className="product-rating">
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="ion-android-star-outline" />
-                                  </span>
-                                </div>
-                                {/*=======  End of rating  =======*/}
-                                {/*=======  username and date  =======*/}
-                                <p className="username">
-                                  Owen Christ{" "}
-                                  <span className="date">/ April 7, 2018</span>
-                                </p>
-                                {/*=======  End of username and date  =======*/}
-                                {/*=======  message  =======*/}
-                                <p className="message">
-                                  I didn’t expect this poster to arrive folded.
-                                  Now there are lines on the poster and one sad
-                                  Ninja.
-                                </p>
-                                {/*=======  End of message  =======*/}
-                              </div>
-                            </div>
-                            {/*=======  End of single review  =======*/}
-                            {/*=======  single review  =======*/}
-                            <div className="single-review">
-                              <div className="single-review__image">
-                                <img
-                                  src="assets/images/user/user3.jpeg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="single-review__content">
-                                {/*=======  rating  =======*/}
-                                <div className="shop-product__rating">
-                                  <span className="product-rating">
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="active ion-android-star" />
-                                    <i className="ion-android-star-outline" />
-                                  </span>
-                                </div>
-                                {/*=======  End of rating  =======*/}
-                                {/*=======  username and date  =======*/}
-                                <p className="username">
-                                  Edna Watson{" "}
-                                  <span className="date">/ April 5, 2018</span>
-                                </p>
-                                {/*=======  End of username and date  =======*/}
-                                {/*=======  message  =======*/}
-                                <p className="message">
-                                  Can’t wait to start mixin’ with this one!
-                                  Irba-irr-Up-up-up-up-date your theme!
-                                </p>
-                                {/*=======  End of message  =======*/}
-                              </div>
-                            </div>
-                            {/*=======  End of single review  =======*/}
-                            <h2 className="review-title mb-20">Add a review</h2>
-                            <p className="text-center">
-                              Your email address will not be published. Required
-                              fields are marked *
-                            </p>
-                            {/*=======  review form  =======*/}
-                            <div className="lezada-form lezada-form--review">
-                              <form action="#">
-                                <div className="row">
-                                  <div className="col-lg-6 mb-20">
-                                    <input
-                                      type="text"
-                                      placeholder="Name *"
-                                      required
-                                    />
-                                  </div>
-                                  <div className="col-lg-6 mb-20">
-                                    <input
-                                      type="email"
-                                      placeholder="Email *"
-                                      required
-                                    />
-                                  </div>
-                                  <div className="col-lg-12 mb-20">
-                                    <span className="rating-title mr-30">
-                                      YOUR RATING
-                                    </span>
-                                    <span className="product-rating">
-                                      <i className="active ion-android-star-outline" />
-                                      <i className="active ion-android-star-outline" />
-                                      <i className="active ion-android-star-outline" />
-                                      <i className="active ion-android-star-outline" />
-                                      <i className="active ion-android-star-outline" />
-                                    </span>
-                                  </div>
-                                  <div className="col-lg-12 mb-20">
-                                    <textarea
-                                      cols={30}
-                                      rows={10}
-                                      placeholder="Your review *"
-                                      defaultValue={""}
-                                    />
-                                  </div>
-                                  <div className="col-lg-12 text-center">
-                                    <button
-                                      type="submit"
-                                      className="lezada-button lezada-button--medium"
-                                    >
-                                      submit
-                                    </button>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                            {/*=======  End of review form  =======*/}
-                          </div>
-                          {/*=======  End of shop product reviews  =======*/}
-                        </div>
+
+                        {/*<div*/}
+                        {/*  className="tab-pane fade"*/}
+                        {/*  id="product-series-2"*/}
+                        {/*  role="tabpanel"*/}
+                        {/*  aria-labelledby="product-tab-2">*/}
+                        {/*  /!*=======  shop product additional information  =======*!/*/}
+                        {/*  <div className="shop-product__additional-info">*/}
+                        {/*    <table className="shop-attributes">*/}
+                        {/*      <tbody>*/}
+                        {/*        <tr>*/}
+                        {/*          <th>Size</th>*/}
+                        {/*          <td>*/}
+                        {/*            <p>L, M, S, XS</p>*/}
+                        {/*          </td>*/}
+                        {/*        </tr>*/}
+                        {/*        <tr>*/}
+                        {/*          <th>Color</th>*/}
+                        {/*          <td>*/}
+                        {/*            <p>Black, Blue, Brown</p>*/}
+                        {/*          </td>*/}
+                        {/*        </tr>*/}
+                        {/*      </tbody>*/}
+                        {/*    </table>*/}
+                        {/*  </div>*/}
+                        {/*  /!*=======  End of shop product additional information  =======*!/*/}
+                        {/*</div>*/}
+
+                        {/*<div*/}
+                        {/*  className="tab-pane fade"*/}
+                        {/*  id="product-series-3"*/}
+                        {/*  role="tabpanel"*/}
+                        {/*  aria-labelledby="product-tab-3">*/}
+                        {/*  /!*=======  shop product reviews  =======*!/*/}
+                        {/*  <div className="shop-product__review shop-product__review--wide">*/}
+                        {/*    <h2 className="review-title mb-20">*/}
+                        {/*      3 reviews for High-waist Trousers*/}
+                        {/*    </h2>*/}
+                        {/*    /!*=======  single review  =======*!/*/}
+                        {/*    <div className="single-review">*/}
+                        {/*      <div className="single-review__image">*/}
+                        {/*        <img*/}
+                        {/*          src="assets/images/user/user1.jpeg"*/}
+                        {/*          className="img-fluid"*/}
+                        {/*          alt=""*/}
+                        {/*        />*/}
+                        {/*      </div>*/}
+                        {/*      <div className="single-review__content">*/}
+                        {/*        /!*=======  rating  =======*!/*/}
+                        {/*        <div className="shop-product__rating">*/}
+                        {/*          <span className="product-rating">*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="ion-android-star-outline" />*/}
+                        {/*          </span>*/}
+                        {/*        </div>*/}
+                        {/*        /!*=======  End of rating  =======*!/*/}
+                        {/*        /!*=======  username and date  =======*!/*/}
+                        {/*        <p className="username">*/}
+                        {/*          Scott James{" "}*/}
+                        {/*          <span className="date">/ April 5, 2018</span>*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of username and date  =======*!/*/}
+                        {/*        /!*=======  message  =======*!/*/}
+                        {/*        <p className="message">*/}
+                        {/*          Thanks for always keeping your HTML themes up*/}
+                        {/*          to date. Your level of support and dedication*/}
+                        {/*          is second to none.*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of message  =======*!/*/}
+                        {/*      </div>*/}
+                        {/*    </div>*/}
+                        {/*    /!*=======  End of single review  =======*!/*/}
+                        {/*    /!*=======  single review  =======*!/*/}
+                        {/*    <div className="single-review">*/}
+                        {/*      <div className="single-review__image">*/}
+                        {/*        <img*/}
+                        {/*          src="assets/images/user/user2.jpeg"*/}
+                        {/*          className="img-fluid"*/}
+                        {/*          alt=""*/}
+                        {/*        />*/}
+                        {/*      </div>*/}
+                        {/*      <div className="single-review__content">*/}
+                        {/*        /!*=======  rating  =======*!/*/}
+                        {/*        <div className="shop-product__rating">*/}
+                        {/*          <span className="product-rating">*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="ion-android-star-outline" />*/}
+                        {/*          </span>*/}
+                        {/*        </div>*/}
+                        {/*        /!*=======  End of rating  =======*!/*/}
+                        {/*        /!*=======  username and date  =======*!/*/}
+                        {/*        <p className="username">*/}
+                        {/*          Owen Christ{" "}*/}
+                        {/*          <span className="date">/ April 7, 2018</span>*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of username and date  =======*!/*/}
+                        {/*        /!*=======  message  =======*!/*/}
+                        {/*        <p className="message">*/}
+                        {/*          I didn’t expect this poster to arrive folded.*/}
+                        {/*          Now there are lines on the poster and one sad*/}
+                        {/*          Ninja.*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of message  =======*!/*/}
+                        {/*      </div>*/}
+                        {/*    </div>*/}
+                        {/*    /!*=======  End of single review  =======*!/*/}
+                        {/*    /!*=======  single review  =======*!/*/}
+                        {/*    <div className="single-review">*/}
+                        {/*      <div className="single-review__image">*/}
+                        {/*        <img*/}
+                        {/*          src="assets/images/user/user3.jpeg"*/}
+                        {/*          className="img-fluid"*/}
+                        {/*          alt=""*/}
+                        {/*        />*/}
+                        {/*      </div>*/}
+                        {/*      <div className="single-review__content">*/}
+                        {/*        /!*=======  rating  =======*!/*/}
+                        {/*        <div className="shop-product__rating">*/}
+                        {/*          <span className="product-rating">*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="active ion-android-star" />*/}
+                        {/*            <i className="ion-android-star-outline" />*/}
+                        {/*          </span>*/}
+                        {/*        </div>*/}
+                        {/*        /!*=======  End of rating  =======*!/*/}
+                        {/*        /!*=======  username and date  =======*!/*/}
+                        {/*        <p className="username">*/}
+                        {/*          Edna Watson{" "}*/}
+                        {/*          <span className="date">/ April 5, 2018</span>*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of username and date  =======*!/*/}
+                        {/*        /!*=======  message  =======*!/*/}
+                        {/*        <p className="message">*/}
+                        {/*          Can’t wait to start mixin’ with this one!*/}
+                        {/*          Irba-irr-Up-up-up-up-date your theme!*/}
+                        {/*        </p>*/}
+                        {/*        /!*=======  End of message  =======*!/*/}
+                        {/*      </div>*/}
+                        {/*    </div>*/}
+                        {/*    /!*=======  End of single review  =======*!/*/}
+                        {/*    <h2 className="review-title mb-20">Add a review</h2>*/}
+                        {/*    <p className="text-center">*/}
+                        {/*      Your email address will not be published. Required*/}
+                        {/*      fields are marked **/}
+                        {/*    </p>*/}
+                        {/*    /!*=======  review form  =======*!/*/}
+                        {/*    <div className="lezada-form lezada-form--review">*/}
+                        {/*      <form action="#">*/}
+                        {/*        <div className="row">*/}
+                        {/*          <div className="col-lg-6 mb-20">*/}
+                        {/*            <input*/}
+                        {/*              type="text"*/}
+                        {/*              placeholder="Name *"*/}
+                        {/*              required*/}
+                        {/*            />*/}
+                        {/*          </div>*/}
+                        {/*          <div className="col-lg-6 mb-20">*/}
+                        {/*            <input*/}
+                        {/*              type="email"*/}
+                        {/*              placeholder="Email *"*/}
+                        {/*              required*/}
+                        {/*            />*/}
+                        {/*          </div>*/}
+                        {/*          <div className="col-lg-12 mb-20">*/}
+                        {/*            <span className="rating-title mr-30">*/}
+                        {/*              YOUR RATING*/}
+                        {/*            </span>*/}
+                        {/*            <span className="product-rating">*/}
+                        {/*              <i className="active ion-android-star-outline" />*/}
+                        {/*              <i className="active ion-android-star-outline" />*/}
+                        {/*              <i className="active ion-android-star-outline" />*/}
+                        {/*              <i className="active ion-android-star-outline" />*/}
+                        {/*              <i className="active ion-android-star-outline" />*/}
+                        {/*            </span>*/}
+                        {/*          </div>*/}
+                        {/*          <div className="col-lg-12 mb-20">*/}
+                        {/*            <textarea*/}
+                        {/*              cols={30}*/}
+                        {/*              rows={10}*/}
+                        {/*              placeholder="Your review *"*/}
+                        {/*              defaultValue={""}*/}
+                        {/*            />*/}
+                        {/*          </div>*/}
+                        {/*          <div className="col-lg-12 text-center">*/}
+                        {/*            <button*/}
+                        {/*              type="submit"*/}
+                        {/*              className="lezada-button lezada-button--medium"*/}
+                        {/*            >*/}
+                        {/*              submit*/}
+                        {/*            </button>*/}
+                        {/*          </div>*/}
+                        {/*        </div>*/}
+                        {/*      </form>*/}
+                        {/*    </div>*/}
+                        {/*    /!*=======  End of review form  =======*!/*/}
+                        {/*  </div>*/}
+                        {/*  /!*=======  End of shop product reviews  =======*!/*/}
+                        {/*</div>*/}
                       </div>
                       {/*=======  End of tab content  =======*/}
                     </div>

@@ -1,7 +1,22 @@
+import { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { AppContext, HIDE_CART, SHOW_CART } from "../context/AppContext";
 
 const Layout = ({ children }) => {
+  const { state, dispatch } = useContext(AppContext);
+  const { showCart } = state;
+  console.log("*********State", state);
+  const onHideCart = () => {
+    dispatch({
+      type: HIDE_CART,
+    });
+  };
+  const onShowCart = () => {
+    dispatch({
+      type: SHOW_CART,
+    });
+  };
   return (
     <div>
       <Head>
@@ -11,7 +26,7 @@ const Layout = ({ children }) => {
         <meta name="description" content="elegant commerce" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Favicon */}
-        <link rel="icon" href="assets/images/favicon.ico" />
+        <link rel="icon" href="assets/images/favicon.png" />
         {/* CSS ================================ */}
         {/* Bootstrap CSS */}
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -28,7 +43,7 @@ const Layout = ({ children }) => {
         {/* Main CSS */}
         <link href="assets/css/main.css" rel="stylesheet" />
         {/* Modernizer JS */}
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        {/*<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>*/}
       </Head>
       <header className="header header-nontransparent-overlay-menu header-sticky static-header">
         {/*=======  header bottom  =======*/}
@@ -40,634 +55,31 @@ const Layout = ({ children }) => {
               <div className="logo-with-offcanvas d-flex">
                 {/*=======  overlay menu icon  =======*/}
                 <div className="overlay-menu-icon mr-20 d-none d-lg-block">
-                  <a href="#" id="overlay-menu-icon">
-                    <i className="ion-navicon" />
-                  </a>
+                  {/*<a href="#" id="overlay-menu-icon">*/}
+                  {/*  <i className="ion-navicon" />*/}
+                  {/*</a>*/}
+                  <Link href={`/`}>
+                    <a>
+                      <h2>MINIMAL SHOP</h2>
+                    </a>
+                  </Link>
                 </div>
                 {/*=======  End of overlay menu icon  =======*/}
               </div>
               {/*=======  End of logo with off canvas  =======*/}
               {/*=======  header bottom navigation  =======*/}
-              <div className="header-bottom-navigation">
-                <div className="site-main-nav d-none d-lg-block">
-                  <nav className="site-nav center-menu">
-                    <ul>
-                      <li className="menu-item-has-children">
-                        <a href="index.html">Home</a>
-                        <ul className="sub-menu mega-menu mega-menu-column-5">
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Home Group
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="index-trending.html">Trending</a>
-                                <img
-                                  src="assets/images/home-preview/01.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-collection.html">
-                                  My collection
-                                </a>
-                                <img
-                                  src="assets/images/home-preview/02.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-special.html">Special</a>
-                                <img
-                                  src="assets/images/home-preview/03.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-concept.html">concept</a>
-                                <img
-                                  src="assets/images/home-preview/04.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-smart.html">smart design</a>
-                                <img
-                                  src="assets/images/home-preview/05.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Home Group
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="index-furniture.html">Furniture </a>
-                                <img
-                                  src="assets/images/home-preview/06.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-essentials.html">Essentials</a>
-                                <img
-                                  src="assets/images/home-preview/07.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-lookbook.html">Lookbook</a>
-                                <img
-                                  src="assets/images/home-preview/08.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-wearables.html">Wearables</a>
-                                <img
-                                  src="assets/images/home-preview/09.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-accessories.html">Accessories</a>
-                                <img
-                                  src="assets/images/home-preview/10.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Home Group
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="index-shoppable.html">Shoppable</a>
-                                <img
-                                  src="assets/images/home-preview/11.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-fashion.html">Fashion</a>
-                                <img
-                                  src="assets/images/home-preview/13.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-perfumes.html">Perfumes</a>
-                                <img
-                                  src="assets/images/home-preview/14.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-cosmetics.html">Cosmetics</a>
-                                <img
-                                  src="assets/images/home-preview/15.jpg"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                              <li>
-                                <a href="index-decor.html">Home Decor</a>
-                                <img
-                                  src="assets/images/home-preview/16.png"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Home Group
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="index-creative.html">Creative</a>
-                                <img
-                                  src="assets/images/home-preview/17.png"
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div className="menu-image">
-                              <img
-                                src="assets/images/menu-image/menu-element.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="menu-item-has-children">
-                        <a href="shop-left-sidebar.html">Shop</a>
-                        <ul className="sub-menu mega-menu mega-menu-column-4">
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Shop Pages
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="shop-no-sidebar.html">
-                                  Shop No Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-left-sidebar.html">
-                                  Shop Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-right-sidebar.html">
-                                  Shop Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-fullwidth-no-space.html">
-                                  Shop Fullwidth No Space
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-fullwidth-no-sidebar.html">
-                                  Shop Fullwidth No Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-fullwidth-left-sidebar.html">
-                                  Shop Fullwidth Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-fullwidth-right-sidebar.html">
-                                  Shop Fullwidth Right Sidebar
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Shop Pages
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="shop-product-basic.html">Basic </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-fullwidth.html">
-                                  Fullwidth
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-sticky-details.html">
-                                  Sticky details
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-with-sidebar.html">
-                                  With Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-extra-content.html">
-                                  Extra Content
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-variation-image.html">
-                                  Variation Image
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-product-bought-together.html">
-                                  Bought Together
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Shop Pages
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="shop-product-with-background.html">
-                                  Product with background
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-cart.html">Shopping Cart</a>
-                              </li>
-                              <li>
-                                <a href="shop-checkout.html">Checkout</a>
-                              </li>
-                              <li>
-                                <a href="shop-order-tracking.html">
-                                  Order Tracking
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-wishlist.html">Wishlist</a>
-                              </li>
-                              <li>
-                                <Link href={`/auth`}>
-                                  <a>Register / Login</a>
-                                </Link>
-                              </li>
-                              <li>
-                                <a href="shop-by-brand.html">Shop by Brand</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div className="menu-image">
-                              <img
-                                src="assets/images/menu-image/megamenu-shop.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="menu-item-has-children">
-                        <a href="#">Elements</a>
-                        <ul className="sub-menu mega-menu mega-menu-column-5">
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Shop / Products
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="element-product-categories.html">
-                                  Product Categories
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-product-sliders.html">
-                                  Product Sliders
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-product-tabs.html">
-                                  Product Tabs
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-product-widget.html">
-                                  Product Widget
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-recent-products.html">
-                                  Recent Products
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Shop / Products
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="element-sale-products.html">
-                                  Sale Products{" "}
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-featured-products.html">
-                                  Featured products
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-top-rated-products.html">
-                                  Top Rated products
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-bestselling-products.html">
-                                  Best Selling products
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-product-attributes.html">
-                                  Product Attributes
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Theming
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="element-blog-posts.html">Blog Posts</a>
-                              </li>
-                              <li>
-                                <a href="element-mailchimp-form.html">
-                                  Mailchimp Form
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-icon-box.html">Icon Box</a>
-                              </li>
-                              <li>
-                                <a href="element-team-member.html">
-                                  Team Member
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-instagram.html">Instagram</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#" className="mega-column-title">
-                              Theming
-                            </a>
-                            <ul className="mega-sub-menu">
-                              <li>
-                                <a href="element-faq.html">FAQs / Toggles</a>
-                              </li>
-                              <li>
-                                <a href="element-countdown-timer.html">
-                                  Countdown Timer
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-button.html">Buttons</a>
-                              </li>
-                              <li>
-                                <a href="element-testimonials.html">
-                                  Testimonials
-                                </a>
-                              </li>
-                              <li>
-                                <a href="element-google-maps.html">
-                                  Google Maps
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div className="menu-image">
-                              <img
-                                src="assets/images/menu-image/menu-element.png"
-                                className="img-fluid"
-                                alt=""
-                              />
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul className="sub-menu single-column-menu">
-                          <li>
-                            <a href="about-us.html">About Us</a>
-                          </li>
-                          <li>
-                            <a href="about-us-2.html">About Us 2</a>
-                          </li>
-                          <li>
-                            <a href="contact-us.html">Contact Us</a>
-                          </li>
-                          <li>
-                            <a href="faq.html">F.A.Q</a>
-                          </li>
-                          <li>
-                            <a href="coming-soon.html">Coming Soon</a>
-                          </li>
-                          <li>
-                            <a href="404.html">404</a>
-                          </li>
-                          <li>
-                            <a href="my-account.html">My account</a>
-                          </li>
-                          <li>
-                            <a href="compare.html">Compare</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className="menu-item-has-children ">
-                        <a href="#">Blog</a>
-                        <ul className="sub-menu single-column-menu single-column-has-children">
-                          <li>
-                            <a href="blog-standard-right-sidebar.html">
-                              Standard Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-standard-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-standard-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-standard-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-grid-right-sidebar.html">
-                              Grid Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-grid-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-grid-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-grid-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-list-right-sidebar.html">
-                              List Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-list-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-list-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-list-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-masonry-right-sidebar.html">
-                              Masonry Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-masonry-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-masonry-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-masonry-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-full-then-grid-right-sidebar.html">
-                              1st Full Then Grid Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-full-then-grid-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-full-then-grid-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-full-then-grid-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-single-post-right-sidebar.html">
-                              Single Post Layout
-                            </a>
-                            <ul className="multilevel-submenu">
-                              <li>
-                                <a href="blog-single-post-right-sidebar.html">
-                                  Right Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-single-post-left-sidebar.html">
-                                  Left Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-single-post-full-width.html">
-                                  Full Width
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
               {/*=======  End of header bottom navigation  =======*/}
               {/*=======  logo   =======*/}
               <div className="logo">
-                <Link href={`/`}>
-                  <a>
-                    <img
-                      src="assets/images/logo.png"
-                      className="img-fluid"
-                      alt=""
-                    />
-                  </a>
-                </Link>
+                {/*<Link href={`/`}>*/}
+                {/*  <a>*/}
+                {/*    <img*/}
+                {/*      src="assets/images/logo.png"*/}
+                {/*      className="img-fluid"*/}
+                {/*      alt=""*/}
+                {/*    />*/}
+                {/*  </a>*/}
+                {/*</Link>*/}
               </div>
               {/*=======  End of logo   =======*/}
               {/*=======  headeer right container  =======*/}
@@ -700,8 +112,8 @@ const Layout = ({ children }) => {
                   {/*</div>*/}
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
-                  <div className="single-icon cart">
-                    <a href="#" id="offcanvas-cart-icon">
+                  <div className="single-icon cart" onClick={onShowCart}>
+                    <a id="offcanvas-cart-icon">
                       <i className="ion-ios-cart" />
                       <span className="count">3</span>
                     </a>
@@ -1733,107 +1145,7 @@ const Layout = ({ children }) => {
           {/*=======  End of overlay navigation menu  =======*/}
         </div>
         {/*=======  End of overlay-navigation-menu  =======*/}
-        {/*=======  about overlay  =======*/}
-        <div className="header-offcanvas about-overlay" id="about-overlay">
-          <div className="overlay-close inactive" />
-          <div className="overlay-content">
-            {/*=======  close icon  =======*/}
-            <span className="close-icon" id="about-close-icon">
-              <a href="#">
-                <i className="ti-close" />
-              </a>
-            </span>
-            {/*=======  End of close icon  =======*/}
-            {/*=======  overlay content container  =======*/}
-            <div className="overlay-content-container d-flex flex-column justify-content-between h-100">
-              {/*=======  widget wrapper  =======*/}
-              <div className="widget-wrapper">
-                {/*=======  single widget  =======*/}
-                <div className="single-widget">
-                  <h2 className="widget-title">About Us</h2>
-                  <p>
-                    At Lezada, we put a strong emphasis on simplicity, quality
-                    and usefulness of fashion products over other factors. Our
-                    fashion items never get outdated. They are not short-lived
-                    as normal fashion clothes.
-                  </p>
-                </div>
-                {/*=======  End of single widget  =======*/}
-              </div>
-              {/*=======  End of widget wrapper  =======*/}
-              {/*=======  contact widget  =======*/}
-              <div className="contact-widget">
-                <p className="email">
-                  <a href="mailto:contact@lezada.com">contact@lezada.com</a>
-                </p>
-                <p className="phone">(+00) 123 567990</p>
-                <div className="social-icons">
-                  <ul>
-                    <li>
-                      <a
-                        href="//www.twitter.com"
-                        data-tippy="Twitter"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay={50}
-                        data-tippy-arrow="true"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="//www.facebook.com"
-                        data-tippy="Facebook"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay={50}
-                        data-tippy-arrow="true"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="//www.instagram.com"
-                        data-tippy="Instagram"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay={50}
-                        data-tippy-arrow="true"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="fa fa-instagram" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="//www.youtube.com"
-                        data-tippy="Youtube"
-                        data-tippy-inertia="true"
-                        data-tippy-animation="shift-away"
-                        data-tippy-delay={50}
-                        data-tippy-arrow="true"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="fa fa-youtube-play" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/*=======  End of contact widget  =======*/}
-            </div>
-            {/*=======  End of overlay content container  =======*/}
-          </div>
-        </div>
-        {/*=======  End of about overlay  =======*/}
+
         {/*=======  wishlist overlay  =======*/}
         <div className="wishlist-overlay" id="wishlist-overlay">
           <div className="wishlist-overlay-close inactive" />
@@ -1846,172 +1158,182 @@ const Layout = ({ children }) => {
             </span>
             {/*=======  End of close icon  =======*/}
             {/*=======  offcanvas wishlist content container  =======*/}
-            <div className="offcanvas-cart-content-container">
-              <h3 className="cart-title">Wishlist</h3>
-              <div className="cart-product-wrapper">
-                <div className="cart-product-container  ps-scroll">
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/01.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Dark Brown Leather Watch
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="main-price discounted">$200.00</span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/02.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">Dining Chair</a>
-                      </h5>
-                      <p>
-                        <span className="main-price discounted">$300.00</span>{" "}
-                        <span className="discounted-price">$220.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/03.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Creative Wooden Stand
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="main-price discounted">$100.00</span>{" "}
-                        <span className="discounted-price">$80.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/01.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Dark Brown Leather Watch
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="main-price discounted">$200.00</span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/02.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Creative Wooden Stand
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="main-price discounted">$200.00</span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                </div>
-                {/*=======  cart buttons  =======*/}
-                <div className="cart-buttons">
-                  <a href="shop-wishlist.html">view wishlist</a>
-                </div>
-                {/*=======  End of cart buttons  =======*/}
-              </div>
-            </div>
+            {/*<div className="offcanvas-cart-content-container">*/}
+            {/*  <h3 className="cart-title">Wishlist</h3>*/}
+            {/*  <div className="cart-product-wrapper">*/}
+            {/*    <div className="cart-product-container  ps-scroll">*/}
+            {/*      /!*=======  single cart product  =======*!/*/}
+            {/*      <div className="single-cart-product">*/}
+            {/*        <span className="cart-close-icon">*/}
+            {/*          <a>*/}
+            {/*            <i className="ti-close" />*/}
+            {/*          </a>*/}
+            {/*        </span>*/}
+            {/*        <div className="image">*/}
+            {/*          <a href="shop-product-basic.html">*/}
+            {/*            <img*/}
+            {/*              src="assets/images/cart-product-image/01.jpg"*/}
+            {/*              className="img-fluid"*/}
+            {/*              alt=""*/}
+            {/*            />*/}
+            {/*          </a>*/}
+            {/*        </div>*/}
+            {/*        <div className="content">*/}
+            {/*          <h5>*/}
+            {/*            <a href="shop-product-basic.html">*/}
+            {/*              Dark Brown Leather Watch*/}
+            {/*            </a>*/}
+            {/*          </h5>*/}
+            {/*          <p>*/}
+            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
+            {/*            <span className="discounted-price">$180.00</span>*/}
+            {/*          </p>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      /!*=======  End of single cart product  =======*!/*/}
+            {/*      /!*=======  single cart product  =======*!/*/}
+            {/*      <div className="single-cart-product">*/}
+            {/*        <span className="cart-close-icon">*/}
+            {/*          <a href="#">*/}
+            {/*            <i className="ti-close" />*/}
+            {/*          </a>*/}
+            {/*        </span>*/}
+            {/*        <div className="image">*/}
+            {/*          <a href="shop-product-basic.html">*/}
+            {/*            <img*/}
+            {/*              src="assets/images/cart-product-image/02.jpg"*/}
+            {/*              className="img-fluid"*/}
+            {/*              alt=""*/}
+            {/*            />*/}
+            {/*          </a>*/}
+            {/*        </div>*/}
+            {/*        <div className="content">*/}
+            {/*          <h5>*/}
+            {/*            <a href="shop-product-basic.html">Dining Chair</a>*/}
+            {/*          </h5>*/}
+            {/*          <p>*/}
+            {/*            <span className="main-price discounted">$300.00</span>{" "}*/}
+            {/*            <span className="discounted-price">$220.00</span>*/}
+            {/*          </p>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      /!*=======  End of single cart product  =======*!/*/}
+            {/*      /!*=======  single cart product  =======*!/*/}
+            {/*      <div className="single-cart-product">*/}
+            {/*        <span className="cart-close-icon">*/}
+            {/*          <a href="#">*/}
+            {/*            <i className="ti-close" />*/}
+            {/*          </a>*/}
+            {/*        </span>*/}
+            {/*        <div className="image">*/}
+            {/*          <a href="shop-product-basic.html">*/}
+            {/*            <img*/}
+            {/*              src="assets/images/cart-product-image/03.jpg"*/}
+            {/*              className="img-fluid"*/}
+            {/*              alt=""*/}
+            {/*            />*/}
+            {/*          </a>*/}
+            {/*        </div>*/}
+            {/*        <div className="content">*/}
+            {/*          <h5>*/}
+            {/*            <a href="shop-product-basic.html">*/}
+            {/*              Creative Wooden Stand*/}
+            {/*            </a>*/}
+            {/*          </h5>*/}
+            {/*          <p>*/}
+            {/*            <span className="main-price discounted">$100.00</span>{" "}*/}
+            {/*            <span className="discounted-price">$80.00</span>*/}
+            {/*          </p>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      /!*=======  End of single cart product  =======*!/*/}
+            {/*      /!*=======  single cart product  =======*!/*/}
+            {/*      <div className="single-cart-product">*/}
+            {/*        <span className="cart-close-icon">*/}
+            {/*          <a href="#">*/}
+            {/*            <i className="ti-close" />*/}
+            {/*          </a>*/}
+            {/*        </span>*/}
+            {/*        <div className="image">*/}
+            {/*          <a href="shop-product-basic.html">*/}
+            {/*            <img*/}
+            {/*              src="assets/images/cart-product-image/01.jpg"*/}
+            {/*              className="img-fluid"*/}
+            {/*              alt=""*/}
+            {/*            />*/}
+            {/*          </a>*/}
+            {/*        </div>*/}
+            {/*        <div className="content">*/}
+            {/*          <h5>*/}
+            {/*            <a href="shop-product-basic.html">*/}
+            {/*              Dark Brown Leather Watch*/}
+            {/*            </a>*/}
+            {/*          </h5>*/}
+            {/*          <p>*/}
+            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
+            {/*            <span className="discounted-price">$180.00</span>*/}
+            {/*          </p>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      /!*=======  End of single cart product  =======*!/*/}
+            {/*      /!*=======  single cart product  =======*!/*/}
+            {/*      <div className="single-cart-product">*/}
+            {/*        <span className="cart-close-icon">*/}
+            {/*          <a href="#">*/}
+            {/*            <i className="ti-close" />*/}
+            {/*          </a>*/}
+            {/*        </span>*/}
+            {/*        <div className="image">*/}
+            {/*          <a href="shop-product-basic.html">*/}
+            {/*            <img*/}
+            {/*              src="assets/images/cart-product-image/02.jpg"*/}
+            {/*              className="img-fluid"*/}
+            {/*              alt=""*/}
+            {/*            />*/}
+            {/*          </a>*/}
+            {/*        </div>*/}
+            {/*        <div className="content">*/}
+            {/*          <h5>*/}
+            {/*            <a href="shop-product-basic.html">*/}
+            {/*              Creative Wooden Stand*/}
+            {/*            </a>*/}
+            {/*          </h5>*/}
+            {/*          <p>*/}
+            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
+            {/*            <span className="discounted-price">$180.00</span>*/}
+            {/*          </p>*/}
+            {/*        </div>*/}
+            {/*      </div>*/}
+            {/*      /!*=======  End of single cart product  =======*!/*/}
+            {/*    </div>*/}
+            {/*    /!*=======  cart buttons  =======*!/*/}
+            {/*    <div className="cart-buttons">*/}
+            {/*      <a href="shop-wishlist.html">view wishlist</a>*/}
+            {/*    </div>*/}
+            {/*    /!*=======  End of cart buttons  =======*!/*/}
+            {/*  </div>*/}
+            {/*</div>*/}
             {/*=======  End of offcanvas wishlist content container   =======*/}
           </div>
         </div>
         {/*=======  End of wishlist overlay  =======*/}
         {/*=======  cart overlay  =======*/}
-        <div className="cart-overlay" id="cart-overlay">
-          <div className="cart-overlay-close inactive" />
+        <div
+          className={`${showCart && "active-cart-overlay"} cart-overlay`}
+          id="cart-overlay"
+        >
+          <div
+            className={`cart-overlay-close ${showCart ? "active" : "inactive"}`}
+            onClick={onHideCart}
+          />
           <div className="cart-overlay-content">
             {/*=======  close icon  =======*/}
-            <span className="close-icon" id="cart-close-icon">
-              <a href="#">
+            <span
+              className="close-icon"
+              id="cart-close-icon"
+              onClick={onHideCart}
+            >
+              <a>
                 <i className="ion-android-close" />
               </a>
             </span>
@@ -2191,6 +1513,7 @@ const Layout = ({ children }) => {
             {/*=======  End of offcanvas cart content container   =======*/}
           </div>
         </div>
+
         {/*=======  End of cart overlay  =======*/}
         {/*=======  search overlay  =======*/}
         <div className="search-overlay" id="search-overlay">
@@ -2222,15 +1545,15 @@ const Layout = ({ children }) => {
       <a href="#" className="scroll-top"></a>
 
       {/**<!-- jQuery JS -->**/}
-      <script src="assets/js/vendor/jquery.min.js"></script>
+      {/*<script src="assets/js/vendor/jquery.min.js"></script>*/}
       {/**<!-- Popper JS --> **/}
-      <script src="assets/js/popper.min.js"></script>
+      {/*<script src="assets/js/popper.min.js"></script>*/}
       {/**<!-- Bootstrap JS --> **/}
-      <script src="assets/js/bootstrap.min.js"></script>
+      {/*<script src="assets/js/bootstrap.min.js"></script>*/}
       {/** <!-- Plugins JS -->**/}
       {/*<script src="assets/js/plugins.js"></script>*/}
       {/** <!-- Main JS -->**/}
-      <script src="assets/js/main.js"></script>
+      {/*<script src="assets/js/main.js"></script>*/}
     </div>
   );
 };

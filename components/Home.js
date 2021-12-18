@@ -53,7 +53,8 @@ const Home = () => {
                 </Link>
                 <span className="number">01/</span>
                 <img
-                  src="assets/images/category/banner-best-seller-1.jpg"
+                  // src="assets/images/category/banner-best-seller-1.jpg"
+                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"
                   className="img-fluid"
                   alt=""
                 />
@@ -74,7 +75,8 @@ const Home = () => {
                 </Link>
                 <span className="number">02/</span>
                 <img
-                  src="assets/images/category/banner-bestseller-2.jpg"
+                  // src="assets/images/category/banner-bestseller-2.jpg"
+                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-2.jpg"
                   className="img-fluid"
                   alt=""
                 />
@@ -94,7 +96,8 @@ const Home = () => {
                 </Link>
                 <span className="number">02/</span>
                 <img
-                  src="assets/images/category/banner-bestseller-2.jpg"
+                  // src="assets/images/category/banner-bestseller-2.jpg"
+                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-6.jpg"
                   className="img-fluid"
                   alt=""
                 />
@@ -114,7 +117,8 @@ const Home = () => {
                 </Link>
                 <span className="number">01/</span>
                 <img
-                  src="assets/images/category/banner-best-seller-1.jpg"
+                  // src="assets/images/category/banner-best-seller-1.jpg"
+                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-7.jpg"
                   className="img-fluid"
                   alt=""
                 />
@@ -135,7 +139,8 @@ const Home = () => {
                 </Link>
                 <span className="number">01/</span>
                 <img
-                  src="assets/images/category/banner-best-seller-1.jpg"
+                  // src="assets/images/category/banner-best-seller-1.jpg"
+                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-10.jpg"
                   className="img-fluid"
                   alt=""
                 />
@@ -156,7 +161,8 @@ const Home = () => {
                 </Link>
                 <span className="number">02/</span>
                 <img
-                  src="assets/images/category/banner-bestseller-2.jpg"
+                  // src="assets/images/category/banner-bestseller-2.jpg"
+                  src="https://images.asos-media.com/products/vans-full-patch-snapback-cap-in-oatmeal/201886737-1-oatmeal?$n_640w$&wid=513&fit=constrain"
                   className="img-fluid"
                   alt=""
                 />
