@@ -77,39 +77,39 @@ const Product = () => {
                         {/*=======  shop product big image gallery  =======*/}
                         <div className="shop-product__big-image-gallery-wrapper mb-0 mb-sm-30">
                           {/*=======  shop product gallery icons  =======*/}
-                          <div className="single-product__floating-badges single-product__floating-badges--shop-product">
-                            <span className="hot">hot</span>
-                          </div>
+                          {/*<div className="single-product__floating-badges single-product__floating-badges--shop-product">*/}
+                          {/*  <span className="hot">hot</span>*/}
+                          {/*</div>*/}
                           <div className="shop-product-rightside-icons">
                             <span className="wishlist-icon">
-                              <a
-                                href="#"
-                                data-tippy="Add to wishlist"
-                                data-tippy-placement="left"
-                                data-tippy-inertia="true"
-                                data-tippy-animation="shift-away"
-                                data-tippy-delay={50}
-                                data-tippy-arrow="true"
-                                data-tippy-theme="sharpborder"
-                              >
-                                <i className="ion-android-favorite-outline" />
-                              </a>
+                              {/*<a*/}
+                              {/*  href="#"*/}
+                              {/*  data-tippy="Add to wishlist"*/}
+                              {/*  data-tippy-placement="left"*/}
+                              {/*  data-tippy-inertia="true"*/}
+                              {/*  data-tippy-animation="shift-away"*/}
+                              {/*  data-tippy-delay={50}*/}
+                              {/*  data-tippy-arrow="true"*/}
+                              {/*  data-tippy-theme="sharpborder"*/}
+                              {/*>*/}
+                              {/*  <i className="ion-android-favorite-outline" />*/}
+                              {/*</a>*/}
                             </span>
-                            <span className="enlarge-icon">
-                              <a
-                                className="btn-zoom-popup"
-                                href="#"
-                                data-tippy="Click to enlarge"
-                                data-tippy-placement="left"
-                                data-tippy-inertia="true"
-                                data-tippy-animation="shift-away"
-                                data-tippy-delay={50}
-                                data-tippy-arrow="true"
-                                data-tippy-theme="sharpborder"
-                              >
-                                <i className="ion-android-expand" />
-                              </a>
-                            </span>
+                            {/*<span className="enlarge-icon">*/}
+                            {/*  <a*/}
+                            {/*    className="btn-zoom-popup"*/}
+                            {/*    href="#"*/}
+                            {/*    data-tippy="Click to enlarge"*/}
+                            {/*    data-tippy-placement="left"*/}
+                            {/*    data-tippy-inertia="true"*/}
+                            {/*    data-tippy-animation="shift-away"*/}
+                            {/*    data-tippy-delay={50}*/}
+                            {/*    data-tippy-arrow="true"*/}
+                            {/*    data-tippy-theme="sharpborder"*/}
+                            {/*  >*/}
+                            {/*    <i className="ion-android-expand" />*/}
+                            {/*  </a>*/}
+                            {/*</span>*/}
                           </div>
                           {/*=======  End of shop product gallery icons  =======*/}
                           <div className="shop-product__big-image-gallery-slider">

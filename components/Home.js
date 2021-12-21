@@ -1,7 +1,42 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import Layout from "./Layout";
 // index-accessories.html
-const Home = () => {
+const Home = ({ products }) => {
+  const renderProducts = () => {
+    return products.map((product, i) => {
+      return (
+        <div
+          className={`col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100`}
+          key={product._id}
+        >
+          <div className="accessories-single-category wow zoomIn">
+            <Link href={`/product`}>
+              <a className="banner-hover" />
+            </Link>
+            {/*<span className="number">01/</span>*/}
+            <span className="number">0{i + 1}/</span>
+            <img
+              // src="assets/images/category/banner-best-seller-1.jpg"
+              // src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"
+              // src="https://frempong-simple-ecommerce.s3.eu-west-2.amazonaws.com/product-image-placeholder.jpeg"
+              // src="https://images.asos-media.com/products/collusion-unisex-beanie-in-black/24398919-1-black?$n_640w$&wid=513&fit=constrain"
+              src={product.image}
+              className="img-fluid"
+              alt=""
+            />
+            <div className="accessories-single-category__content">
+              <p className="name">Minimal Leather Watch</p>
+              <p className="price">
+                <span className="main-price discounted">$100.00</span>{" "}
+                <span className="discounted-price">$80.00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  };
   return (
     <>
       {/*=============================================
@@ -46,134 +81,137 @@ const Home = () => {
       <div className="home-content--accessories mb-100 mb-md-80 mb-sm-80">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">01/</span>
-                <img
-                  // src="assets/images/category/banner-best-seller-1.jpg"
-                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Minimal Leather Watch</p>
-                  <p className="price">
-                    <span className="main-price discounted">$100.00</span>{" "}
-                    <span className="discounted-price">$80.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {renderProducts()}
+            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">01/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
+            {/*      // src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"*/}
+            {/*      // src="https://frempong-simple-ecommerce.s3.eu-west-2.amazonaws.com/product-image-placeholder.jpeg"*/}
+            {/*      src="https://images.asos-media.com/products/collusion-unisex-beanie-in-black/24398919-1-black?$n_640w$&wid=513&fit=constrain"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Minimal Leather Watch</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
+            {/*        <span className="discounted-price">$80.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">02/</span>
-                <img
-                  // src="assets/images/category/banner-bestseller-2.jpg"
-                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-2.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Hoho Bag</p>
-                  <p className="price">
-                    <span className="main-price">$100.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">02/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
+            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-2.jpg"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Hoho Bag</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price">$100.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">02/</span>
-                <img
-                  // src="assets/images/category/banner-bestseller-2.jpg"
-                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-6.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Hoho Bag</p>
-                  <p className="price">
-                    <span className="main-price">$100.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">02/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
+            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-6.jpg"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Hoho Bag</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price">$100.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">01/</span>
-                <img
-                  // src="assets/images/category/banner-best-seller-1.jpg"
-                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-7.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Minimal Leather Watch</p>
-                  <p className="price">
-                    <span className="main-price discounted">$100.00</span>{" "}
-                    <span className="discounted-price">$80.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">01/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
+            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-7.jpg"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Minimal Leather Watch</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
+            {/*        <span className="discounted-price">$80.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">01/</span>
-                <img
-                  // src="assets/images/category/banner-best-seller-1.jpg"
-                  src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-10.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Minimal Leather Watch</p>
-                  <p className="price">
-                    <span className="main-price discounted">$100.00</span>{" "}
-                    <span className="discounted-price">$80.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">01/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
+            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-10.jpg"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Minimal Leather Watch</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
+            {/*        <span className="discounted-price">$80.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
-            <div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">
-              <div className="accessories-single-category wow zoomIn">
-                <Link href={`/product`}>
-                  <a className="banner-hover" />
-                </Link>
-                <span className="number">02/</span>
-                <img
-                  // src="assets/images/category/banner-bestseller-2.jpg"
-                  src="https://images.asos-media.com/products/vans-full-patch-snapback-cap-in-oatmeal/201886737-1-oatmeal?$n_640w$&wid=513&fit=constrain"
-                  className="img-fluid"
-                  alt=""
-                />
-                <div className="accessories-single-category__content">
-                  <p className="name">Hoho Bag</p>
-                  <p className="price">
-                    <span className="main-price">$100.00</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
+            {/*  <div className="accessories-single-category wow zoomIn">*/}
+            {/*    <Link href={`/product`}>*/}
+            {/*      <a className="banner-hover" />*/}
+            {/*    </Link>*/}
+            {/*    <span className="number">02/</span>*/}
+            {/*    <img*/}
+            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
+            {/*      src="https://images.asos-media.com/products/vans-full-patch-snapback-cap-in-oatmeal/201886737-1-oatmeal?$n_640w$&wid=513&fit=constrain"*/}
+            {/*      className="img-fluid"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*    <div className="accessories-single-category__content">*/}
+            {/*      <p className="name">Hoho Bag</p>*/}
+            {/*      <p className="price">*/}
+            {/*        <span className="main-price">$100.00</span>*/}
+            {/*      </p>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
 
             <div className="col-lg-12">
               {/*=======  shop button  =======*/}
@@ -231,194 +269,12 @@ const Home = () => {
         </div>
       </div>
       {/*=====  End of instagram slider area  ======*/}
-
-      {/*=====  cart-overlay  ======*/}
-      {/*<div*/}
-      {/*  className={`cart-overlay active-cart-overlay`}*/}
-      {/*  id="cart-overlay">*/}
-      {/*  <div className="cart-overlay-close inactive" />*/}
-      {/*  <div className="cart-overlay-content">*/}
-      {/*    /!*=======  close icon  =======*!/*/}
-      {/*    <span className="close-icon" id="cart-close-icon">*/}
-      {/*      <a href="#">*/}
-      {/*        <i className="ion-android-close" />*/}
-      {/*      </a>*/}
-      {/*    </span>*/}
-      {/*    /!*=======  End of close icon  =======*!/*/}
-      {/*    /!*=======  offcanvas cart content container  =======*!/*/}
-      {/*    <div className="offcanvas-cart-content-container">*/}
-      {/*      <h3 className="cart-title">Cart</h3>*/}
-      {/*      <div className="cart-product-wrapper">*/}
-      {/*        <div className="cart-product-container  ps-scroll">*/}
-      {/*          /!*=======  single cart product  =======*!/*/}
-      {/*          <div className="single-cart-product">*/}
-      {/*            <span className="cart-close-icon">*/}
-      {/*              <a href="#">*/}
-      {/*                <i className="ti-close" />*/}
-      {/*              </a>*/}
-      {/*            </span>*/}
-      {/*            <div className="image">*/}
-      {/*              <a href="shop-product-basic.html">*/}
-      {/*                <img*/}
-      {/*                  src="assets/images/cart-product-image/01.jpg"*/}
-      {/*                  className="img-fluid"*/}
-      {/*                  alt=""*/}
-      {/*                />*/}
-      {/*              </a>*/}
-      {/*            </div>*/}
-      {/*            <div className="content">*/}
-      {/*              <h5>*/}
-      {/*                <a href="shop-product-basic.html">*/}
-      {/*                  Dark Brown Leather Watch*/}
-      {/*                </a>*/}
-      {/*              </h5>*/}
-      {/*              <p>*/}
-      {/*                <span className="cart-count">2 x </span>{' '}*/}
-      {/*                <span className="discounted-price">$180.00</span>*/}
-      {/*              </p>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*          /!*=======  End of single cart product  =======*!/*/}
-      {/*          /!*=======  single cart product  =======*!/*/}
-      {/*          <div className="single-cart-product">*/}
-      {/*            <span className="cart-close-icon">*/}
-      {/*              <a href="#">*/}
-      {/*                <i className="ti-close" />*/}
-      {/*              </a>*/}
-      {/*            </span>*/}
-      {/*            <div className="image">*/}
-      {/*              <a href="shop-product-basic.html">*/}
-      {/*                <img*/}
-      {/*                  src="assets/images/cart-product-image/02.jpg"*/}
-      {/*                  className="img-fluid"*/}
-      {/*                  alt=""*/}
-      {/*                />*/}
-      {/*              </a>*/}
-      {/*            </div>*/}
-      {/*            <div className="content">*/}
-      {/*              <h5>*/}
-      {/*                <a href="shop-product-basic.html">Dining Chair</a>*/}
-      {/*              </h5>*/}
-      {/*              <p>*/}
-      {/*                <span className="cart-count">2 x </span>{' '}*/}
-      {/*                <span className="discounted-price">$220.00</span>*/}
-      {/*              </p>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*          /!*=======  End of single cart product  =======*!/*/}
-      {/*          /!*=======  single cart product  =======*!/*/}
-      {/*          <div className="single-cart-product">*/}
-      {/*            <span className="cart-close-icon">*/}
-      {/*              <a href="#">*/}
-      {/*                <i className="ti-close" />*/}
-      {/*              </a>*/}
-      {/*            </span>*/}
-      {/*            <div className="image">*/}
-      {/*              <a href="shop-product-basic.html">*/}
-      {/*                <img*/}
-      {/*                  src="assets/images/cart-product-image/03.jpg"*/}
-      {/*                  className="img-fluid"*/}
-      {/*                  alt=""*/}
-      {/*                />*/}
-      {/*              </a>*/}
-      {/*            </div>*/}
-      {/*            <div className="content">*/}
-      {/*              <h5>*/}
-      {/*                <a href="shop-product-basic.html">*/}
-      {/*                  Creative Wooden Stand*/}
-      {/*                </a>*/}
-      {/*              </h5>*/}
-      {/*              <p>*/}
-      {/*                <span className="cart-count">2 x </span>{' '}*/}
-      {/*                <span className="discounted-price">$80.00</span>*/}
-      {/*              </p>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*          /!*=======  End of single cart product  =======*!/*/}
-      {/*          /!*=======  single cart product  =======*!/*/}
-      {/*          <div className="single-cart-product">*/}
-      {/*            <span className="cart-close-icon">*/}
-      {/*              <a href="#">*/}
-      {/*                <i className="ti-close" />*/}
-      {/*              </a>*/}
-      {/*            </span>*/}
-      {/*            <div className="image">*/}
-      {/*              <a href="shop-product-basic.html">*/}
-      {/*                <img*/}
-      {/*                  src="assets/images/cart-product-image/01.jpg"*/}
-      {/*                  className="img-fluid"*/}
-      {/*                  alt=""*/}
-      {/*                />*/}
-      {/*              </a>*/}
-      {/*            </div>*/}
-      {/*            <div className="content">*/}
-      {/*              <h5>*/}
-      {/*                <a href="shop-product-basic.html">*/}
-      {/*                  Dark Brown Leather Watch*/}
-      {/*                </a>*/}
-      {/*              </h5>*/}
-      {/*              <p>*/}
-      {/*                <span className="cart-count">2 x </span>{' '}*/}
-      {/*                <span className="discounted-price">$180.00</span>*/}
-      {/*              </p>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*          /!*=======  End of single cart product  =======*!/*/}
-      {/*          /!*=======  single cart product  =======*!/*/}
-      {/*          <div className="single-cart-product">*/}
-      {/*            <span className="cart-close-icon">*/}
-      {/*              <a href="#">*/}
-      {/*                <i className="ti-close" />*/}
-      {/*              </a>*/}
-      {/*            </span>*/}
-      {/*            <div className="image">*/}
-      {/*              <a href="shop-product-basic.html">*/}
-      {/*                <img*/}
-      {/*                  src="assets/images/cart-product-image/02.jpg"*/}
-      {/*                  className="img-fluid"*/}
-      {/*                  alt=""*/}
-      {/*                />*/}
-      {/*              </a>*/}
-      {/*            </div>*/}
-      {/*            <div className="content">*/}
-      {/*              <h5>*/}
-      {/*                <a href="shop-product-basic.html">*/}
-      {/*                  Creative Wooden Stand*/}
-      {/*                </a>*/}
-      {/*              </h5>*/}
-      {/*              <p>*/}
-      {/*                <span className="cart-count">2 x </span>{' '}*/}
-      {/*                <span className="discounted-price">$180.00</span>*/}
-      {/*              </p>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*          /!*=======  End of single cart product  =======*!/*/}
-      {/*        </div>*/}
-      {/*        /!*=======  subtotal calculation  =======*!/*/}
-      {/*        <p className="cart-subtotal">*/}
-      {/*          <span className="subtotal-title">Subtotal:</span>*/}
-      {/*          <span className="subtotal-amount">$200.00</span>*/}
-      {/*        </p>*/}
-      {/*        /!*=======  End of subtotal calculation  =======*!/*/}
-      {/*        /!*=======  cart buttons  =======*!/*/}
-      {/*        <div className="cart-buttons">*/}
-      {/*          <a href="shop-cart.html">view cart</a>*/}
-      {/*          <a href="shop-checkout.html">checkout</a>*/}
-      {/*        </div>*/}
-      {/*        /!*=======  End of cart buttons  =======*!/*/}
-      {/*        /!*=======  free shipping text  =======*!/*/}
-      {/*        <p className="free-shipping-text">*/}
-      {/*          Free Shipping on All Orders Over $100!*/}
-      {/*        </p>*/}
-      {/*        /!*=======  End of free shipping text  =======*!/*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*    /!*=======  End of offcanvas cart content container   =======*!/*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      {/*===== End cart-overlay  ======*/}
     </>
   );
+};
+
+Home.propTypes = {
+  products: PropTypes.array.isRequired,
 };
 
 export default Home;

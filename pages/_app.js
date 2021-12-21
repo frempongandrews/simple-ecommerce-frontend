@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-// import "../styles/globals.css";
+import "../styles/globals.css";
 import Layout from "../components/Layout";
 import AppContextProvider from "../context/AppContext";
 

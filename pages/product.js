@@ -7,3 +7,5 @@ export default function ProductPage() {
     </>
   );
 }
+
+export const getStaticProps = async () => {};

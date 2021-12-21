@@ -6,7 +6,7 @@ export const HIDE_CART = "HIDE_CART";
 export const AppContext = createContext();
 
 const initialState = {
-  showCart: true,
+  showCart: false,
   cart: [],
 };
 
