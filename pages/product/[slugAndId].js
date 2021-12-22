@@ -1,10 +1,13 @@
+import PropTypes from "prop-types";
+import Link from "next/link";
 import { getProductById } from "../../lib/api";
+import Product from "../../components/Product";
 
-const ProductPage = () => {
+const ProductPage = ({ product, message }) => {
   return (
-    <div style={{ minHeight: "70vh" }}>
-      <h1>Product Page</h1>
-    </div>
+    <>
+      <Product product={product} message={message} />
+    </>
   );
 };
 
@@ -27,6 +30,7 @@ export const getStaticProps = async (ctx) => {
   }
 
   const product = productRes.data.product;
+  console.log("*********Product", product);
   return {
     props: {
       product,
@@ -40,6 +44,13 @@ export const getStaticPaths = async () => {
     paths: [],
     fallback: true,
   };
+};
+
+ProductPage.propTypes = {
+  // product can be null
+  product: PropTypes.object,
+  // message can be empty string
+  message: PropTypes.string,
 };
 
 export default ProductPage;
