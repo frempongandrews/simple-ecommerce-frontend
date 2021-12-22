@@ -26,6 +26,7 @@ const Layout = ({ children }) => {
         <meta name="description" content="elegant commerce" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Favicon */}
+        <base href="/" />
         <link rel="icon" href="assets/images/favicon.png" />
         {/* CSS ================================ */}
         {/* Bootstrap CSS */}

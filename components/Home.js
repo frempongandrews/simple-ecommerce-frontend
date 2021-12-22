@@ -11,20 +11,12 @@ const Home = ({ products }) => {
           key={product._id}
         >
           <div className="accessories-single-category wow zoomIn">
-            <Link href={`/product`}>
+            <Link href={`/product/${product.slug}-${product.id}`}>
               <a className="banner-hover" />
             </Link>
             {/*<span className="number">01/</span>*/}
             <span className="number">0{i + 1}/</span>
-            <img
-              // src="assets/images/category/banner-best-seller-1.jpg"
-              // src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"
-              // src="https://frempong-simple-ecommerce.s3.eu-west-2.amazonaws.com/product-image-placeholder.jpeg"
-              // src="https://images.asos-media.com/products/collusion-unisex-beanie-in-black/24398919-1-black?$n_640w$&wid=513&fit=constrain"
-              src={product.image}
-              className="img-fluid"
-              alt=""
-            />
+            <img src={product.image} className="img-fluid" alt="" />
             <div className="accessories-single-category__content">
               <p className="name">Minimal Leather Watch</p>
               <p className="price">

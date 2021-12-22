@@ -1,4 +1,7 @@
 module.exports = {
   reactStrictMode: true,
-  env: {}
-}
+  env: {},
+  experimental: {
+    scrollRestoration: true,
+  },
+};
