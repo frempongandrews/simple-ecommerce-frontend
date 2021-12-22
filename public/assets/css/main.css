@@ -1180,10 +1180,8 @@ a.scroll-top:hover {
 
 .offcanvas-cart-content-container .cart-product-wrapper .cart-product-container {
   position: relative;
-
   overflow: auto;
-
-  max-height: 330px;
+  max-height: 480px;
 }
 
 .offcanvas-cart-content-container .cart-product-wrapper .cart-product-container .single-cart-product {

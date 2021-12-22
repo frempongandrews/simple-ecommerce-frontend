@@ -2,12 +2,17 @@ import { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { AppContext, HIDE_CART, SHOW_CART } from "../context/AppContext";
-import { centsToPounds } from "../lib/helpers";
+import {
+  centsToPounds,
+  generateShorterProductTitle,
+  calculateTotal,
+  getCartItemsNumber,
+} from "../lib/helpers";
 
 const Layout = ({ children }) => {
   console.log("**********centsToPounds ==> ", centsToPounds(1000));
   const { state, dispatch } = useContext(AppContext);
-  const { showCart } = state;
+  const { showCart, cartArr } = state;
   console.log("*********State", state);
   const onHideCart = () => {
     dispatch({
@@ -17,6 +22,48 @@ const Layout = ({ children }) => {
   const onShowCart = () => {
     dispatch({
       type: SHOW_CART,
+    });
+  };
+
+  const renderCartItems = () => {
+    return cartArr.map((prodObj) => {
+      return (
+        <div className="single-cart-product" key={prodObj?.product?.id}>
+          <span className="cart-close-icon">
+            <a>
+              <i className="ti-close" />
+            </a>
+          </span>
+          <div className="image">
+            <Link href={`/product/${prodObj?.product?.id}`}>
+              <a>
+                <img
+                  src={`${prodObj?.product?.image}`}
+                  className="img-fluid"
+                  alt=""
+                />
+              </a>
+            </Link>
+          </div>
+          <div className="content">
+            <h5>
+              <Link href={`/product/${prodObj?.product?.id}`}>
+                <a>{generateShorterProductTitle(prodObj?.product?.title)}</a>
+              </Link>
+            </h5>
+            <p>
+              <span className="cart-count">{prodObj.quantity} x </span>{" "}
+              <span className="discounted-price">
+                £
+                {(
+                  prodObj.quantity *
+                  parseInt(centsToPounds(prodObj.product.price))
+                ).toFixed(2)}
+              </span>
+            </p>
+          </div>
+        </div>
+      );
     });
   };
   return (
@@ -118,7 +165,9 @@ const Layout = ({ children }) => {
                   <div className="single-icon cart" onClick={onShowCart}>
                     <a id="offcanvas-cart-icon">
                       <i className="ion-ios-cart" />
-                      <span className="count">3</span>
+                      <span className="count">
+                        {getCartItemsNumber(cartArr)}
+                      </span>
                     </a>
                   </div>
                   {/*=======  End of single-icon  =======*/}
@@ -503,154 +552,14 @@ const Layout = ({ children }) => {
               <h3 className="cart-title">Cart</h3>
               <div className="cart-product-wrapper">
                 <div className="cart-product-container  ps-scroll">
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/01.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Dark Brown Leather Watch
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="cart-count">2 x </span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/02.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">Dining Chair</a>
-                      </h5>
-                      <p>
-                        <span className="cart-count">2 x </span>{" "}
-                        <span className="discounted-price">$220.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/03.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Creative Wooden Stand
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="cart-count">2 x </span>{" "}
-                        <span className="discounted-price">$80.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/01.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Dark Brown Leather Watch
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="cart-count">2 x </span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
-                  {/*=======  single cart product  =======*/}
-                  <div className="single-cart-product">
-                    <span className="cart-close-icon">
-                      <a href="#">
-                        <i className="ti-close" />
-                      </a>
-                    </span>
-                    <div className="image">
-                      <a href="shop-product-basic.html">
-                        <img
-                          src="assets/images/cart-product-image/02.jpg"
-                          className="img-fluid"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="content">
-                      <h5>
-                        <a href="shop-product-basic.html">
-                          Creative Wooden Stand
-                        </a>
-                      </h5>
-                      <p>
-                        <span className="cart-count">2 x </span>{" "}
-                        <span className="discounted-price">$180.00</span>
-                      </p>
-                    </div>
-                  </div>
-                  {/*=======  End of single cart product  =======*/}
+                  {renderCartItems()}
                 </div>
                 {/*=======  subtotal calculation  =======*/}
                 <p className="cart-subtotal">
                   <span className="subtotal-title">Subtotal:</span>
-                  <span className="subtotal-amount">$200.00</span>
+                  <span className="subtotal-amount">
+                    £{calculateTotal(cartArr)}
+                  </span>
                 </p>
                 {/*=======  End of subtotal calculation  =======*/}
                 {/*=======  cart buttons  =======*/}
@@ -665,7 +574,7 @@ const Layout = ({ children }) => {
                 {/*=======  End of cart buttons  =======*/}
                 {/*=======  free shipping text  =======*/}
                 <p className="free-shipping-text">
-                  Free Shipping on All Orders Over $100!
+                  Free Shipping on All Orders!
                 </p>
                 {/*=======  End of free shipping text  =======*/}
               </div>
