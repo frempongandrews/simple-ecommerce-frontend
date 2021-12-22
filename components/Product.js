@@ -1,9 +1,18 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
-import { generateShorterProductTitle } from "../lib/helpers";
+import { generateShorterProductTitle, centsToPounds } from "../lib/helpers";
+import { useContext } from "react";
+import { ADD_PRODUCT_TO_CART, AppContext } from "../context/AppContext";
 // shop-product-fullwidth.html
 
 const Product = ({ product, message }) => {
+  const { state, dispatch } = useContext(AppContext);
+  const onAddProductToCart = () => {
+    dispatch({
+      type: ADD_PRODUCT_TO_CART,
+      product,
+    });
+  };
   return (
     <div style={{ minHeight: "80vh" }}>
       {/*=======  breadcrumb area =======*/}
@@ -129,13 +138,15 @@ const Product = ({ product, message }) => {
                         {/*=======  End of shop product rating  =======*/}
                         {/*=======  shop product title  =======*/}
                         <div className="shop-product__title mb-15">
-                          <h2>High waist trousers</h2>
+                          <h2>{product?.title}</h2>
                         </div>
                         {/*=======  End of shop product title  =======*/}
                         {/*=======  shop product price  =======*/}
                         <div className="shop-product__price mb-30">
-                          <span className="main-price discounted">$160.00</span>
-                          <span className="discounted-price">$180.00</span>
+                          {/*<span className="main-price discounted">$160.00</span>*/}
+                          <span className="discounted-price">
+                            £{centsToPounds(product?.price)}
+                          </span>
                         </div>
                         {/*=======  End of shop product price  =======*/}
                         {/*=======  shop product short description  =======*/}
@@ -199,7 +210,10 @@ const Product = ({ product, message }) => {
                         {/*=======  End of shop product quantity block  =======*/}
                         {/*=======  shop product buttons  =======*/}
                         <div className="shop-product__buttons mb-40">
-                          <a className="lezada-button lezada-button--medium">
+                          <a
+                            className="lezada-button lezada-button--medium"
+                            onClick={onAddProductToCart}
+                          >
                             add to cart
                           </a>
                           {/*<a*/}
