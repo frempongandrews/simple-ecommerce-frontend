@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   AppContext,
   HIDE_CART,
+  REMOVE_PRODUCT_FROM_CART,
   SET_CART_ARR,
   SHOW_CART,
 } from "../context/AppContext";
@@ -31,11 +32,21 @@ const Layout = ({ children }) => {
     });
   };
 
+  const onRemoveProductFromCart = (productId) => {
+    dispatch({
+      type: REMOVE_PRODUCT_FROM_CART,
+      productId,
+    });
+  };
+
   const renderCartItems = () => {
     return cartArr.map((prodObj) => {
       return (
         <div className="single-cart-product" key={prodObj?.product?.id}>
-          <span className="cart-close-icon">
+          <span
+            className="cart-close-icon"
+            onClick={() => onRemoveProductFromCart(prodObj.product.id)}
+          >
             <a>
               <i className="ti-close" />
             </a>

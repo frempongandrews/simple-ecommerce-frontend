@@ -76,6 +76,28 @@ const appReducer = (state = initialState, action) => {
         }),
       };
 
+    case REMOVE_PRODUCT_FROM_CART:
+      const updatedCartObj = {
+        ...state.cartObj,
+      };
+      delete updatedCartObj[action.productId];
+      // update localStorage
+      const updatedCartArr = state.cartArr.filter((prodObj) => {
+        return prodObj.product.id !== action.productId;
+      });
+      window.localStorage.setItem("cart", JSON.stringify(updatedCartArr));
+      return {
+        ...state,
+        cartArr: [...updatedCartArr],
+        // cartObj: {
+        //   ...state.cartObj,
+        //   [action.productId]: undefined,
+        // },
+        cartObj: {
+          ...updatedCartObj,
+        },
+      };
+
     case SET_CART_ARR:
       const newCartObjState = {};
       action.cart.map((prodObj) => {

@@ -1,0 +1,3 @@
+Todo:
+[x] Add prod to cart
+[] make API calls when add and remove product from cart

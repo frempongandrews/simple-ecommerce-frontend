@@ -69,7 +69,14 @@ const Cart = () => {
                       </td>
                       <td className="product-quantity">
                         <div className="pro-qty d-inline-block mx-0">
-                          <input type="text" defaultValue={1} />
+                          {/*<input type="number" step={1} defaultValue={1} />*/}
+                          <select name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
                         </div>
                       </td>
                       <td className="total-price">
@@ -100,7 +107,14 @@ const Cart = () => {
                       </td>
                       <td className="product-quantity">
                         <div className="pro-qty d-inline-block mx-0">
-                          <input type="text" defaultValue={1} />
+                          {/*<input type="number" step={1} defaultValue={1} />*/}
+                          <select name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
                         </div>
                       </td>
                       <td className="total-price">
@@ -131,7 +145,20 @@ const Cart = () => {
                       </td>
                       <td className="product-quantity">
                         <div className="pro-qty d-inline-block mx-0">
-                          <input type="text" defaultValue={1} />
+                          {/*<input*/}
+                          {/*  type="number"*/}
+                          {/*  step={1}*/}
+                          {/*  defaultValue={1}*/}
+                          {/*  min={1}*/}
+                          {/*  max={99}*/}
+                          {/*/>*/}
+                          <select name="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
                         </div>
                       </td>
                       <td className="total-price">
@@ -148,42 +175,43 @@ const Cart = () => {
               </div>
               {/*=======  End of cart table  =======*/}
             </div>
-            <div className="col-lg-12 mb-80">
-              {/*=======  coupon area  =======*/}
-              <div className="cart-coupon-area pb-30">
-                <div className="row align-items-center">
-                  <div className="col-lg-6 mb-md-30 mb-sm-30">
-                    {/*=======  coupon form  =======*/}
-                    <div className="lezada-form coupon-form">
-                      {/*<form action="#">*/}
-                      {/*  <div className="row">*/}
-                      {/*    <div className="col-md-7 mb-sm-10">*/}
-                      {/*      <input*/}
-                      {/*        type="text"*/}
-                      {/*        placeholder="Enter your coupon code"*/}
-                      {/*      />*/}
-                      {/*    </div>*/}
-                      {/*    <div className="col-md-5">*/}
-                      {/*      <button className="lezada-button lezada-button--medium">*/}
-                      {/*        apply coupon*/}
-                      {/*      </button>*/}
-                      {/*    </div>*/}
-                      {/*  </div>*/}
-                      {/*</form>*/}
-                    </div>
-                    {/*=======  End of coupon form  =======*/}
-                  </div>
-                  <div className="col-lg-6 text-left text-lg-right">
-                    {/*=======  update cart button  =======*/}
-                    <button className="lezada-button lezada-button--medium">
-                      update cart
-                    </button>
-                    {/*=======  End of update cart button  =======*/}
-                  </div>
-                </div>
-              </div>
-              {/*=======  End of coupon area  =======*/}
-            </div>
+
+            {/*<div className="col-lg-12 mb-80">*/}
+            {/*  /!*=======  coupon area  =======*!/*/}
+            {/*  <div className="cart-coupon-area pb-30">*/}
+            {/*    <div className="row align-items-center">*/}
+            {/*      <div className="col-lg-6 mb-md-30 mb-sm-30">*/}
+            {/*        /!*=======  coupon form  =======*!/*/}
+            {/*        <div className="lezada-form coupon-form">*/}
+            {/*          /!*<form action="#">*!/*/}
+            {/*          /!*  <div className="row">*!/*/}
+            {/*          /!*    <div className="col-md-7 mb-sm-10">*!/*/}
+            {/*          /!*      <input*!/*/}
+            {/*          /!*        type="text"*!/*/}
+            {/*          /!*        placeholder="Enter your coupon code"*!/*/}
+            {/*          /!*      />*!/*/}
+            {/*          /!*    </div>*!/*/}
+            {/*          /!*    <div className="col-md-5">*!/*/}
+            {/*          /!*      <button className="lezada-button lezada-button--medium">*!/*/}
+            {/*          /!*        apply coupon*!/*/}
+            {/*          /!*      </button>*!/*/}
+            {/*          /!*    </div>*!/*/}
+            {/*          /!*  </div>*!/*/}
+            {/*          /!*</form>*!/*/}
+            {/*        </div>*/}
+            {/*        /!*=======  End of coupon form  =======*!/*/}
+            {/*      </div>*/}
+            {/*      <div className="col-lg-6 text-left text-lg-right">*/}
+            {/*        /!*=======  update cart button  =======*!/*/}
+            {/*        /!*<button className="lezada-button lezada-button--medium">*!/*/}
+            {/*        /!*  update cart*!/*/}
+            {/*        /!*</button>*!/*/}
+            {/*        /!*=======  End of update cart button  =======*!/*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*  /!*=======  End of coupon area  =======*!/*/}
+            {/*</div>*/}
             <div className="col-xl-4 offset-xl-8 col-lg-5 offset-lg-7">
               <div className="cart-calculation-area">
                 <h2 className="mb-40">Cart totals</h2>
