@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Link from "next/link";
 import { getProductById } from "../../lib/api";
 import Product from "../../components/Product";
 

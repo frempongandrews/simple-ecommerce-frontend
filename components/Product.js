@@ -1,16 +1,30 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { generateShorterProductTitle, centsToPounds } from "../lib/helpers";
-import { useContext } from "react";
-import { ADD_PRODUCT_TO_CART, AppContext } from "../context/AppContext";
+import { useContext, useEffect, useRef } from "react";
+import {
+  ADD_PRODUCT_TO_CART,
+  AppContext,
+  SHOW_CART,
+} from "../context/AppContext";
+import { usePrevious } from "../hooks";
 // shop-product-fullwidth.html
 
 const Product = ({ product, message }) => {
   const { state, dispatch } = useContext(AppContext);
+  const oldState = usePrevious(state);
+  useEffect(() => {
+    console.log("********Old state", oldState);
+    console.log("*********New state", state);
+  });
+
   const onAddProductToCart = () => {
     dispatch({
       type: ADD_PRODUCT_TO_CART,
       product,
+    });
+    dispatch({
+      type: SHOW_CART,
     });
   };
   return (

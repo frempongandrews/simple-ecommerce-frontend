@@ -1,7 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { AppContext, HIDE_CART, SHOW_CART } from "../context/AppContext";
+import {
+  AppContext,
+  HIDE_CART,
+  SET_CART_ARR,
+  SHOW_CART,
+} from "../context/AppContext";
 import {
   centsToPounds,
   generateShorterProductTitle,
@@ -14,6 +19,7 @@ const Layout = ({ children }) => {
   const { state, dispatch } = useContext(AppContext);
   const { showCart, cartArr } = state;
   console.log("*********State", state);
+
   const onHideCart = () => {
     dispatch({
       type: HIDE_CART,
