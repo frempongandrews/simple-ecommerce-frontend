@@ -1,3 +1,4 @@
 Todo:
 [x] Add prod to cart
+[x] cart page
 [] make API calls when add and remove product from cart
