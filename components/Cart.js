@@ -68,10 +68,16 @@ const Cart = () => {
                 {/*<option value="9">9</option>*/}
                 {/*<option value="10">10</option>*/}
                 {new Array(10).fill(1).map((_el, index) => {
+                  console.log("********Index + 1", index + 1);
+                  // console.log(
+                  //   "******cartItem.quantity === index + 1",
+                  //   cartItem.quantity === index + 1
+                  // );
                   return (
                     <option
                       value={index + 1}
                       selected={cartItem.quantity === index + 1}
+                      key={index}
                     >
                       {index + 1}
                     </option>
@@ -308,7 +314,9 @@ const Cart = () => {
         </div>
       )}
 
-      <h2 style={{ textAlign: "center" }}>Your cart is empty</h2>
+      {cartArr.length === 0 && (
+        <h2 style={{ textAlign: "center" }}>Your cart is empty</h2>
+      )}
 
       {/*=====  End of cart page content  ======*/}
     </>

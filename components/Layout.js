@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
     });
   };
   const onShowCart = () => {
-    if (cartArr.length > 0) {
+    if (cartArr.length > 0 && router.pathname !== "/checkout") {
       dispatch({
         type: SHOW_CART,
       });

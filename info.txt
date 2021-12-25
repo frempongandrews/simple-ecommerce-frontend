@@ -4,6 +4,9 @@ Todo:
 [x] cart page
 [x] UPDATE_ITEM_QUANTITY_IN_CART - cart page - onItemQuantityChange
 [x] close side cart when route change is complete
+[x] checkout page not accessible when cart items is 0
+[] on checkout page remove ability to remove items in side cart => on /checkout
+when click on side cart icon => go to /cart page
 [] make API calls when add and remove product from cart
 
 
