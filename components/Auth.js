@@ -33,6 +33,11 @@ const Auth = () => {
 
   const onRegisterUser = async () => {
     setIsLoading(true);
+    setState({
+      ...state,
+      error: null,
+      message: "",
+    });
     const res = await registerUser({
       email: state.registerEmail,
       password: state.registerPassword,
