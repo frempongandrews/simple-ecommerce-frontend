@@ -213,10 +213,7 @@ const Home = ({ products }) => {
             <div className="col-lg-12">
               {/*=======  shop button  =======*/}
               <div className="shop-button text-center">
-                <a
-                  className="lezada-button lezada-button--medium lezada-button--icon--left"
-                  href="shop-left-sidebar.html"
-                >
+                <a className="lezada-button lezada-button--medium lezada-button--icon--left">
                   {" "}
                   <i className="icon-left ion-plus" /> Load more
                 </a>

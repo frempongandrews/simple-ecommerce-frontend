@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,6 +21,21 @@ const Layout = ({ children }) => {
   const { showCart, cartArr } = state;
   const router = useRouter();
   console.log("*********State", state);
+
+  useEffect(() => {
+    const handleRouteChangeCompleted = () => {
+      dispatch({
+        type: HIDE_CART,
+      });
+    };
+    router.events.on("routeChangeComplete", handleRouteChangeCompleted);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChangeCompleted);
+    };
+  }, []);
 
   const onHideCart = () => {
     dispatch({

@@ -2,7 +2,8 @@ Todo:
 [x] Add prod to cart
 [x] Remove prod from cart
 [x] cart page
-[x] ==> UPDATE_ITEM_QUANTITY_IN_CART - cart page - onItemQuantityChange
+[x] UPDATE_ITEM_QUANTITY_IN_CART - cart page - onItemQuantityChange
+[x] close side cart when route change is complete
 [] make API calls when add and remove product from cart
 
 
