@@ -1,7 +1,28 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
+import {
+  calculateTotal,
+  generateShortProductTitle,
+  centsToPounds,
+} from "../lib/helpers";
+
 // shop-checkout.html
 
-const Checkout = () => {
+const Checkout = ({ cartArr }) => {
+  const renderCartItems = () => {
+    return cartArr.map((cartItem) => {
+      return (
+        <li key={cartItem.product.id}>
+          {generateShortProductTitle({
+            title: cartItem.product.title,
+            length: 30,
+          })}{" "}
+          <span>x {cartItem.quantity}</span>{" "}
+          <span>{centsToPounds(cartItem.product.price)}</span>
+        </li>
+      );
+    });
+  };
   return (
     <>
       {/*=======  breadcrumb area =======*/}
@@ -37,7 +58,7 @@ const Checkout = () => {
             <div className="col-12">
               <div className="lezada-form">
                 {/* Checkout Form s*/}
-                <form action="#" className="checkout-form">
+                <form className="checkout-form">
                   <div className="row row-40">
                     <div className="col-lg-7 mb-20">
                       {/* Shipping Address */}
@@ -67,7 +88,11 @@ const Checkout = () => {
                           <div className="col-12 mb-20">
                             <label>Address*</label>
                             <input type="text" placeholder="Address line 1" />
-                            <input type="text" placeholder="Address line 2" />
+                            <input
+                              type="text"
+                              placeholder="Address line 2"
+                              style={{ marginTop: 30 }}
+                            />
                           </div>
                           <div className="col-md-6 col-12 mb-20">
                             <label>Country*</label>
@@ -107,59 +132,7 @@ const Checkout = () => {
                           </div>
                         </div>
                       </div>
-                      {/* Shipping Address */}
-                      <div id="shipping-form" className="mb-40">
-                        <h4 className="checkout-title">Shipping Address</h4>
-                        <div className="row">
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>First Name*</label>
-                            <input type="text" placeholder="First Name" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Last Name*</label>
-                            <input type="text" placeholder="Last Name" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Email Address*</label>
-                            <input type="email" placeholder="Email Address" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Phone no*</label>
-                            <input type="text" placeholder="Phone number" />
-                          </div>
-                          <div className="col-12 mb-20">
-                            <label>Company Name</label>
-                            <input type="text" placeholder="Company Name" />
-                          </div>
-                          <div className="col-12 mb-20">
-                            <label>Address*</label>
-                            <input type="text" placeholder="Address line 1" />
-                            <input type="text" placeholder="Address line 2" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Country*</label>
-                            <select className="nice-select">
-                              <option>Bangladesh</option>
-                              <option>China</option>
-                              <option>country</option>
-                              <option>India</option>
-                              <option>Japan</option>
-                            </select>
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Town/City*</label>
-                            <input type="text" placeholder="Town/City" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>State*</label>
-                            <input type="text" placeholder="State" />
-                          </div>
-                          <div className="col-md-6 col-12 mb-20">
-                            <label>Zip Code*</label>
-                            <input type="text" placeholder="Zip Code" />
-                          </div>
-                        </div>
-                      </div>
+                      {/* End Shipping Address */}
                     </div>
                     <div className="col-lg-5">
                       <div className="row">
@@ -171,31 +144,33 @@ const Checkout = () => {
                               Product <span>Total</span>
                             </h4>
                             <ul>
-                              <li>
-                                Cillum dolore tortor nisl X 01{" "}
-                                <span>$25.00</span>
-                              </li>
-                              <li>
-                                Auctor gravida pellentesque X 02{" "}
-                                <span>$50.00</span>
-                              </li>
-                              <li>
-                                Condimentum posuere consectetur X 01{" "}
-                                <span>$29.00</span>
-                              </li>
-                              <li>
-                                Habitasse dictumst elementum X 01{" "}
-                                <span>$10.00</span>
-                              </li>
+                              {renderCartItems()}
+                              {/*<li>*/}
+                              {/*  Cillum dolore tortor nisl X 01{" "}*/}
+                              {/*  <span>$25.00</span>*/}
+                              {/*</li>*/}
+                              {/*<li>*/}
+                              {/*  Auctor gravida pellentesque X 02{" "}*/}
+                              {/*  <span>$50.00</span>*/}
+                              {/*</li>*/}
+                              {/*<li>*/}
+                              {/*  Condimentum posuere consectetur X 01{" "}*/}
+                              {/*  <span>$29.00</span>*/}
+                              {/*</li>*/}
+                              {/*<li>*/}
+                              {/*  Habitasse dictumst elementum X 01{" "}*/}
+                              {/*  <span>$10.00</span>*/}
+                              {/*</li>*/}
                             </ul>
                             <p>
-                              Sub Total <span>$104.00</span>
+                              Sub Total <span>£{calculateTotal(cartArr)}</span>
                             </p>
                             <p>
-                              Shipping Fee <span>$00.00</span>
+                              Shipping Fee <span>Free</span>
                             </p>
                             <h4>
-                              Grand Total <span>$104.00</span>
+                              Grand Total{" "}
+                              <span>£{calculateTotal(cartArr)}</span>
                             </h4>
                           </div>
                         </div>
@@ -287,6 +262,7 @@ const Checkout = () => {
                           {/*  </div>*/}
                           {/*</div>*/}
                           <button
+                            type="button"
                             className="lezada-button lezada-button--medium mt-30"
                             style={{ position: "absolute", right: 15 }}
                           >
@@ -305,6 +281,10 @@ const Checkout = () => {
       {/*=====  End of checkout page content  ======*/}
     </>
   );
+};
+
+Checkout.propTypes = {
+  cartArr: PropTypes.array.isRequired,
 };
 
 export default Checkout;

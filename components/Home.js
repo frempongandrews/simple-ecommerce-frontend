@@ -253,7 +253,7 @@ const Home = ({ products }) => {
               {/*=======  instagram intro  =======*/}
               <div className="instagram-section-intro pl-50 pl-lg-50 pl-md-0 pl-sm-0 pl-xs-0 pl-xxs-0 mb-0 mb-lg-0 mb-md-50 mb-sm-50 mb-xs-50 mb-xxs-50">
                 <p>
-                  <a href="#">@lezada_shop</a>
+                  <a>@minimal_shop</a>
                 </p>
                 <h3>Follow us on Instagram</h3>
               </div>

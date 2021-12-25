@@ -1,7 +1,6 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Checkout from "../components/Checkout";
-import { AppContext } from "../context/AppContext";
 
 const CheckoutPage = () => {
   const router = useRouter();

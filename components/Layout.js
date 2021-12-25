@@ -348,7 +348,7 @@ const Layout = ({ children }) => {
             <div className="col footer-single-widget">
               {/*=======  single widget  =======*/}
               <div className="footer-subscription-widget">
-                <h2 className="footer-subscription-title">Subscribe.</h2>
+                <h2 className="footer-subscription-title">Follow us</h2>
                 <p className="subscription-subtitle">
                   Follow our social media to receive news on update.
                 </p>
