@@ -8,6 +8,8 @@ Todo:
 [x] on checkout page remove ability to remove items in side cart => on /checkout
 when click on side cart icon => go to /cart page
 [] register user
+[] verify user
 [] login user
+[] forgot password
 [] get current user on app mount
 [] make API calls when add and remove product from cart

@@ -1,7 +1,66 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { registerUser } from "../lib/api";
 // shop-customer-login.html
 
 const Auth = () => {
+  const [state, setState] = useState({
+    loginEmail: "",
+    loginPassword: "",
+    registerEmail: "",
+    registerPassword: "",
+    registerConfirmPassword: "",
+    // success message
+    message: "",
+    // object with error messages
+    error: null,
+    submittedForm: "",
+  });
+
+  // while form is submitting
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    console.log("********Auth state", state);
+  });
+
+  const onInputChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onRegisterUser = async () => {
+    setIsLoading(true);
+    const res = await registerUser({
+      email: state.registerEmail,
+      password: state.registerPassword,
+      confirmPassword: state.registerConfirmPassword,
+    });
+
+    if (res.status >= 400) {
+      setIsLoading(false);
+      setState({
+        ...state,
+        error: {
+          ...res.data,
+        },
+        message: "",
+        submittedForm: "register",
+      });
+      return;
+    }
+
+    setIsLoading(false);
+    setState({
+      ...state,
+      error: null,
+      message: res?.data?.message,
+      submittedForm: "register",
+    });
+  };
+
   return (
     <>
       <div className="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
@@ -26,6 +85,9 @@ const Auth = () => {
         </div>
       </div>
 
+      {JSON.stringify(state, null, 4)}
+      {isLoading && <h3>Loading...</h3>}
+
       {/*=============================================
     =            login page content         =
     =============================================*/}
@@ -45,13 +107,28 @@ const Auth = () => {
                       {/*=======  End of login title  =======*/}
                     </div>
                     <div className="col-lg-12 mb-60">
-                      <input type="text" placeholder="Email address" required />
+                      <input
+                        onChange={onInputChange}
+                        type="text"
+                        placeholder="Email address"
+                        name="loginEmail"
+                        required
+                      />
                     </div>
                     <div className="col-lg-12 mb-60">
-                      <input type="password" placeholder="Password" required />
+                      <input
+                        onChange={onInputChange}
+                        type="password"
+                        placeholder="Password"
+                        required
+                        name="loginPassword"
+                      />
                     </div>
                     <div className="col-lg-12 text-center mb-30">
-                      <button className="lezada-button lezada-button--medium">
+                      <button
+                        type="button"
+                        className="lezada-button lezada-button--medium"
+                      >
                         login
                       </button>
                     </div>
@@ -82,16 +159,92 @@ const Auth = () => {
                       </div>
                       {/*=======  End of Register title  =======*/}
                     </div>
+                    {state.submittedForm === "register" &&
+                      state?.error?.message && (
+                        <p style={{ fontSize: "0.8em", color: "red" }}>
+                          {state?.error?.message}
+                        </p>
+                      )}
+                    {state.submittedForm === "register" && state?.message && (
+                      <p
+                        style={{
+                          fontSize: "0.8em",
+                          color: "darkgreen",
+                          textAlign: "center",
+                        }}
+                      >
+                        {state?.message}
+                      </p>
+                    )}
                     <div className="col-lg-12 mb-60">
-                      <input type="text" placeholder="Email address" required />
+                      <input
+                        onChange={onInputChange}
+                        type="text"
+                        placeholder="Email address"
+                        required
+                        name="registerEmail"
+                      />
+                      {state.submittedForm === "register" &&
+                        state?.error?.email && (
+                          <p style={{ fontSize: "0.8em", color: "red" }}>
+                            {state?.error?.email}
+                          </p>
+                        )}
                     </div>
-                    <div className="col-lg-12 mb-60">
-                      <input type="password" placeholder="Password" required />
+                    <div
+                      className="col-lg-12 mb-60"
+                      style={{ display: "flex" }}
+                    >
+                      <div style={{ width: 120, flex: 1, marginRight: 30 }}>
+                        <input
+                          onChange={onInputChange}
+                          type="password"
+                          placeholder="Password"
+                          name="registerPassword"
+                          required
+                        />
+                        {state.submittedForm === "register" &&
+                          state?.error?.password && (
+                            <p style={{ fontSize: "0.8em", color: "red" }}>
+                              {state?.error?.password}
+                            </p>
+                          )}
+                      </div>
+
+                      <div style={{ width: 120, flex: 1 }}>
+                        <input
+                          onChange={onInputChange}
+                          type="password"
+                          placeholder="Confirm password"
+                          name="registerConfirmPassword"
+                          required
+                        />
+                        {state.submittedForm === "register" &&
+                          state?.error?.confirmPassword && (
+                            <p style={{ fontSize: "0.8em", color: "red" }}>
+                              {state?.error?.confirmPassword}
+                            </p>
+                          )}
+                      </div>
                     </div>
                     <div className="col-lg-12 text-center mb-30">
-                      <button className="lezada-button lezada-button--medium">
+                      <button
+                        type="button"
+                        className="lezada-button lezada-button--medium"
+                        onClick={onRegisterUser}
+                        disabled={isLoading}
+                      >
                         Register
                       </button>
+                      <p style={{ marginTop: 20 }}>
+                        Already registered but not verified? Please verify your
+                        email{" "}
+                        <span>
+                          <Link href={`/verify-email`}>
+                            <a style={{ fontWeight: "bold" }}>here</a>
+                          </Link>
+                        </span>
+                      </p>
                     </div>
                     {/*<div className="col-lg-12">*/}
                     {/*  <input type="checkbox" />{" "}*/}
