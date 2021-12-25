@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   AppContext,
   HIDE_CART,
   REMOVE_PRODUCT_FROM_CART,
-  SET_CART_ARR,
   SHOW_CART,
 } from "../context/AppContext";
 import {
@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
   console.log("**********centsToPounds ==> ", centsToPounds(1000));
   const { state, dispatch } = useContext(AppContext);
   const { showCart, cartArr } = state;
+  const router = useRouter();
   console.log("*********State", state);
 
   const onHideCart = () => {
@@ -27,12 +28,27 @@ const Layout = ({ children }) => {
     });
   };
   const onShowCart = () => {
-    dispatch({
-      type: SHOW_CART,
-    });
+    if (cartArr.length > 0) {
+      dispatch({
+        type: SHOW_CART,
+      });
+      return;
+    }
+    router.push("/cart");
   };
 
   const onRemoveProductFromCart = (productId) => {
+    if (cartArr.length === 1) {
+      dispatch({
+        type: REMOVE_PRODUCT_FROM_CART,
+        productId,
+      });
+      dispatch({
+        type: HIDE_CART,
+      });
+      return;
+    }
+
     dispatch({
       type: REMOVE_PRODUCT_FROM_CART,
       productId,

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import Layout from "./Layout";
+import { centsToPounds, generateShorterProductTitle } from "../lib/helpers";
 // index-accessories.html
 const Home = ({ products }) => {
   const renderProducts = () => {
@@ -18,10 +19,14 @@ const Home = ({ products }) => {
             <span className="number">0{i + 1}/</span>
             <img src={product.image} className="img-fluid" alt="" />
             <div className="accessories-single-category__content">
-              <p className="name">Minimal Leather Watch</p>
+              <p className="name">
+                {generateShorterProductTitle(product.title)}
+              </p>
               <p className="price">
-                <span className="main-price discounted">$100.00</span>{" "}
-                <span className="discounted-price">$80.00</span>
+                {/*<span className="main-price discounted">$100.00</span>{" "}*/}
+                <span className="discounted-price">
+                  £{centsToPounds(product.price)}
+                </span>
               </p>
             </div>
           </div>

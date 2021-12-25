@@ -4,7 +4,8 @@ export const SHOW_CART = "SHOW_CART";
 export const HIDE_CART = "HIDE_CART";
 export const ADD_PRODUCT_TO_CART = "ADD_PRODUCT_TO_CART";
 export const REMOVE_PRODUCT_FROM_CART = "REMOVE_PRODUCT_FROM_CART";
-export const SET_CART_ARR = "";
+export const SET_CART_ARR = "SET_CART_ARR";
+export const UPDATE_ITEM_QUANTITY_IN_CART = "UPDATE_ITEM_QUANTITY_IN_CART";
 
 export const AppContext = createContext();
 
@@ -111,6 +112,17 @@ const appReducer = (state = initialState, action) => {
         },
       };
 
+    case UPDATE_ITEM_QUANTITY_IN_CART:
+      return {
+        ...state,
+        cartArr: state.cartArr.map((cartObj) => {
+          if (cartObj.product.id === action.payload.product.id) {
+            cartObj.quantity = action.payload.quantity;
+          }
+          return cartObj;
+        }),
+      };
+
     default:
       return state;
   }
@@ -120,6 +132,7 @@ const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
   useEffect(() => {
     // todo: get current user - if user => set user.cart to localstorage
+    // todo: empty localStorage cart when logout
     // todo: if no user, load cart from localstorage
     // load cart
     const cartArr = JSON.parse(window.localStorage.getItem("cart")) || [];
