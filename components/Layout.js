@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import {
   AppContext,
   HIDE_CART,
+  LOGOUT_USER,
   REMOVE_PRODUCT_FROM_CART,
   SHOW_CART,
 } from "../context/AppContext";
@@ -16,6 +17,7 @@ import {
   getCartItemsNumber,
 } from "../lib/helpers";
 import "react-toastify/dist/ReactToastify.min.css";
+import { logoutUser } from "../lib/api";
 
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(AppContext);
@@ -115,6 +117,14 @@ const Layout = ({ children }) => {
           </div>
         </div>
       );
+    });
+  };
+
+  const onLogoutUser = async () => {
+    const res = await logoutUser();
+    toast.success(res?.data?.message || "Successfully logged out");
+    dispatch({
+      type: LOGOUT_USER,
     });
   };
   return (
@@ -225,9 +235,13 @@ const Layout = ({ children }) => {
 
                     {currentUser !== null && (
                       <div className="user-sub-menu">
-                        <p className="greeting">Hi, {currentUser.email}</p>
+                        <Link href={`/profile`}>
+                          <a>
+                            <p className="greeting">Hi, {currentUser.email}</p>
+                          </a>
+                        </Link>
                         <ul>
-                          <li>logout</li>
+                          <li onClick={onLogoutUser}>logout</li>
                         </ul>
                       </div>
                     )}

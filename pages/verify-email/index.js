@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { verifyRegisteredUser } from "../../lib/api";
+import { checkUserAuthStatus } from "../../lib/helpers";
 // shop-customer-login.html
 
 const VerifyUser = () => {
@@ -165,6 +166,10 @@ const VerifyUser = () => {
 
 VerifyUser.propTypes = {
   message: PropTypes.string,
+};
+
+export const getServerSideProps = async (ctx) => {
+  return await checkUserAuthStatus(ctx);
 };
 
 export default VerifyUser;

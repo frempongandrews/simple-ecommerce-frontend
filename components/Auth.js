@@ -137,7 +137,6 @@ const Auth = () => {
         </div>
       </div>
 
-      {JSON.stringify(state, null, 4)}
       {isLoading && <h3>Loading...</h3>}
 
       {/*=============================================

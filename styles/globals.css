@@ -24,6 +24,10 @@ body {
   padding-bottom: 10px;
 }
 
+.user-sub-menu a:hover{
+  color: #777777;
+}
+
 .user-login:hover .user-sub-menu{
   height: 150px;
   transition: all 0.3s ease;
