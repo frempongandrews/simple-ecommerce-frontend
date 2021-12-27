@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -14,11 +15,12 @@ import {
   calculateTotal,
   getCartItemsNumber,
 } from "../lib/helpers";
-import { verifyRegisteredUser } from "../lib/api";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(AppContext);
   const { showCart, cartArr } = state;
+  const currentUser = state.currentUser;
   const router = useRouter();
   console.log("*********State", state);
   // verify registered user
@@ -117,6 +119,18 @@ const Layout = ({ children }) => {
   };
   return (
     <div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -193,13 +207,36 @@ const Layout = ({ children }) => {
                   {/*</div>*/}
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
-                  <div className="single-icon user-login">
-                    <Link href={`/auth`}>
-                      <a>
-                        {/*<i className="ion-android-person" />*/}
-                        Register / Login
-                      </a>
-                    </Link>
+                  <div
+                    className="single-icon user-login"
+                    style={{ position: "relative" }}
+                  >
+                    {currentUser !== null && (
+                      <i
+                        className="ion-android-person"
+                        style={{
+                          marginRight: 10,
+                          fontSize: 20,
+                          cursor: "pointer",
+                        }}
+                        title={currentUser?.email}
+                      />
+                    )}
+
+                    {currentUser !== null && (
+                      <div className="user-sub-menu">
+                        <p className="greeting">Hi, {currentUser.email}</p>
+                        <ul>
+                          <li>logout</li>
+                        </ul>
+                      </div>
+                    )}
+
+                    {!currentUser && (
+                      <Link href={`/auth`}>
+                        <a>Register / Login</a>
+                      </Link>
+                    )}
                   </div>
                   {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}

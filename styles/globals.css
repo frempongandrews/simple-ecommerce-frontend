@@ -6,6 +6,31 @@ body {
   min-width: 482px !important;
 }
 
+.user-sub-menu {
+  height: 0;
+  right: 0;
+  width: 250px;
+  position: absolute;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  /*text-align: right;*/
+  overflow: hidden;
+  background-color: #ffffff;
+  z-index: 999;
+}
+
+.user-sub-menu p.greeting{
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+.user-login:hover .user-sub-menu{
+  height: 150px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
 /** {*/
 /*  box-sizing: border-box;*/
 /*}*/

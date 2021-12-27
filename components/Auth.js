@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
-import { registerUser } from "../lib/api";
+import { useRouter } from "next/router";
+import { loginUser, registerUser } from "../lib/api";
+import { AppContext, LOGIN_USER } from "../context/AppContext";
+import { toast } from "react-toastify";
 // shop-customer-login.html
 
 const Auth = () => {
@@ -19,6 +22,9 @@ const Auth = () => {
 
   // while form is submitting
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const context = useContext(AppContext);
+  console.log("*********context", context);
 
   useEffect(() => {
     console.log("********Auth state", state);
@@ -64,6 +70,9 @@ const Auth = () => {
       message: res?.data?.message,
       submittedForm: "register",
     });
+    toast.success(
+      res?.data?.message || "Successfully registered - check your email"
+    );
   };
 
   const onLoginUser = async () => {
@@ -73,7 +82,35 @@ const Auth = () => {
       error: null,
       message: "",
     });
-    // const res = awai
+    const res = await loginUser({
+      email: state.loginEmail,
+      password: state.loginPassword,
+    });
+    if (res.status >= 400) {
+      setIsLoading(false);
+      setState({
+        ...state,
+        error: {
+          ...res.data,
+        },
+        message: "",
+        submittedForm: "login",
+      });
+      return;
+    }
+    toast.success(res?.data?.message || "Successfully logged in");
+    context.dispatch({
+      type: LOGIN_USER,
+      user: res?.data?.user,
+    });
+    setIsLoading(false);
+    router.push("/");
+    // setState({
+    //   ...state,
+    //   error: null,
+    //   message: res?.data?.message,
+    //   submittedForm: "login",
+    // });
   };
 
   return (
@@ -100,6 +137,7 @@ const Auth = () => {
         </div>
       </div>
 
+      {JSON.stringify(state, null, 4)}
       {isLoading && <h3>Loading...</h3>}
 
       {/*=============================================
@@ -110,7 +148,7 @@ const Auth = () => {
           <div className="row">
             <div className="col-lg-6 mb-md-50 mb-sm-50">
               <div className="lezada-form login-form">
-                <form action="#">
+                <form>
                   <div className="row">
                     <div className="col-lg-12">
                       {/*=======  login title  =======*/}
@@ -118,6 +156,30 @@ const Auth = () => {
                         <h2 className="mb-20">Login</h2>
                         <p>Great to have you back!</p>
                       </div>
+
+                      {state.submittedForm === "login" &&
+                        state?.error?.message && (
+                          <p
+                            style={{
+                              fontSize: "0.8em",
+                              color: "red",
+                              marginBottom: 20,
+                            }}
+                          >
+                            {state?.error?.message}
+                          </p>
+                        )}
+                      {state.submittedForm === "login" && state?.message && (
+                        <p
+                          style={{
+                            fontSize: "0.8em",
+                            color: "darkgreen",
+                            textAlign: "center",
+                          }}
+                        >
+                          {state?.message}
+                        </p>
+                      )}
                       {/*=======  End of login title  =======*/}
                     </div>
                     <div className="col-lg-12 mb-60">
@@ -128,6 +190,12 @@ const Auth = () => {
                         name="loginEmail"
                         required
                       />
+                      {state?.error?.email &&
+                        state?.submittedForm === "login" && (
+                          <p style={{ fontSize: "0.8em", color: "red" }}>
+                            {state?.error?.email}
+                          </p>
+                        )}
                     </div>
                     <div className="col-lg-12 mb-60">
                       <input
@@ -137,11 +205,18 @@ const Auth = () => {
                         required
                         name="loginPassword"
                       />
+                      {state?.error?.password &&
+                        state?.submittedForm === "login" && (
+                          <p style={{ fontSize: "0.8em", color: "red" }}>
+                            {state?.error?.password}
+                          </p>
+                        )}
                     </div>
                     <div className="col-lg-12 text-center mb-30">
                       <button
                         type="button"
                         className="lezada-button lezada-button--medium"
+                        onClick={onLoginUser}
                       >
                         login
                       </button>

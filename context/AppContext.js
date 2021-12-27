@@ -1,12 +1,14 @@
 import { createContext, useReducer, useEffect } from "react";
 import { useRouter } from "next/router";
-import { verifyRegisteredUser } from "../lib/api";
 export const SHOW_CART = "SHOW_CART";
 export const HIDE_CART = "HIDE_CART";
 export const ADD_PRODUCT_TO_CART = "ADD_PRODUCT_TO_CART";
 export const REMOVE_PRODUCT_FROM_CART = "REMOVE_PRODUCT_FROM_CART";
 export const SET_CART_ARR = "SET_CART_ARR";
 export const UPDATE_ITEM_QUANTITY_IN_CART = "UPDATE_ITEM_QUANTITY_IN_CART";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const SET_USER = "SET_USER";
 
 export const AppContext = createContext();
 
@@ -15,10 +17,29 @@ const initialState = {
   cartArr: [],
   // use product id as key
   cartObj: {},
+  currentUser: null,
 };
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOGIN_USER:
+      return {
+        ...state,
+        currentUser: action.user,
+      };
+
+    case LOGOUT_USER:
+      return {
+        ...state,
+        currentUser: null,
+      };
+
+    case SET_USER:
+      return {
+        ...state,
+        currentUser: action.user,
+      };
+
     case SHOW_CART:
       return {
         ...state,
@@ -131,8 +152,6 @@ const appReducer = (state = initialState, action) => {
 
 const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
-  const router = useRouter();
-  console.log("********Router in AppContextProvider", router);
 
   useEffect(() => {
     // todo: get current user - if user => set user.cart to localstorage

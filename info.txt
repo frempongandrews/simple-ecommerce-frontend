@@ -10,7 +10,9 @@ when click on side cart icon => go to /cart page
 [x] register user
 [x] verify user
 [] ===> verify user on mount - verify on mount layout component
-[] login user
+[x] login user
+[] get current user on app mount (in AppContext)
+[] logout user
 [] forgot password
 [] get current user on app mount
 [] make API calls when add and remove product from cart
