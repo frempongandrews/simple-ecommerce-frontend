@@ -14,13 +14,14 @@ import {
   calculateTotal,
   getCartItemsNumber,
 } from "../lib/helpers";
+import { verifyRegisteredUser } from "../lib/api";
 
 const Layout = ({ children }) => {
-  console.log("**********centsToPounds ==> ", centsToPounds(1000));
   const { state, dispatch } = useContext(AppContext);
   const { showCart, cartArr } = state;
   const router = useRouter();
   console.log("*********State", state);
+  // verify registered user
 
   useEffect(() => {
     const handleRouteChangeCompleted = () => {

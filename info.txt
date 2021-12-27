@@ -7,8 +7,9 @@ Todo:
 [x] checkout page not accessible when cart items is 0
 [x] on checkout page remove ability to remove items in side cart => on /checkout
 when click on side cart icon => go to /cart page
-[] register user
-[] verify user
+[x] register user
+[x] verify user
+[] ===> verify user on mount - verify on mount layout component
 [] login user
 [] forgot password
 [] get current user on app mount

@@ -66,6 +66,16 @@ const Auth = () => {
     });
   };
 
+  const onLoginUser = async () => {
+    setIsLoading(true);
+    setState({
+      ...state,
+      error: null,
+      message: "",
+    });
+    // const res = awai
+  };
+
   return (
     <>
       <div className="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
@@ -90,7 +100,6 @@ const Auth = () => {
         </div>
       </div>
 
-      {JSON.stringify(state, null, 4)}
       {isLoading && <h3>Loading...</h3>}
 
       {/*=============================================

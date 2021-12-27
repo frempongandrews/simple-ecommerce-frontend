@@ -1,17 +1,70 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { verifyRegisteredUser } from "../../lib/api";
 // shop-customer-login.html
 
 const VerifyUser = () => {
-  const router = useRouter();
-  console.log("*********Router", router);
-  const { code, email } = router.query;
-  let canCheckCode = code && email;
-  let [isCheckingCode, setIsCheckingCode] = useState(false);
+  // console.log("*********Router", router);
+  const [state, setState] = useState({
+    isVerifyingUser: false,
+    isFinishedVerifyingUser: false,
+    // success
+    message: "",
+    error: null,
+  });
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    verificationCode: "",
+  });
+
   useEffect(() => {
-    // todo: make call to check if code is valid
+    console.log("**********Verify email mounted");
   }, []);
+
+  const onInputChange = (e) => {
+    setInputValues({
+      ...inputValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onVerifyRegisteredUser = async () => {
+    console.log("**********onVerifyRegisteredUser running");
+    setState({
+      ...state,
+      isVerifyingUser: true,
+      isFinishedVerifyingUser: false,
+      message: "",
+      error: null,
+    });
+    const res = await verifyRegisteredUser({
+      email: inputValues.email,
+      verificationCode: inputValues.verificationCode,
+    });
+    // error
+    if (res.status >= 400) {
+      setState({
+        ...state,
+        isVerifyingUser: false,
+        isFinishedVerifyingUser: true,
+        message: res?.data?.message,
+        error: {
+          ...res.data,
+        },
+      });
+      return;
+    }
+    // success
+    setState({
+      ...state,
+      isVerifyingUser: false,
+      isFinishedVerifyingUser: true,
+      message: res?.data?.message,
+      error: null,
+    });
+  };
   return (
     <>
       <div className="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
@@ -43,49 +96,64 @@ const VerifyUser = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 mb-md-50 mb-sm-50">
-              {canCheckCode && <p>Loading...</p>}
-
-              {!canCheckCode && (
-                <div
-                  className="lezada-form login-form"
-                  style={{ backgroundColor: "white" }}
-                >
-                  <form action="#">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        {/*=======  login title  =======*/}
-                        <div className="section-title section-title--login text-center mb-50">
-                          <h2 className="mb-20">Verify your email</h2>
-                          <p>Please verify your email</p>
-                        </div>
-                        {/*=======  End of login title  =======*/}
+              {state.isVerifyingUser && <h4>Verifying...</h4>}
+              {state.message && <h3>{state.message}</h3>}
+              <div
+                className="lezada-form login-form"
+                style={{ backgroundColor: "white" }}
+              >
+                <form action="#">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      {/*=======  login title  =======*/}
+                      <div className="section-title section-title--login text-center mb-50">
+                        <h2 className="mb-20">Verify your email</h2>
+                        <p>Please verify your email</p>
                       </div>
-                      <div className="col-lg-12 mb-60">
-                        <input
-                          type="text"
-                          placeholder="Email address"
-                          required
-                        />
-                      </div>
-                      <div className="col-lg-12 mb-60">
-                        <input
-                          type="text"
-                          placeholder="verification code"
-                          required
-                        />
-                      </div>
-                      <div className="col-lg-12 text-center mb-30">
-                        <button
-                          type="button"
-                          className="lezada-button lezada-button--medium"
-                        >
-                          verify
-                        </button>
-                      </div>
+                      {/*=======  End of login title  =======*/}
                     </div>
-                  </form>
-                </div>
-              )}
+                    <div className="col-lg-12 mb-60">
+                      <input
+                        type="text"
+                        placeholder="Email address"
+                        name="email"
+                        value={inputValues.email}
+                        onChange={onInputChange}
+                        required
+                      />
+                      {state?.error?.email && (
+                        <p style={{ color: "darkred", fontSize: "0.8em" }}>
+                          {state?.error?.email}
+                        </p>
+                      )}
+                    </div>
+                    <div className="col-lg-12 mb-60">
+                      <input
+                        type="text"
+                        placeholder="verification code"
+                        name="verificationCode"
+                        value={inputValues.verificationCode}
+                        onChange={onInputChange}
+                        required
+                      />
+                      {state?.error?.verificationCode && (
+                        <p style={{ color: "darkred", fontSize: "0.8em" }}>
+                          {state?.error?.verificationCode}
+                        </p>
+                      )}
+                    </div>
+                    <div className="col-lg-12 text-center mb-30">
+                      <button
+                        type="button"
+                        className="lezada-button lezada-button--medium"
+                        onClick={onVerifyRegisteredUser}
+                      >
+                        verify
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -93,6 +161,10 @@ const VerifyUser = () => {
       {/*=====  End of login content  ======*/}
     </>
   );
+};
+
+VerifyUser.propTypes = {
+  message: PropTypes.string,
 };
 
 export default VerifyUser;
