@@ -1,5 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
 import { useRouter } from "next/router";
+import { getCurrentUser } from "../lib/api";
 export const SHOW_CART = "SHOW_CART";
 export const HIDE_CART = "HIDE_CART";
 export const ADD_PRODUCT_TO_CART = "ADD_PRODUCT_TO_CART";
@@ -157,6 +158,15 @@ const AppContextProvider = ({ children }) => {
     // todo: get current user - if user => set user.cart to localstorage
     // todo: empty localStorage cart when logout
     // todo: if no user, load cart from localstorage
+
+    // always returns user or null
+    getCurrentUser().then((res) => {
+      dispatch({
+        type: LOGIN_USER,
+        user: res.data.user,
+      });
+    });
+
     // load cart
     const cartArr = JSON.parse(window.localStorage.getItem("cart")) || [];
     dispatch({
