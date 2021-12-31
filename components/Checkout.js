@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import {
@@ -5,10 +6,25 @@ import {
   generateShortProductTitle,
   centsToPounds,
 } from "../lib/helpers";
+import { checkoutCart } from "../lib/api";
 
 // shop-checkout.html
 
 const Checkout = ({ cartArr }) => {
+  const [state, setState] = useState({
+    firstName: "Andrews",
+    lastName: "Frempong",
+    email: "frempongandrews@yahoo.com",
+    phoneNumber: "07466964068",
+    addressLine1: "14 whitworth street",
+    addressLine2: "flat 4",
+    city: "Manchester",
+    country: "U.K",
+    postcode: "M1 3BS",
+    // for res from server
+    error: null,
+    message: "",
+  });
   const renderCartItems = () => {
     return cartArr.map((cartItem) => {
       return (
@@ -22,6 +38,27 @@ const Checkout = ({ cartArr }) => {
         </li>
       );
     });
+  };
+
+  const onInputChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onCheckout = async () => {
+    const cart = JSON.parse(window.localStorage.getItem("cart"));
+    const inputValues = {
+      ...state,
+    };
+    delete inputValues.error;
+    delete inputValues.message;
+
+    const res = await checkoutCart({ cart, inputValues });
+    const url = res?.data?.url;
+    // console.log("**********Stripe checkout res", res);
+    window.location = url;
   };
   return (
     <>
@@ -67,19 +104,43 @@ const Checkout = ({ cartArr }) => {
                         <div className="row">
                           <div className="col-md-6 col-12 mb-20">
                             <label>First Name*</label>
-                            <input type="text" placeholder="First Name" />
+                            <input
+                              type="text"
+                              placeholder="First Name"
+                              name="firstName"
+                              value={state.firstName}
+                              onChange={onInputChange}
+                            />
                           </div>
                           <div className="col-md-6 col-12 mb-20">
                             <label>Last Name*</label>
-                            <input type="text" placeholder="Last Name" />
+                            <input
+                              type="text"
+                              placeholder="Last Name"
+                              name="lastName"
+                              value={state.lastName}
+                              onChange={onInputChange}
+                            />
                           </div>
                           <div className="col-md-6 col-12 mb-20">
                             <label>Email Address*</label>
-                            <input type="email" placeholder="Email Address" />
+                            <input
+                              type="email"
+                              placeholder="Email Address"
+                              name="email"
+                              value={state.email}
+                              onChange={onInputChange}
+                            />
                           </div>
                           <div className="col-md-6 col-12 mb-20">
-                            <label>Phone no*</label>
-                            <input type="text" placeholder="Phone number" />
+                            <label>Phone no</label>
+                            <input
+                              type="text"
+                              placeholder="Phone number"
+                              name="phoneNumber"
+                              value={state.phoneNumber}
+                              onChange={onInputChange}
+                            />
                           </div>
                           {/*<div className="col-12 mb-20">*/}
                           {/*  <label>Company Name</label>*/}
@@ -87,11 +148,20 @@ const Checkout = ({ cartArr }) => {
                           {/*</div>*/}
                           <div className="col-12 mb-20">
                             <label>Address*</label>
-                            <input type="text" placeholder="Address line 1" />
+                            <input
+                              type="text"
+                              placeholder="Address line 1"
+                              name="addressLine1"
+                              value={state.addressLine1}
+                              onChange={onInputChange}
+                            />
                             <input
                               type="text"
                               placeholder="Address line 2"
                               style={{ marginTop: 30 }}
+                              name="addressLine2"
+                              value={state.addressLine2}
+                              onChange={onInputChange}
                             />
                           </div>
                           <div className="col-md-6 col-12 mb-20">
@@ -102,7 +172,13 @@ const Checkout = ({ cartArr }) => {
                           </div>
                           <div className="col-md-6 col-12 mb-20">
                             <label>Town/City*</label>
-                            <input type="text" placeholder="Town/City" />
+                            <input
+                              type="text"
+                              placeholder="Town/City"
+                              name="city"
+                              value={state.city}
+                              onChange={onInputChange}
+                            />
                           </div>
                           {/*<div className="col-md-6 col-12 mb-20">*/}
                           {/*  <label>County*</label>*/}
@@ -110,7 +186,13 @@ const Checkout = ({ cartArr }) => {
                           {/*</div>*/}
                           <div className="col-md-6 col-12 mb-20">
                             <label>PostCode*</label>
-                            <input type="text" placeholder="PostCode" />
+                            <input
+                              type="text"
+                              placeholder="PostCode"
+                              name="postCode"
+                              value={state.postcode}
+                              onChange={onInputChange}
+                            />
                           </div>
                           <div className="col-12 mb-20">
                             {/*<div className="check-box">*/}
@@ -265,6 +347,7 @@ const Checkout = ({ cartArr }) => {
                             type="button"
                             className="lezada-button lezada-button--medium mt-30"
                             style={{ position: "absolute", right: 15 }}
+                            onClick={onCheckout}
                           >
                             Place order
                           </button>

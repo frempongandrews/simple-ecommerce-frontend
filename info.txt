@@ -16,8 +16,14 @@ when click on side cart icon => go to /cart page
 [x] logout user
 [x] profile page
 [x] protect profile page
+[x] sign up stripe
+
+
 [] checkout stripe
 
+[x] PaymentCompletedPage: get session_id from query <= parse url
+[x] PaymentCompletedPage: then get session to customize page and call BE to update order to completed
+[] page transitions
 
 {OPTIONAL}
 [] forgot password

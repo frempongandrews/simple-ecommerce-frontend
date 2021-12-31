@@ -237,7 +237,7 @@ const Layout = ({ children }) => {
                       <div className="user-sub-menu">
                         <Link href={`/profile`}>
                           <a>
-                            <p className="greeting">Hi, {currentUser.email}</p>
+                            <p className="greeting">Hi, {currentUser?.email}</p>
                           </a>
                         </Link>
                         <ul>

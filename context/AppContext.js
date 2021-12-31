@@ -127,6 +127,7 @@ const appReducer = (state = initialState, action) => {
       action.cart.map((prodObj) => {
         newCartObjState[prodObj.product.id] = prodObj.product;
       });
+      window.localStorage.setItem("cart", JSON.stringify(action.cart));
       return {
         ...state,
         cartArr: [...action.cart],
@@ -136,14 +137,16 @@ const appReducer = (state = initialState, action) => {
       };
 
     case UPDATE_ITEM_QUANTITY_IN_CART:
+      const newCartArr = state.cartArr.map((cartObj) => {
+        if (cartObj.product.id === action.payload.product.id) {
+          cartObj.quantity = action.payload.quantity;
+        }
+        return cartObj;
+      });
+      window.localStorage.setItem("cart", JSON.stringify(newCartArr));
       return {
         ...state,
-        cartArr: state.cartArr.map((cartObj) => {
-          if (cartObj.product.id === action.payload.product.id) {
-            cartObj.quantity = action.payload.quantity;
-          }
-          return cartObj;
-        }),
+        cartArr: [...newCartArr],
       };
 
     default:
@@ -155,15 +158,11 @@ const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
   useEffect(() => {
-    // todo: get current user - if user => set user.cart to localstorage
-    // todo: empty localStorage cart when logout
-    // todo: if no user, load cart from localstorage
-
     // always returns user or null
     getCurrentUser().then((res) => {
       dispatch({
         type: LOGIN_USER,
-        user: res.data.user,
+        user: res?.data?.user,
       });
     });
 
