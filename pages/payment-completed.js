@@ -1,5 +1,4 @@
 import { useEffect, useState, useContext } from "react";
-import useIsMounted from "react-is-mounted-hook";
 import { useRouter } from "next/router";
 import { getStripeSessionOrderDetails } from "../lib/api";
 import Link from "next/link";
@@ -11,7 +10,6 @@ import {
 import { AppContext, SET_CART_ARR } from "../context/AppContext";
 
 const PaymentCompleted = () => {
-  const isMounted = useIsMounted();
   const [completedOrder, setCompletedOrder] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
@@ -36,16 +34,14 @@ const PaymentCompleted = () => {
           setErrorMessage(res.data.message);
           return;
         }
-        if (isMounted()) {
-          setCompletedOrder(res.data.order);
-          dispatch({
-            type: SET_CART_ARR,
-            cart: [],
-          });
-        }
+        setCompletedOrder(res.data.order);
+        dispatch({
+          type: SET_CART_ARR,
+          cart: [],
+        });
       });
     }
-  }, [isMounted, stripeSessionID]);
+  }, [stripeSessionID]);
 
   const renderOrderItems = () => {
     const cartArr = completedOrder?.items.map((item) => {
@@ -90,7 +86,7 @@ const PaymentCompleted = () => {
     });
   };
 
-  if (!isMounted()) {
+  if (!stripeSessionID) {
     return null;
   }
 
