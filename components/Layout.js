@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Head from "next/head";
 import Link from "next/link";
@@ -24,10 +24,11 @@ const Layout = ({ children }) => {
   const { showCart, cartArr } = state;
   const currentUser = state.currentUser;
   const router = useRouter();
-  console.log("*********State", state);
-  // verify registered user
-
+  const [notificationMessage, setNotificationMessage] = useState("");
   useEffect(() => {
+    window.addEventListener("offline", handleInternetConnectionChange);
+    window.addEventListener("online", handleInternetConnectionChange);
+
     const handleRouteChangeCompleted = () => {
       dispatch({
         type: HIDE_CART,
@@ -36,11 +37,26 @@ const Layout = ({ children }) => {
     router.events.on("routeChangeComplete", handleRouteChangeCompleted);
 
     // If the component is unmounted, unsubscribe
-    // from the event with the `off` method:
+    // from the event:
     return () => {
       router.events.off("routeChangeComplete", handleRouteChangeCompleted);
+      window.removeEventListener("offline", handleInternetConnectionChange);
+      window.removeEventListener("online", handleInternetConnectionChange);
     };
   }, []);
+
+  const handleInternetConnectionChange = (e) => {
+    if (e.type === "offline") {
+      setNotificationMessage(
+        "You are offline. This page is cached and will remain available."
+      );
+      return;
+    }
+    if (e.type === "online") {
+      setNotificationMessage("");
+      window.location.reload();
+    }
+  };
 
   const onHideCart = () => {
     dispatch({
@@ -122,6 +138,21 @@ const Layout = ({ children }) => {
 
   const onLogoutUser = async () => {
     const res = await logoutUser();
+    if (res.status >= 400 && res.status < 500) {
+      toast.error(res?.data?.message || "Error logging out");
+      return;
+    }
+    if (res.status >= 500) {
+      console.log("*********onLogoutUser YESSSSS", res);
+      toast.error(
+        res?.data?.message ||
+          "Error logging out - Please check your internet connection"
+      );
+      return;
+    }
+    if (router.pathname === "/profile") {
+      router.push("/");
+    }
     toast.success(res?.data?.message || "Successfully logged out");
     dispatch({
       type: LOGOUT_USER,
@@ -129,6 +160,17 @@ const Layout = ({ children }) => {
   };
   return (
     <div>
+      {notificationMessage && (
+        <div
+          style={{
+            textAlign: "center",
+            padding: "10px 0",
+            backgroundColor: "#e3e8ee",
+          }}
+        >
+          {notificationMessage}
+        </div>
+      )}
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -140,7 +182,6 @@ const Layout = ({ children }) => {
         draggable
         pauseOnHover
       />
-
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

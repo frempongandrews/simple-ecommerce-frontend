@@ -23,7 +23,7 @@ export default function HomePage({ products, message }) {
 
 export const getStaticProps = async () => {
   const res = await getProducts();
-  if (res.status >= 400) {
+  if (res?.status >= 400) {
     return {
       props: {
         products: [],
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
       },
     };
   }
-  const { products } = res.data;
+  const products = res?.data?.products || [];
   console.log("*******Products", products);
   return {
     props: {

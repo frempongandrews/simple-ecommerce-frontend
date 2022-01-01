@@ -7,7 +7,9 @@ import { checkUserAuthStatus } from "../../lib/helpers";
 // shop-customer-login.html
 
 const VerifyUser = () => {
-  // console.log("*********Router", router);
+  const router = useRouter();
+  console.log("*********VerifyUser Router", router);
+  const { code, email } = router.query;
   const [state, setState] = useState({
     isVerifyingUser: false,
     isFinishedVerifyingUser: false,
@@ -22,7 +24,11 @@ const VerifyUser = () => {
 
   useEffect(() => {
     console.log("**********Verify email mounted");
-  }, []);
+    if (code && email) {
+      console.log("********Automatically very email");
+      onVerifyRegisteredUser({ email, verificationCode: code });
+    }
+  }, [code, email]);
 
   const onInputChange = (e) => {
     setInputValues({
@@ -31,7 +37,7 @@ const VerifyUser = () => {
     });
   };
 
-  const onVerifyRegisteredUser = async () => {
+  const onVerifyRegisteredUser = async ({ email, verificationCode }) => {
     console.log("**********onVerifyRegisteredUser running");
     setState({
       ...state,
@@ -41,8 +47,8 @@ const VerifyUser = () => {
       error: null,
     });
     const res = await verifyRegisteredUser({
-      email: inputValues.email,
-      verificationCode: inputValues.verificationCode,
+      email: email,
+      verificationCode: verificationCode,
     });
     // error
     if (res.status >= 400) {
@@ -147,7 +153,12 @@ const VerifyUser = () => {
                       <button
                         type="button"
                         className="lezada-button lezada-button--medium"
-                        onClick={onVerifyRegisteredUser}
+                        onClick={() =>
+                          onVerifyRegisteredUser({
+                            email: inputValues.email,
+                            verificationCode: inputValues.verificationCode,
+                          })
+                        }
                       >
                         verify
                       </button>
