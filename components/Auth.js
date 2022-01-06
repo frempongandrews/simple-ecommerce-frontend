@@ -24,11 +24,14 @@ const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const context = useContext(AppContext);
+  const currentUser = context.state.currentUser;
   console.log("*********context", context);
 
   useEffect(() => {
-    console.log("********Auth state", state);
-  });
+    if (context.state.currentUser) {
+      router.push("/");
+    }
+  }, [currentUser]);
 
   const onInputChange = (e) => {
     setState({
