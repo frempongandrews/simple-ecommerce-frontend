@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
-import requireAuth from "../components/hoc/requireAuth";
+import { useRouter } from "next/router";
 
 const ProfilePage = () => {
+  const router = useRouter();
   const {
     state: { currentUser },
   } = useContext(AppContext);
+
+  useEffect(() => {
+    if (!currentUser) {
+      router.push("/auth");
+    }
+  }, [currentUser]);
+
   return (
     <div className="container" style={{ minHeight: "60vh" }}>
       <h2>Profile page</h2>
@@ -13,14 +21,5 @@ const ProfilePage = () => {
     </div>
   );
 };
-
-export const getServerSideProps = requireAuth((context) => {
-  // Your normal `getServerSideProps` code here
-  // get protected data here
-
-  return {
-    props: {},
-  };
-});
 
 export default ProfilePage;
