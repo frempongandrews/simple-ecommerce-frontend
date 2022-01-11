@@ -8,6 +8,7 @@ import {
   generateShorterProductTitle,
 } from "../lib/helpers";
 import { AppContext, SET_CART_ARR } from "../context/AppContext";
+import Loader from "../components/common/Loader";
 
 const PaymentCompleted = () => {
   const [completedOrder, setCompletedOrder] = useState(null);
@@ -87,7 +88,7 @@ const PaymentCompleted = () => {
   };
 
   if (!stripeSessionID) {
-    return null;
+    return <Loader />;
   }
 
   return (

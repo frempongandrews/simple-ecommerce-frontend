@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { loginUser, registerUser } from "../lib/api";
 import { AppContext, LOGIN_USER } from "../context/AppContext";
 import { toast } from "react-toastify";
+import Loader from "./common/Loader";
 // shop-customer-login.html
 
 const Auth = () => {
@@ -140,7 +141,7 @@ const Auth = () => {
         </div>
       </div>
 
-      {isLoading && <h3>Loading...</h3>}
+      {isLoading && <Loader />}
 
       {/*=============================================
     =            login page content         =

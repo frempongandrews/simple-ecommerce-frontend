@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { verifyRegisteredUser } from "../../lib/api";
 import { checkUserAuthStatus } from "../../lib/helpers";
+import Loader from "../../components/common/Loader";
 // shop-customer-login.html
 
 const VerifyUser = () => {
@@ -74,6 +75,7 @@ const VerifyUser = () => {
   };
   return (
     <>
+      {state.isVerifyingUser && <Loader />}
       <div className="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
         <div className="container">
           <div className="row">

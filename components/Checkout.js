@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import {
@@ -7,24 +7,31 @@ import {
   centsToPounds,
 } from "../lib/helpers";
 import { checkoutCart } from "../lib/api";
+import { AppContext } from "../context/AppContext";
 
 // shop-checkout.html
 
 const Checkout = ({ cartArr }) => {
+  const appState = useContext(AppContext);
+  const currentUser = appState?.state?.currentUser;
+  console.log("**********appState", appState);
   const [state, setState] = useState({
     firstName: "Andrews",
     lastName: "Frempong",
-    email: "frempongandrews@yahoo.com",
-    phoneNumber: "07466964068",
-    addressLine1: "14 whitworth street",
-    addressLine2: "flat 4",
+    email: `${currentUser?.email || "frempongandrews@yahoo.com"}`,
+    phoneNumber: "074123456789",
+    addressLine1: "City tower",
+    addressLine2: "flat 23",
     city: "Manchester",
     country: "U.K",
-    postcode: "M1 3BS",
+    postcode: "M1 4AJ",
     // for res from server
     error: null,
     message: "",
   });
+
+  useEffect(() => {}, [currentUser]);
+
   const renderCartItems = () => {
     return cartArr.map((cartItem) => {
       return (
@@ -142,10 +149,7 @@ const Checkout = ({ cartArr }) => {
                               onChange={onInputChange}
                             />
                           </div>
-                          {/*<div className="col-12 mb-20">*/}
-                          {/*  <label>Company Name</label>*/}
-                          {/*  <input type="text" placeholder="Company Name" />*/}
-                          {/*</div>*/}
+
                           <div className="col-12 mb-20">
                             <label>Address*</label>
                             <input
@@ -180,10 +184,7 @@ const Checkout = ({ cartArr }) => {
                               onChange={onInputChange}
                             />
                           </div>
-                          {/*<div className="col-md-6 col-12 mb-20">*/}
-                          {/*  <label>County*</label>*/}
-                          {/*  <input type="text" placeholder="County" />*/}
-                          {/*</div>*/}
+
                           <div className="col-md-6 col-12 mb-20">
                             <label>PostCode*</label>
                             <input
@@ -194,24 +195,7 @@ const Checkout = ({ cartArr }) => {
                               onChange={onInputChange}
                             />
                           </div>
-                          <div className="col-12 mb-20">
-                            {/*<div className="check-box">*/}
-                            {/*  <input type="checkbox" id="create_account" />*/}
-                            {/*  <label htmlFor="create_account">*/}
-                            {/*    Create an Acount?*/}
-                            {/*  </label>*/}
-                            {/*</div>*/}
-                            {/*<div className="check-box">*/}
-                            {/*  <input*/}
-                            {/*    type="checkbox"*/}
-                            {/*    id="shiping_address"*/}
-                            {/*    data-shipping*/}
-                            {/*  />*/}
-                            {/*  <label htmlFor="shiping_address">*/}
-                            {/*    Ship to Different Address*/}
-                            {/*  </label>*/}
-                            {/*</div>*/}
-                          </div>
+                          <div className="col-12 mb-20"></div>
                         </div>
                       </div>
                       {/* End Shipping Address */}
@@ -225,25 +209,7 @@ const Checkout = ({ cartArr }) => {
                             <h4>
                               Product <span>Total</span>
                             </h4>
-                            <ul>
-                              {renderCartItems()}
-                              {/*<li>*/}
-                              {/*  Cillum dolore tortor nisl X 01{" "}*/}
-                              {/*  <span>$25.00</span>*/}
-                              {/*</li>*/}
-                              {/*<li>*/}
-                              {/*  Auctor gravida pellentesque X 02{" "}*/}
-                              {/*  <span>$50.00</span>*/}
-                              {/*</li>*/}
-                              {/*<li>*/}
-                              {/*  Condimentum posuere consectetur X 01{" "}*/}
-                              {/*  <span>$29.00</span>*/}
-                              {/*</li>*/}
-                              {/*<li>*/}
-                              {/*  Habitasse dictumst elementum X 01{" "}*/}
-                              {/*  <span>$10.00</span>*/}
-                              {/*</li>*/}
-                            </ul>
+                            <ul>{renderCartItems()}</ul>
                             <p>
                               Sub Total <span>£{calculateTotal(cartArr)}</span>
                             </p>
@@ -258,91 +224,6 @@ const Checkout = ({ cartArr }) => {
                         </div>
                         {/* Payment Method */}
                         <div className="col-12">
-                          {/*<h4 className="checkout-title">Payment Method</h4>*/}
-                          {/*<div className="checkout-payment-method">*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input*/}
-                          {/*      type="radio"*/}
-                          {/*      id="payment_check"*/}
-                          {/*      name="payment-method"*/}
-                          {/*      defaultValue="check"*/}
-                          {/*    />*/}
-                          {/*    <label htmlFor="payment_check">*/}
-                          {/*      Check Payment*/}
-                          {/*    </label>*/}
-                          {/*    <p data-method="check">*/}
-                          {/*      Please send a Check to Store name with Store*/}
-                          {/*      Street, Store Town, Store State, Store Postcode,*/}
-                          {/*      Store Country.*/}
-                          {/*    </p>*/}
-                          {/*  </div>*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input*/}
-                          {/*      type="radio"*/}
-                          {/*      id="payment_bank"*/}
-                          {/*      name="payment-method"*/}
-                          {/*      defaultValue="bank"*/}
-                          {/*    />*/}
-                          {/*    <label htmlFor="payment_bank">*/}
-                          {/*      Direct Bank Transfer*/}
-                          {/*    </label>*/}
-                          {/*    <p data-method="bank">*/}
-                          {/*      Please send a Check to Store name with Store*/}
-                          {/*      Street, Store Town, Store State, Store Postcode,*/}
-                          {/*      Store Country.*/}
-                          {/*    </p>*/}
-                          {/*  </div>*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input*/}
-                          {/*      type="radio"*/}
-                          {/*      id="payment_cash"*/}
-                          {/*      name="payment-method"*/}
-                          {/*      defaultValue="cash"*/}
-                          {/*    />*/}
-                          {/*    <label htmlFor="payment_cash">*/}
-                          {/*      Cash on Delivery*/}
-                          {/*    </label>*/}
-                          {/*    <p data-method="cash">*/}
-                          {/*      Please send a Check to Store name with Store*/}
-                          {/*      Street, Store Town, Store State, Store Postcode,*/}
-                          {/*      Store Country.*/}
-                          {/*    </p>*/}
-                          {/*  </div>*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input*/}
-                          {/*      type="radio"*/}
-                          {/*      id="payment_paypal"*/}
-                          {/*      name="payment-method"*/}
-                          {/*      defaultValue="paypal"*/}
-                          {/*    />*/}
-                          {/*    <label htmlFor="payment_paypal">Paypal</label>*/}
-                          {/*    <p data-method="paypal">*/}
-                          {/*      Please send a Check to Store name with Store*/}
-                          {/*      Street, Store Town, Store State, Store Postcode,*/}
-                          {/*      Store Country.*/}
-                          {/*    </p>*/}
-                          {/*  </div>*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input*/}
-                          {/*      type="radio"*/}
-                          {/*      id="payment_payoneer"*/}
-                          {/*      name="payment-method"*/}
-                          {/*      defaultValue="payoneer"*/}
-                          {/*    />*/}
-                          {/*    <label htmlFor="payment_payoneer">Payoneer</label>*/}
-                          {/*    <p data-method="payoneer">*/}
-                          {/*      Please send a Check to Store name with Store*/}
-                          {/*      Street, Store Town, Store State, Store Postcode,*/}
-                          {/*      Store Country.*/}
-                          {/*    </p>*/}
-                          {/*  </div>*/}
-                          {/*  <div className="single-method">*/}
-                          {/*    <input type="checkbox" id="accept_terms" />*/}
-                          {/*    <label htmlFor="accept_terms">*/}
-                          {/*      I’ve read and accept the terms &amp; conditions*/}
-                          {/*    </label>*/}
-                          {/*  </div>*/}
-                          {/*</div>*/}
                           <button
                             type="button"
                             className="lezada-button lezada-button--medium mt-30"

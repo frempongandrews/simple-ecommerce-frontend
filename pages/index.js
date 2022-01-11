@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
     };
   }
   const products = res?.data?.products || [];
-  console.log("*******Products", products);
+  // console.log("*******Products", products);
   return {
     props: {
       products,
@@ -40,13 +40,6 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-// export const getStaticPaths = async () => {
-//   return {
-//     paths: [],
-//     fallback: true,
-//   };
-// };
 
 HomePage.propTypes = {
   message: PropTypes.string.isRequired,

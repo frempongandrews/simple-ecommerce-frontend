@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { AiFillInfoCircle, AiFillCloseCircle } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import Head from "next/head";
 import Link from "next/link";
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
   const currentUser = state.currentUser;
   const router = useRouter();
   const [notificationMessage, setNotificationMessage] = useState("");
+  const [showInfo, setShowInfo] = useState(true);
   useEffect(() => {
     window.addEventListener("offline", handleInternetConnectionChange);
     window.addEventListener("online", handleInternetConnectionChange);
@@ -171,6 +173,72 @@ const Layout = ({ children }) => {
           {notificationMessage}
         </div>
       )}
+
+      {!showInfo && (
+        <AiFillInfoCircle
+          style={{
+            fontSize: 20,
+            cursor: "pointer",
+            position: "absolute",
+            top: 20,
+            right: 50,
+          }}
+          onClick={() => setShowInfo(true)}
+        />
+      )}
+
+      {showInfo && (
+        <div
+          style={{
+            textAlign: "center",
+            padding: "10px 0",
+            position: "sticky",
+            top: 0,
+            zIndex: 100,
+            width: "100%",
+            backgroundColor: "#e3e8ee",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <p>
+              Feel free to use the details the form is already pre-filled with
+              during checkout.{" "}
+            </p>
+            <div>
+              <p>Card details for stripe checkout:</p>
+              <p>
+                <span>Card Number: </span>
+                <b>4242 4242 4242 4242</b>
+              </p>
+              <p>
+                <span>CVC: </span>
+                <b>123</b>
+              </p>
+              <p>
+                <span>Expiry: </span>
+                <b>04/24</b>
+              </p>
+            </div>
+          </div>
+
+          <span>
+            <AiFillCloseCircle
+              style={{
+                fontSize: 20,
+                cursor: "pointer",
+                position: "absolute",
+                right: 30,
+                top: "40%",
+              }}
+              onClick={() => setShowInfo(false)}
+            />
+          </span>
+        </div>
+      )}
+
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -211,7 +279,7 @@ const Layout = ({ children }) => {
       </Head>
       <header className="header header-nontransparent-overlay-menu header-sticky static-header">
         {/*=======  header bottom  =======*/}
-        <div className="header-bottom pt-40 pb-40">
+        <div className="header-bottom pt-80 pb-40">
           <div className="container wide">
             {/*=======  header bottom container  =======*/}
             <div className="header-bottom-container">
