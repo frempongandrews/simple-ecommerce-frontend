@@ -35,14 +35,24 @@ const Cart = () => {
       return (
         <tr key={cartItem.product.id}>
           <td className="product-thumbnail">
-            <a href="shop-product-basic.html">
-              <img src={cartItem.product.image} className="img-fluid" alt="" />
-            </a>
+            <Link
+              href={`/product/${cartItem.product.slug}-${cartItem.product.id}`}
+            >
+              <a>
+                <img
+                  src={cartItem.product.image}
+                  className="img-fluid"
+                  alt=""
+                />
+              </a>
+            </Link>
           </td>
           <td className="product-name">
-            <a href="shop-product-basic.html">
-              {generateShorterProductTitle(cartItem.product.title)}
-            </a>
+            <Link
+              href={`/product/${cartItem.product.slug}-${cartItem.product.id}`}
+            >
+              <a>{generateShorterProductTitle(cartItem.product.title)}</a>
+            </Link>
             {/*<span className="product-variation">Color: Black</span>*/}
           </td>
           <td className="product-price">
