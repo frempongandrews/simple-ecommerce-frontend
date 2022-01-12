@@ -43,6 +43,11 @@ body {
   border: 1px solid lightgray;
 }
 
+/*****Show info******/
+.show-info-container p {
+  margin: 0;
+}
+
 /***** Loader ****/
 #loader {
   position: fixed;

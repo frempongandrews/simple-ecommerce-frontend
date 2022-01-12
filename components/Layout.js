@@ -189,6 +189,7 @@ const Layout = ({ children }) => {
 
       {showInfo && (
         <div
+          className="show-info-container"
           style={{
             textAlign: "center",
             padding: "10px 0",
@@ -203,10 +204,10 @@ const Layout = ({ children }) => {
           }}
         >
           <div>
-            <p>
+            {/* <p style={{ margin: 0 }}>
               Feel free to use the details the form is already pre-filled with
               during checkout.{" "}
-            </p>
+            </p> */}
             <div>
               <p>Card details for stripe checkout:</p>
               <p>

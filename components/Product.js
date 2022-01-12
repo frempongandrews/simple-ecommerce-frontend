@@ -55,8 +55,7 @@ const Product = ({ product, message }) => {
             </div>
           </div>
         </div>
-
-        <div style={{ position: "absolute", bottom: -50 }} ref={elRef}>
+        <div style={{ position: "absolute", bottom: 20 }} ref={elRef}>
           <h1></h1>
         </div>
       </div>
