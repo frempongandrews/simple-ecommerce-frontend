@@ -10,10 +10,12 @@ export const UPDATE_ITEM_QUANTITY_IN_CART = "UPDATE_ITEM_QUANTITY_IN_CART";
 export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const SET_USER = "SET_USER";
+export const SET_SHOW_INFO = "SET_SHOW_INFO";
 
 export const AppContext = createContext();
 
 const initialState = {
+  showInfo: true,
   showCart: false,
   cartArr: [],
   // use product id as key
@@ -23,6 +25,12 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_SHOW_INFO:
+      return {
+        ...state,
+        showInfo: action.payload,
+      };
+
     case LOGIN_USER:
       return {
         ...state,

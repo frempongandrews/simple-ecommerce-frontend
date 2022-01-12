@@ -9,6 +9,7 @@ import {
   HIDE_CART,
   LOGOUT_USER,
   REMOVE_PRODUCT_FROM_CART,
+  SET_SHOW_INFO,
   SHOW_CART,
 } from "../context/AppContext";
 import {
@@ -22,11 +23,10 @@ import { logoutUser } from "../lib/api";
 
 const Layout = ({ children }) => {
   const { state, dispatch } = useContext(AppContext);
-  const { showCart, cartArr } = state;
+  const { showCart, cartArr, showInfo } = state;
   const currentUser = state.currentUser;
   const router = useRouter();
   const [notificationMessage, setNotificationMessage] = useState("");
-  const [showInfo, setShowInfo] = useState(true);
   useEffect(() => {
     window.addEventListener("offline", handleInternetConnectionChange);
     window.addEventListener("online", handleInternetConnectionChange);
@@ -183,7 +183,7 @@ const Layout = ({ children }) => {
             top: 20,
             right: 50,
           }}
-          onClick={() => setShowInfo(true)}
+          onClick={() => dispatch({ type: SET_SHOW_INFO, payload: true })}
         />
       )}
 
@@ -233,7 +233,7 @@ const Layout = ({ children }) => {
                 right: 30,
                 top: "40%",
               }}
-              onClick={() => setShowInfo(false)}
+              onClick={() => dispatch({ type: SET_SHOW_INFO, payload: false })}
             />
           </span>
         </div>

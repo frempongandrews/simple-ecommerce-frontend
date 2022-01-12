@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { generateShorterProductTitle, centsToPounds } from "../lib/helpers";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
+import { useScroll } from "../hooks";
 import {
   ADD_PRODUCT_TO_CART,
   AppContext,
@@ -12,11 +13,12 @@ import { usePrevious } from "../hooks";
 
 const Product = ({ product, message }) => {
   const { state, dispatch } = useContext(AppContext);
-  const oldState = usePrevious(state);
+  const [executeScroll, elRef] = useScroll();
+  useEffect(executeScroll, []); // Runs after component mounts
+
   useEffect(() => {
-    console.log("********Old state", oldState);
     console.log("*********New state", state);
-  });
+  }, []);
 
   const onAddProductToCart = () => {
     dispatch({
@@ -30,7 +32,10 @@ const Product = ({ product, message }) => {
   return (
     <div style={{ minHeight: "80vh" }}>
       {/*=======  breadcrumb area =======*/}
-      <div className="breadcrumb-area breadcrumb-bg-2 pt-50 pb-70">
+      <div
+        className="breadcrumb-area breadcrumb-bg-2 pt-50 pb-70"
+        style={{ position: "relative" }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -49,6 +54,10 @@ const Product = ({ product, message }) => {
               {/*=======  End of breadcrumb list  =======*/}
             </div>
           </div>
+        </div>
+
+        <div style={{ position: "absolute", bottom: -50 }} ref={elRef}>
+          <h1></h1>
         </div>
       </div>
       {/*=======  End of breadcrumb area =======*/}
