@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AiFillInfoCircle, AiFillCloseCircle } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -108,11 +109,17 @@ const Layout = ({ children }) => {
           <div className="image">
             <Link href={`/product/${prodObj?.product?.id}`}>
               <a>
-                <img
+                <Image
+                  src={`${prodObj?.product?.publicImage}`}
+                  width={76}
+                  height={98}
+                  objectFit="contain"
+                />
+                {/* <img
                   src={`${prodObj?.product?.image}`}
                   className="img-fluid"
                   alt=""
-                />
+                /> */}
               </a>
             </Link>
           </div>
@@ -145,7 +152,7 @@ const Layout = ({ children }) => {
       return;
     }
     if (res.status >= 500) {
-      console.log("*********onLogoutUser YESSSSS", res);
+      // console.log("*********onLogoutUser YESSSSS", res);
       toast.error(
         res?.data?.message ||
           "Error logging out - Please check your internet connection"

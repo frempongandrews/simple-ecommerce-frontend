@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "./Layout";
 import { centsToPounds, generateShorterProductTitle } from "../lib/helpers";
 // index-accessories.html
@@ -17,7 +18,14 @@ const Home = ({ products }) => {
             </Link>
             {/*<span className="number">01/</span>*/}
             <span className="number">0{i + 1}/</span>
-            <img src={product.image} className="img-fluid" alt="" />
+            <Image
+              src={product.publicImage}
+              width={470}
+              height={600}
+              layout="responsive"
+              objectFit="contain"
+            />
+            {/* <img src={product.publicImage} className="img-fluid" alt="" /> */}
             <div className="accessories-single-category__content">
               <p className="name">
                 {generateShorterProductTitle(product.title)}

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Link from "next/link";
+import Image from "next/image";
 import { generateShorterProductTitle, centsToPounds } from "../lib/helpers";
 import { useContext, useEffect } from "react";
 import { useScroll } from "../hooks";
@@ -15,10 +16,6 @@ const Product = ({ product, message }) => {
   const { state, dispatch } = useContext(AppContext);
   const [executeScroll, elRef] = useScroll();
   useEffect(executeScroll, []); // Runs after component mounts
-
-  useEffect(() => {
-    console.log("*********New state", state);
-  }, []);
 
   const onAddProductToCart = () => {
     dispatch({
@@ -118,12 +115,22 @@ const Product = ({ product, message }) => {
                             {/*=======  End of shop product gallery icons  =======*/}
                             <div className="shop-product__big-image-gallery-slider">
                               {/*=======  single image  =======*/}
-                              <div className="single-image">
-                                <img
+                              <div
+                                className="single-image"
+                                style={{ display: "block" }}
+                              >
+                                <Image
+                                  src={product.publicImage}
+                                  width={330}
+                                  height={421}
+                                  layout="responsive"
+                                  objectFit="contain"
+                                />
+                                {/* <img
                                   src={product.image}
                                   className="img-fluid"
                                   alt=""
-                                />
+                                /> */}
                               </div>
                             </div>
                           </div>
