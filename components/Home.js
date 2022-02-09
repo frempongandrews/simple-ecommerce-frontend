@@ -91,7 +91,7 @@ const Home = ({ products }) => {
               {/* <div className="shop-button text-center">
                 <a className="lezada-button lezada-button--medium lezada-button--icon--left">
                   {" "}
-                  <i className="icon-left ion-plus" /> Load more
+                  <i className="icon-left ion-plus" /> LOAD more
                 </a>
               </div> */}
               {/*=======  End of shop button  =======*/}
