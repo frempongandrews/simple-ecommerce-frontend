@@ -1,5 +1,3 @@
-import cookie from "cookie";
-import Link from "next/link";
 import Auth from "../components/Auth";
 import { checkUserAuthStatus } from "../lib/helpers";
 

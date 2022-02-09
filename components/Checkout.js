@@ -14,7 +14,6 @@ import { AppContext } from "../context/AppContext";
 const Checkout = ({ cartArr }) => {
   const appState = useContext(AppContext);
   const currentUser = appState?.state?.currentUser;
-  console.log("**********appState", appState);
   const [state, setState] = useState({
     firstName: "Andrews",
     lastName: "Frempong",
@@ -64,7 +63,6 @@ const Checkout = ({ cartArr }) => {
 
     const res = await checkoutCart({ cart, inputValues });
     const url = res?.data?.url;
-    // console.log("**********Stripe checkout res", res);
     window.location = url;
   };
   return (

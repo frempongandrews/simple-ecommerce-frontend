@@ -63,7 +63,6 @@ const appReducer = (state = initialState, action) => {
 
     case ADD_PRODUCT_TO_CART:
       const id = action.product.id;
-      console.log("*********Product", action.product);
       // product not in cart
       if (!state.cartObj.hasOwnProperty(id)) {
         const newCartArrState = [
@@ -85,7 +84,6 @@ const appReducer = (state = initialState, action) => {
       // product already in cart
       const newCartArrState = state.cartArr.map((prodObj) => {
         // i.e => productObj = {product: {}, quantity: 1}
-        console.log("*********Id", id);
         if (prodObj.product.id === id) {
           prodObj = { ...prodObj, quantity: prodObj.quantity + 1 };
         }
@@ -100,7 +98,6 @@ const appReducer = (state = initialState, action) => {
         },
         cartArr: state.cartArr.map((prodObj) => {
           // i.e => productObj = {product: {}, quantity: 1}
-          console.log("*********Id", id);
           if (prodObj.product.id === id) {
             prodObj = { ...prodObj, quantity: prodObj.quantity + 1 };
           }
@@ -121,10 +118,6 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         cartArr: [...updatedCartArr],
-        // cartObj: {
-        //   ...state.cartObj,
-        //   [action.productId]: undefined,
-        // },
         cartObj: {
           ...updatedCartObj,
         },

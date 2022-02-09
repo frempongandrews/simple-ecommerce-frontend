@@ -9,7 +9,7 @@ import Loader from "../../components/common/Loader";
 
 const VerifyUser = () => {
   const router = useRouter();
-  console.log("*********VerifyUser Router", router);
+
   const { code, email } = router.query;
   const [state, setState] = useState({
     isVerifyingUser: false,
@@ -24,9 +24,7 @@ const VerifyUser = () => {
   });
 
   useEffect(() => {
-    console.log("**********Verify email mounted");
     if (code && email) {
-      console.log("********Automatically very email");
       onVerifyRegisteredUser({ email, verificationCode: code });
     }
   }, [code, email]);
@@ -39,7 +37,6 @@ const VerifyUser = () => {
   };
 
   const onVerifyRegisteredUser = async ({ email, verificationCode }) => {
-    console.log("**********onVerifyRegisteredUser running");
     setState({
       ...state,
       isVerifyingUser: true,

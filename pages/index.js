@@ -32,7 +32,6 @@ export const getStaticProps = async () => {
     };
   }
   const products = res?.data?.products || [];
-  // console.log("*******Products", products);
   return {
     props: {
       products,

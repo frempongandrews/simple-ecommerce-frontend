@@ -15,7 +15,7 @@ const PaymentCompleted = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   const { dispatch } = useContext(AppContext);
-  console.log("************PaymentCompleted router", router);
+
   // removing the {} from stripe session id
   // {cs_test_.......i}
   // stripeSessionID will be "" when component first mounts hence add to dependency array
@@ -23,14 +23,9 @@ const PaymentCompleted = () => {
   const stripeSessionID =
     router?.query?.session_id?.slice(1, router?.query?.session_id.length - 1) ||
     "";
-  console.log("************PaymentCompleted stripeSessionID", stripeSessionID);
-  // console.log("************PaymentCompleted stripeSessionId", stripeSessionId);
   useEffect(() => {
-    // todo: get stripe session id from backend => gets customerId and orderId =>
-    // todo: return customer and order to this page
     if (stripeSessionID) {
       getStripeSessionOrderDetails(stripeSessionID).then((res) => {
-        console.log("**********PaymentCompleted Res", res);
         if (res.status >= 400) {
           setErrorMessage(res.data.message);
           return;
@@ -52,7 +47,6 @@ const PaymentCompleted = () => {
       };
     });
     return cartArr?.map((cartItem) => {
-      console.log("**********cartItem", cartItem);
       return (
         <tr key={cartItem.product.id}>
           <td className="product-thumbnail">
@@ -64,7 +58,6 @@ const PaymentCompleted = () => {
             <a href="shop-product-basic.html">
               {generateShorterProductTitle(cartItem.product.title)}
             </a>
-            {/*<span className="product-variation">Color: Black</span>*/}
           </td>
           <td className="product-price">
             <span className="price">
@@ -73,7 +66,6 @@ const PaymentCompleted = () => {
           </td>
           <td className="product-quantity">
             <div className="pro-qty d-inline-block mx-0">
-              {/*<input type="number" step={1} defaultValue={1} />*/}
               <select name="quantity" disabled={true}>
                 <option value={cartItem.quantity}>{cartItem.quantity}</option>
               </select>
@@ -117,8 +109,6 @@ const PaymentCompleted = () => {
       </div>
       {/*=======  End of breadcrumb area =======*/}
 
-      {/*{JSON.stringify(completedOrder, null, 4)}*/}
-
       <div className="container" style={{ marginTop: -60, marginBottom: 40 }}>
         {errorMessage && <p>{errorMessage}</p>}
         {completedOrder && (
@@ -154,144 +144,17 @@ const PaymentCompleted = () => {
                         <th className="product-remove">&nbsp;</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {renderOrderItems()}
-
-                      {/*<tr>*/}
-                      {/*  <td className="product-thumbnail">*/}
-                      {/*    <a href="shop-product-basic.html">*/}
-                      {/*      <img*/}
-                      {/*        src="assets/images/products/watch-1-1-600x800.jpg"*/}
-                      {/*        className="img-fluid"*/}
-                      {/*        alt=""*/}
-                      {/*      />*/}
-                      {/*    </a>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-name">*/}
-                      {/*    <a href="shop-product-basic.html">Brown watch</a>*/}
-                      {/*    <span className="product-variation">Color: Brown</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-price">*/}
-                      {/*    <span className="price">$150.00</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-quantity">*/}
-                      {/*    <div className="pro-qty d-inline-block mx-0">*/}
-                      {/*      /!*<input type="number" step={1} defaultValue={1} />*!/*/}
-                      {/*      <select name="quantity">*/}
-                      {/*        <option value="1">1</option>*/}
-                      {/*        <option value="2">2</option>*/}
-                      {/*        <option value="3">3</option>*/}
-                      {/*        <option value="4">4</option>*/}
-                      {/*        <option value="5">5</option>*/}
-                      {/*      </select>*/}
-                      {/*    </div>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="total-price">*/}
-                      {/*    <span className="price">$250.00</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-remove">*/}
-                      {/*    <a href="#">*/}
-                      {/*      <i className="ion-android-close" />*/}
-                      {/*    </a>*/}
-                      {/*  </td>*/}
-                      {/*</tr>*/}
-
-                      {/*<tr>*/}
-                      {/*  <td className="product-thumbnail">*/}
-                      {/*    <a href="shop-product-basic.html">*/}
-                      {/*      <img*/}
-                      {/*        src="assets/images/products/cloth-1-1-600x800.jpg"*/}
-                      {/*        className="img-fluid"*/}
-                      {/*        alt=""*/}
-                      {/*      />*/}
-                      {/*    </a>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-name">*/}
-                      {/*    <a href="shop-product-basic.html">High weist pant</a>*/}
-                      {/*    <span className="product-variation">Color: Blue</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-price">*/}
-                      {/*    <span className="price">$10.00</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-quantity">*/}
-                      {/*    <div className="pro-qty d-inline-block mx-0">*/}
-                      {/*      /!*<input*!/*/}
-                      {/*      /!*  type="number"*!/*/}
-                      {/*      /!*  step={1}*!/*/}
-                      {/*      /!*  defaultValue={1}*!/*/}
-                      {/*      /!*  min={1}*!/*/}
-                      {/*      /!*  max={99}*!/*/}
-                      {/*      /!*/
-                      /*/}
-                      {/*      <select name="quantity">*/}
-                      {/*        <option value="1">1</option>*/}
-                      {/*        <option value="2">2</option>*/}
-                      {/*        <option value="3">3</option>*/}
-                      {/*        <option value="4">4</option>*/}
-                      {/*        <option value="5">5</option>*/}
-                      {/*      </select>*/}
-                      {/*    </div>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="total-price">*/}
-                      {/*    <span className="price">$260.00</span>*/}
-                      {/*  </td>*/}
-                      {/*  <td className="product-remove">*/}
-                      {/*    <a href="#">*/}
-                      {/*      <i className="ion-android-close" />*/}
-                      {/*    </a>*/}
-                      {/*  </td>*/}
-                      {/*</tr>*/}
-                    </tbody>
+                    <tbody>{renderOrderItems()}</tbody>
                   </table>
                 </div>
                 {/*=======  End of cart table  =======*/}
               </div>
 
-              {/*<div className="col-lg-12 mb-80">*/}
-              {/*  /!*=======  coupon area  =======*!/*/}
-              {/*  <div className="cart-coupon-area pb-30">*/}
-              {/*    <div className="row align-items-center">*/}
-              {/*      <div className="col-lg-6 mb-md-30 mb-sm-30">*/}
-              {/*        /!*=======  coupon form  =======*!/*/}
-              {/*        <div className="lezada-form coupon-form">*/}
-              {/*          /!*<form action="#">*!/*/}
-              {/*          /!*  <div className="row">*!/*/}
-              {/*          /!*    <div className="col-md-7 mb-sm-10">*!/*/}
-              {/*          /!*      <input*!/*/}
-              {/*          /!*        type="text"*!/*/}
-              {/*          /!*        placeholder="Enter your coupon code"*!/*/}
-              {/*          /!*      />*!/*/}
-              {/*          /!*    </div>*!/*/}
-              {/*          /!*    <div className="col-md-5">*!/*/}
-              {/*          /!*      <button className="lezada-button lezada-button--medium">*!/*/}
-              {/*          /!*        apply coupon*!/*/}
-              {/*          /!*      </button>*!/*/}
-              {/*          /!*    </div>*!/*/}
-              {/*          /!*  </div>*!/*/}
-              {/*          /!*</form>*!/*/}
-              {/*        </div>*/}
-              {/*        /!*=======  End of coupon form  =======*!/*/}
-              {/*      </div>*/}
-              {/*      <div className="col-lg-6 text-left text-lg-right">*/}
-              {/*        /!*=======  update cart button  =======*!/*/}
-              {/*        /!*<button className="lezada-button lezada-button--medium">*!/*/}
-              {/*        /!*  update cart*!/*/}
-              {/*        /!*</button>*!/*/}
-              {/*        /!*=======  End of update cart button  =======*!/*/}
-              {/*      </div>*/}
-              {/*    </div>*/}
-              {/*  </div>*/}
-              {/*  /!*=======  End of coupon area  =======*!/*/}
-              {/*</div>*/}
               <div className="col-xl-4 offset-xl-8 col-lg-5 offset-lg-7">
                 <div className="cart-calculation-area">
                   <h2 className="mb-40">TOTAL</h2>
                   <table className="cart-calculation-table mb-30">
                     <tbody>
-                      {/*<tr>*/}
-                      {/*  <th>SUBTOTAL</th>*/}
-                      {/*  <td className="subtotal">£{calculateTotal(cartArr)}</td>*/}
-                      {/*</tr>*/}
                       <tr>
                         <th>TOTAL</th>
                         <td className="total">

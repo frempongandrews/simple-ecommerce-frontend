@@ -152,7 +152,6 @@ const Layout = ({ children }) => {
       return;
     }
     if (res.status >= 500) {
-      // console.log("*********onLogoutUser YESSSSS", res);
       toast.error(
         res?.data?.message ||
           "Error logging out - Please check your internet connection"
@@ -211,10 +210,6 @@ const Layout = ({ children }) => {
           }}
         >
           <div>
-            {/* <p style={{ margin: 0 }}>
-              Feel free to use the details the form is already pre-filled with
-              during checkout.{" "}
-            </p> */}
             <div>
               <p>Card details for stripe checkout:</p>
               <p>
@@ -282,8 +277,6 @@ const Layout = ({ children }) => {
         <link href="assets/css/helper.css" rel="stylesheet" />
         {/* Main CSS */}
         <link href="assets/css/main.css" rel="stylesheet" />
-        {/* Modernizer JS */}
-        {/*<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>*/}
       </Head>
       <header className="header header-nontransparent-overlay-menu header-sticky static-header">
         {/*=======  header bottom  =======*/}
@@ -295,9 +288,6 @@ const Layout = ({ children }) => {
               <div className="logo-with-offcanvas d-flex">
                 {/*=======  overlay menu icon  =======*/}
                 <div className="overlay-menu-icon mr-20 d-lg-block">
-                  {/*<a href="#" id="overlay-menu-icon">*/}
-                  {/*  <i className="ion-navicon" />*/}
-                  {/*</a>*/}
                   <Link href={`/`}>
                     <a>
                       <h2>MINIMAL SHOP</h2>
@@ -310,29 +300,12 @@ const Layout = ({ children }) => {
               {/*=======  header bottom navigation  =======*/}
               {/*=======  End of header bottom navigation  =======*/}
               {/*=======  logo   =======*/}
-              <div className="logo">
-                {/*<Link href={`/`}>*/}
-                {/*  <a>*/}
-                {/*    <img*/}
-                {/*      src="assets/images/logo.png"*/}
-                {/*      className="img-fluid"*/}
-                {/*      alt=""*/}
-                {/*    />*/}
-                {/*  </a>*/}
-                {/*</Link>*/}
-              </div>
+              <div className="logo"></div>
               {/*=======  End of logo   =======*/}
               {/*=======  headeer right container  =======*/}
               <div className="header-right-container">
                 {/*=======  header right icons  =======*/}
                 <div className="header-right-icons d-flex justify-content-end align-items-center h-100">
-                  {/*=======  single-icon  =======*/}
-                  {/*<div className="single-icon search">*/}
-                  {/*  <a href="#" id="search-icon">*/}
-                  {/*    <i className="ion-ios-search-strong" />*/}
-                  {/*  </a>*/}
-                  {/*</div>*/}
-                  {/*=======  End of single-icon  =======*/}
                   {/*=======  single-icon  =======*/}
                   <div
                     className="single-icon user-login"
@@ -370,14 +343,7 @@ const Layout = ({ children }) => {
                     )}
                   </div>
                   {/*=======  End of single-icon  =======*/}
-                  {/*=======  single-icon  =======*/}
-                  {/*<div className="single-icon wishlist">*/}
-                  {/*  <a href="#" id="offcanvas-wishlist-icon">*/}
-                  {/*    <i className="ion-android-favorite-outline" />*/}
-                  {/*    <span className="count">2</span>*/}
-                  {/*  </a>*/}
-                  {/*</div>*/}
-                  {/*=======  End of single-icon  =======*/}
+
                   {/*=======  single-icon  =======*/}
                   <div className="single-icon cart" onClick={onShowCart}>
                     <a id="offcanvas-cart-icon">
@@ -411,11 +377,6 @@ const Layout = ({ children }) => {
               {/*=======  copyright text  =======*/}
               {/*=======  logo  =======*/}
               <div className="logo">
-                {/*<img*/}
-                {/*  src="assets/images/logo.png"*/}
-                {/*  className="img-fluid"*/}
-                {/*  alt=""*/}
-                {/*/>*/}
                 <h3>MINIMAL SHOP</h3>
               </div>
               {/*=======  End of logo  =======*/}
@@ -521,30 +482,6 @@ const Layout = ({ children }) => {
                 <p className="subscription-subtitle">
                   Follow our social media to receive news on update.
                 </p>
-                {/*=======  subscription form  =======*/}
-                {/*<div className="subscription-form">*/}
-                {/*  <form id="mc-form" className="mc-form">*/}
-                {/*    <input*/}
-                {/*      type="email"*/}
-                {/*      placeholder="Your email address"*/}
-                {/*      required*/}
-                {/*    />*/}
-                {/*    <button type="submit">*/}
-                {/*      <i className="ion-ios-arrow-thin-right" />*/}
-                {/*    </button>*/}
-                {/*  </form>*/}
-                {/*</div>*/}
-                {/*=======  End of subscription form  =======*/}
-                {/* mailchimp-alerts Start */}
-                {/*<div className="mailchimp-alerts">*/}
-                {/*  <div className="mailchimp-submitting" />*/}
-                {/*  /!* mailchimp-submitting end *!/*/}
-                {/*  <div className="mailchimp-success" />*/}
-                {/*  /!* mailchimp-success end *!/*/}
-                {/*  <div className="mailchimp-error" />*/}
-                {/*  /!* mailchimp-error end *!/*/}
-                {/*</div>*/}
-                {/* mailchimp-alerts end */}
               </div>
               {/*=======  End of single widget  =======*/}
             </div>
@@ -582,163 +519,7 @@ const Layout = ({ children }) => {
                 <i className="ion-android-close" />
               </a>
             </span>
-            {/*=======  End of close icon  =======*/}
-            {/*=======  offcanvas wishlist content container  =======*/}
-            {/*<div className="offcanvas-cart-content-container">*/}
-            {/*  <h3 className="cart-title">Wishlist</h3>*/}
-            {/*  <div className="cart-product-wrapper">*/}
-            {/*    <div className="cart-product-container  ps-scroll">*/}
-            {/*      /!*=======  single cart product  =======*!/*/}
-            {/*      <div className="single-cart-product">*/}
-            {/*        <span className="cart-close-icon">*/}
-            {/*          <a>*/}
-            {/*            <i className="ti-close" />*/}
-            {/*          </a>*/}
-            {/*        </span>*/}
-            {/*        <div className="image">*/}
-            {/*          <a href="shop-product-basic.html">*/}
-            {/*            <img*/}
-            {/*              src="assets/images/cart-product-image/01.jpg"*/}
-            {/*              className="img-fluid"*/}
-            {/*              alt=""*/}
-            {/*            />*/}
-            {/*          </a>*/}
-            {/*        </div>*/}
-            {/*        <div className="content">*/}
-            {/*          <h5>*/}
-            {/*            <a href="shop-product-basic.html">*/}
-            {/*              Dark Brown Leather Watch*/}
-            {/*            </a>*/}
-            {/*          </h5>*/}
-            {/*          <p>*/}
-            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
-            {/*            <span className="discounted-price">$180.00</span>*/}
-            {/*          </p>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      /!*=======  End of single cart product  =======*!/*/}
-            {/*      /!*=======  single cart product  =======*!/*/}
-            {/*      <div className="single-cart-product">*/}
-            {/*        <span className="cart-close-icon">*/}
-            {/*          <a href="#">*/}
-            {/*            <i className="ti-close" />*/}
-            {/*          </a>*/}
-            {/*        </span>*/}
-            {/*        <div className="image">*/}
-            {/*          <a href="shop-product-basic.html">*/}
-            {/*            <img*/}
-            {/*              src="assets/images/cart-product-image/02.jpg"*/}
-            {/*              className="img-fluid"*/}
-            {/*              alt=""*/}
-            {/*            />*/}
-            {/*          </a>*/}
-            {/*        </div>*/}
-            {/*        <div className="content">*/}
-            {/*          <h5>*/}
-            {/*            <a href="shop-product-basic.html">Dining Chair</a>*/}
-            {/*          </h5>*/}
-            {/*          <p>*/}
-            {/*            <span className="main-price discounted">$300.00</span>{" "}*/}
-            {/*            <span className="discounted-price">$220.00</span>*/}
-            {/*          </p>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      /!*=======  End of single cart product  =======*!/*/}
-            {/*      /!*=======  single cart product  =======*!/*/}
-            {/*      <div className="single-cart-product">*/}
-            {/*        <span className="cart-close-icon">*/}
-            {/*          <a href="#">*/}
-            {/*            <i className="ti-close" />*/}
-            {/*          </a>*/}
-            {/*        </span>*/}
-            {/*        <div className="image">*/}
-            {/*          <a href="shop-product-basic.html">*/}
-            {/*            <img*/}
-            {/*              src="assets/images/cart-product-image/03.jpg"*/}
-            {/*              className="img-fluid"*/}
-            {/*              alt=""*/}
-            {/*            />*/}
-            {/*          </a>*/}
-            {/*        </div>*/}
-            {/*        <div className="content">*/}
-            {/*          <h5>*/}
-            {/*            <a href="shop-product-basic.html">*/}
-            {/*              Creative Wooden Stand*/}
-            {/*            </a>*/}
-            {/*          </h5>*/}
-            {/*          <p>*/}
-            {/*            <span className="main-price discounted">$100.00</span>{" "}*/}
-            {/*            <span className="discounted-price">$80.00</span>*/}
-            {/*          </p>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      /!*=======  End of single cart product  =======*!/*/}
-            {/*      /!*=======  single cart product  =======*!/*/}
-            {/*      <div className="single-cart-product">*/}
-            {/*        <span className="cart-close-icon">*/}
-            {/*          <a href="#">*/}
-            {/*            <i className="ti-close" />*/}
-            {/*          </a>*/}
-            {/*        </span>*/}
-            {/*        <div className="image">*/}
-            {/*          <a href="shop-product-basic.html">*/}
-            {/*            <img*/}
-            {/*              src="assets/images/cart-product-image/01.jpg"*/}
-            {/*              className="img-fluid"*/}
-            {/*              alt=""*/}
-            {/*            />*/}
-            {/*          </a>*/}
-            {/*        </div>*/}
-            {/*        <div className="content">*/}
-            {/*          <h5>*/}
-            {/*            <a href="shop-product-basic.html">*/}
-            {/*              Dark Brown Leather Watch*/}
-            {/*            </a>*/}
-            {/*          </h5>*/}
-            {/*          <p>*/}
-            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
-            {/*            <span className="discounted-price">$180.00</span>*/}
-            {/*          </p>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      /!*=======  End of single cart product  =======*!/*/}
-            {/*      /!*=======  single cart product  =======*!/*/}
-            {/*      <div className="single-cart-product">*/}
-            {/*        <span className="cart-close-icon">*/}
-            {/*          <a href="#">*/}
-            {/*            <i className="ti-close" />*/}
-            {/*          </a>*/}
-            {/*        </span>*/}
-            {/*        <div className="image">*/}
-            {/*          <a href="shop-product-basic.html">*/}
-            {/*            <img*/}
-            {/*              src="assets/images/cart-product-image/02.jpg"*/}
-            {/*              className="img-fluid"*/}
-            {/*              alt=""*/}
-            {/*            />*/}
-            {/*          </a>*/}
-            {/*        </div>*/}
-            {/*        <div className="content">*/}
-            {/*          <h5>*/}
-            {/*            <a href="shop-product-basic.html">*/}
-            {/*              Creative Wooden Stand*/}
-            {/*            </a>*/}
-            {/*          </h5>*/}
-            {/*          <p>*/}
-            {/*            <span className="main-price discounted">$200.00</span>{" "}*/}
-            {/*            <span className="discounted-price">$180.00</span>*/}
-            {/*          </p>*/}
-            {/*        </div>*/}
-            {/*      </div>*/}
-            {/*      /!*=======  End of single cart product  =======*!/*/}
-            {/*    </div>*/}
-            {/*    /!*=======  cart buttons  =======*!/*/}
-            {/*    <div className="cart-buttons">*/}
-            {/*      <a href="shop-wishlist.html">view wishlist</a>*/}
-            {/*    </div>*/}
-            {/*    /!*=======  End of cart buttons  =======*!/*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+
             {/*=======  End of offcanvas wishlist content container   =======*/}
           </div>
         </div>
@@ -799,47 +580,7 @@ const Layout = ({ children }) => {
             {/*=======  End of offcanvas cart content container   =======*/}
           </div>
         </div>
-
-        {/*=======  End of cart overlay  =======*/}
-        {/*=======  search overlay  =======*/}
-        {/*<div className="search-overlay" id="search-overlay">*/}
-        {/*  /!*=======  close icon  =======*!/*/}
-        {/*  <span className="close-icon search-close-icon">*/}
-        {/*    <a href="#" id="search-close-icon">*/}
-        {/*      <i className="ti-close" />*/}
-        {/*    </a>*/}
-        {/*  </span>*/}
-        {/*  /!*=======  End of close icon  =======*!/*/}
-        {/*  /!*=======  search overlay content  =======*!/*/}
-        {/*  <div className="search-overlay-content">*/}
-        {/*    <div className="input-box">*/}
-        {/*      <form action="index.html">*/}
-        {/*        <input type="search" placeholder="Search Products..." />*/}
-        {/*      </form>*/}
-        {/*    </div>*/}
-        {/*    <div className="search-hint">*/}
-        {/*      <span># Hit enter to search or ESC to close</span>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*  /!*=======  End of search overlay content  =======*!/*/}
-        {/*</div>*/}
-        {/*=======  End of search overlay  =======*/}
-        {/*=====  End of overlay items  ======*/}
       </div>
-
-      {/** Scroll to Top**/}
-      {/*<a className="scroll-top"></a>*/}
-
-      {/**<!-- jQuery JS -->**/}
-      {/*<script src="assets/js/vendor/jquery.min.js"></script>*/}
-      {/**<!-- Popper JS --> **/}
-      {/*<script src="assets/js/popper.min.js"></script>*/}
-      {/**<!-- Bootstrap JS --> **/}
-      {/*<script src="assets/js/bootstrap.min.js"></script>*/}
-      {/** <!-- Plugins JS -->**/}
-      {/*<script src="assets/js/plugins.js"></script>*/}
-      {/** <!-- Main JS -->**/}
-      {/*<script src="assets/js/main.js"></script>*/}
     </div>
   );
 };

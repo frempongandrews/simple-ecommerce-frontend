@@ -11,11 +11,10 @@ const ProductPage = ({ product, message }) => {
 };
 
 export const getStaticProps = async (ctx) => {
-  console.log("*******Product page context", ctx);
   const { slugAndId } = ctx.params;
   const slugAndIdArr = slugAndId.split("-");
   const productId = slugAndIdArr[slugAndIdArr.length - 1];
-  console.log("*******ProductId", productId);
+
   // fetch product here
   const productRes = await getProductById(productId);
   // error
@@ -29,7 +28,6 @@ export const getStaticProps = async (ctx) => {
   }
 
   const product = productRes.data.product;
-  console.log("*********Product", product);
   return {
     props: {
       product,

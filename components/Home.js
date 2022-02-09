@@ -25,13 +25,12 @@ const Home = ({ products }) => {
               layout="responsive"
               objectFit="contain"
             />
-            {/* <img src={product.publicImage} className="img-fluid" alt="" /> */}
+
             <div className="accessories-single-category__content">
               <p className="name">
                 {generateShorterProductTitle(product.title)}
               </p>
               <p className="price">
-                {/*<span className="main-price discounted">$100.00</span>{" "}*/}
                 <span className="discounted-price">
                   £{centsToPounds(product.price)}
                 </span>
@@ -87,137 +86,6 @@ const Home = ({ products }) => {
         <div className="container">
           <div className="row align-items-center">
             {renderProducts()}
-            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">01/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
-            {/*      // src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-best-seller-1.jpg"*/}
-            {/*      // src="https://frempong-simple-ecommerce.s3.eu-west-2.amazonaws.com/product-image-placeholder.jpeg"*/}
-            {/*      src="https://images.asos-media.com/products/collusion-unisex-beanie-in-black/24398919-1-black?$n_640w$&wid=513&fit=constrain"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Minimal Leather Watch</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
-            {/*        <span className="discounted-price">$80.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">02/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
-            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-2.jpg"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Hoho Bag</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price">$100.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">02/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
-            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-6.jpg"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Hoho Bag</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price">$100.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">01/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
-            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-7.jpg"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Minimal Leather Watch</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
-            {/*        <span className="discounted-price">$80.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="col-lg-5 offset-lg-1 col-md-10 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">01/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-best-seller-1.jpg"*/}
-            {/*      src="https://template.hasthemes.com/lezada/lezada/assets/images/category/banner-bestseller-10.jpg"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Minimal Leather Watch</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price discounted">$100.00</span>{" "}*/}
-            {/*        <span className="discounted-price">$80.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
-            {/*<div className="col-lg-4 offset-lg-1 col-md-8 offset-md-2 mb-100">*/}
-            {/*  <div className="accessories-single-category wow zoomIn">*/}
-            {/*    <Link href={`/product`}>*/}
-            {/*      <a className="banner-hover" />*/}
-            {/*    </Link>*/}
-            {/*    <span className="number">02/</span>*/}
-            {/*    <img*/}
-            {/*      // src="assets/images/category/banner-bestseller-2.jpg"*/}
-            {/*      src="https://images.asos-media.com/products/vans-full-patch-snapback-cap-in-oatmeal/201886737-1-oatmeal?$n_640w$&wid=513&fit=constrain"*/}
-            {/*      className="img-fluid"*/}
-            {/*      alt=""*/}
-            {/*    />*/}
-            {/*    <div className="accessories-single-category__content">*/}
-            {/*      <p className="name">Hoho Bag</p>*/}
-            {/*      <p className="price">*/}
-            {/*        <span className="main-price">$100.00</span>*/}
-            {/*      </p>*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-
             <div className="col-lg-12">
               {/*=======  shop button  =======*/}
               {/* <div className="shop-button text-center">

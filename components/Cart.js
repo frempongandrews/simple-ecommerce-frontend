@@ -32,7 +32,6 @@ const Cart = () => {
 
   const renderCartItems = () => {
     return cartArr.map((cartItem) => {
-      // console.log("**********cartItem", cartItem);
       return (
         <tr key={cartItem.product.id}>
           <td className="product-thumbnail">
@@ -46,11 +45,6 @@ const Cart = () => {
                   height={113}
                   objectFit="contain"
                 />
-                {/* <img
-                  src={cartItem.product.image}
-                  className="img-fluid"
-                  alt=""
-                /> */}
               </a>
             </Link>
           </td>
@@ -60,7 +54,6 @@ const Cart = () => {
             >
               <a>{generateShorterProductTitle(cartItem.product.title)}</a>
             </Link>
-            {/*<span className="product-variation">Color: Black</span>*/}
           </td>
           <td className="product-price">
             <span className="price">
@@ -69,27 +62,11 @@ const Cart = () => {
           </td>
           <td className="product-quantity">
             <div className="pro-qty d-inline-block mx-0">
-              {/*<input type="number" step={1} defaultValue={1} />*/}
               <select
                 name="quantity"
                 onChange={(e) => onItemQuantityChange(e, cartItem.product)}
               >
-                {/*<option value="1">1</option>*/}
-                {/*<option defaultValue="2">2</option>*/}
-                {/*<option value="3">3</option>*/}
-                {/*<option value="4">4</option>*/}
-                {/*<option value="5">5</option>*/}
-                {/*<option value="6">6</option>*/}
-                {/*<option value="7">7</option>*/}
-                {/*<option value="8">8</option>*/}
-                {/*<option value="9">9</option>*/}
-                {/*<option value="10">10</option>*/}
                 {new Array(10).fill(1).map((_el, index) => {
-                  // console.log("********Index + 1", index + 1);
-                  // console.log(
-                  //   "******cartItem.quantity === index + 1",
-                  //   cartItem.quantity === index + 1
-                  // );
                   return (
                     <option
                       value={index + 1}
@@ -182,10 +159,6 @@ const Cart = () => {
                   <h2 className="mb-40">TOTAL</h2>
                   <table className="cart-calculation-table mb-30">
                     <tbody>
-                      {/*<tr>*/}
-                      {/*  <th>SUBTOTAL</th>*/}
-                      {/*  <td className="subtotal">£{calculateTotal(cartArr)}</td>*/}
-                      {/*</tr>*/}
                       <tr>
                         <th>TOTAL</th>
                         <td className="total">£{calculateTotal(cartArr)}</td>

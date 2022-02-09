@@ -1,9 +1,7 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
-import { useRouter } from "next/router";
 
 const ProfilePage = () => {
-  const router = useRouter();
   const { state } = useContext(AppContext);
   const currentUser = state.currentUser;
   useEffect(() => {}, [currentUser]);

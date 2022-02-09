@@ -5,7 +5,6 @@ import { loginUser, registerUser } from "../lib/api";
 import { AppContext, LOGIN_USER } from "../context/AppContext";
 import { toast } from "react-toastify";
 import Loader from "./common/Loader";
-// shop-customer-login.html
 
 const Auth = () => {
   const [state, setState] = useState({
@@ -26,7 +25,6 @@ const Auth = () => {
   const router = useRouter();
   const context = useContext(AppContext);
   const currentUser = context.state.currentUser;
-  console.log("*********context", context);
 
   useEffect(() => {
     if (context.state.currentUser) {
@@ -224,13 +222,6 @@ const Auth = () => {
                         login
                       </button>
                     </div>
-                    {/*<div className="col-lg-12">*/}
-                    {/*  <input type="checkbox" />{" "}*/}
-                    {/*  <span className="remember-text">Remember me</span>*/}
-                    {/*  <a href="#" className="reset-pass-link">*/}
-                    {/*    Lost your password?*/}
-                    {/*  </a>*/}
-                    {/*</div>*/}
                   </div>
                 </form>
               </div>
@@ -338,13 +329,6 @@ const Auth = () => {
                         </span>
                       </p>
                     </div>
-                    {/*<div className="col-lg-12">*/}
-                    {/*  <input type="checkbox" />{" "}*/}
-                    {/*  <span className="remember-text">Remember me</span>*/}
-                    {/*  <a href="#" className="reset-pass-link">*/}
-                    {/*    Lost your password?*/}
-                    {/*  </a>*/}
-                    {/*</div>*/}
                   </div>
                 </form>
               </div>
